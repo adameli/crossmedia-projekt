@@ -1,0 +1,41 @@
+:root {
+
+    --background-main: rgb(204, 204, 204);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-main);
+    margin: 0;
+}
+
+main {
+    max-width: 430px;
+    /*the width of a iphone 15 pro max*/
+    width: 100%;
+    height: 100dvh;
+    margin: 0 auto;
+    background-color: aliceblue;
+
+}
+
+dialog {
+    max-width: 430px;
+    /*the width of a iphone 15 pro max*/
+    width: 100%;
+    height: 100dvh;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: none;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 10px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
