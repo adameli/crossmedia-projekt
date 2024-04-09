@@ -1,14 +1,14 @@
-import { componentManger } from "../componentManager.js"
+import { componentManger } from "../componentManager.js";
 import { PubSub } from "../../logic/pubsub.js";
 import { closePopup } from "../../identity/closePopup.js";
 
 function renderComponent() {
+    window.localStorage.removeItem('game-data');
+
     const component = {
         id: 'start-container',
         parentId: 'main',
         tag: 'div',
-        cssId: "start-css",
-        href: "./components/start/start.css",
     }
 
     const dom = componentManger(component);
@@ -33,7 +33,8 @@ function renderComponent() {
 
 }
 
-PubSub.subscribe({ event: 'startApp', listener: renderComponent });
+PubSub.subscribe({ event: 'renderstart', listener: renderComponent });
+// renderComponent()
 
 function play(e) {
     console.log(e.currentTarget);
@@ -42,15 +43,54 @@ function play(e) {
         <button class="close-dialog btn">Tillbaka</button>
         <h2 class="sub-title">Välj din vagn</h2>
         <div>
-            <button class="btn">VAGN 1</button>
-            <button class="btn">VAGN 2</button>
+            <button id="team-1" class="btn team-btn">VAGN 1</button>
+            <button id="team-2" class="btn team-btn">VAGN 2</button>
         </div>
     `;
 
     dialog.showModal();
-
     const dialogBtns = Array.from(document.querySelectorAll('.close-dialog'));
     closePopup(dialog, dialogBtns);
+
+    dialog.querySelectorAll('.team-btn').forEach(btn => btn.addEventListener('click', startGame));
+}
+
+function startGame(e) {
+    const dialog = document.getElementById('start-popup');
+    dialog.innerHTML = `
+        <button class="close-dialog btn">Tillbaka</button>
+        <h2 class="sub-title">Välj ett lag namn sen börjar vi spela</h2>
+        <p class="error-message"></p>
+        <div id="start-game-container">
+            <input  maxlength="15" type="text" placeholder="Lagnamn" id="team-name"></input>
+            <button id="start-game" class="btn ">START</button>
+        </div>
+    `;
+
+    dialog.querySelector('.close-dialog').addEventListener('click', play);
+
+    dialog.querySelector('#start-game').addEventListener('click', (e) => {
+        const input = dialog.querySelector('#team-name');
+        console.log(input.value);
+
+        if (input.value.length < 3) {
+            dialog.querySelector('.error-message').textContent = 'Invalid name must be more then 4 characters';
+            return;
+        }
+
+        const localData = {
+            name: input.value,
+            points: 0,
+            currentClue: 0,
+            currentQuiz: 0,
+            time: 0,
+        }
+
+        window.localStorage.setItem('game-data', JSON.stringify(localData));
+        // window.location = '/clue';
+    });
+
+
 }
 
 function displayInfo(e) {
