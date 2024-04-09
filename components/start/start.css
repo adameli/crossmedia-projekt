@@ -18,10 +18,3 @@
     border: none;
     background-color: var(--background-main);
 }
-
-#start-game-container {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-
-}

@@ -3,16 +3,14 @@ import { PubSub } from "../../../../logic/pubsub.js";
 
 function renderComponent() {
     const component = {
-        id: 'clue-container',
+        id: 'game-container',
         parentId: 'main',
         tag: 'div',
     }
 
     const dom = componentManger(component);
 
-    dom.innerHTML = `
-        <h1 class="clue-title">Detta är ledtråden</h1>
-    `;
+    PubSub.publish({ event: 'renderClueComponents', detail: component.id });
 }
 
 PubSub.subscribe({ event: 'renderclue', listener: renderComponent });

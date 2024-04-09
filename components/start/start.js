@@ -61,7 +61,7 @@ function startGame(e) {
         <button class="close-dialog btn">Tillbaka</button>
         <h2 class="sub-title">Välj ett lag namn sen börjar vi spela</h2>
         <p class="error-message"></p>
-        <div id="start-game-container">
+        <div id="start-game-container" class="btn-input-container">
             <input  maxlength="15" type="text" placeholder="Lagnamn" id="team-name"></input>
             <button id="start-game" class="btn ">START</button>
         </div>
@@ -87,7 +87,7 @@ function startGame(e) {
         }
 
         window.localStorage.setItem('game-data', JSON.stringify(localData));
-        // window.location = '/clue';
+        window.location = '/clue';
     });
 
 
