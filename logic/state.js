@@ -1,3 +1,5 @@
+import { PubSub } from "./pubsub.js";
+
 const _state = {}
 
 
@@ -6,8 +8,13 @@ export const STATE = {
     Patch,
     Delete,
     Get,
+    getEntity
 }
 
+
+function getEntity(entity) {
+    return JSON.parse(JSON.stringify(_state[entity]));
+}
 
 function Post() {
     console.log('hej');
@@ -22,20 +29,26 @@ function Delete() {
 async function Get(data) {
     const { entity, key } = data;
     const prefix = `./api/GET.php?entity=${entity}&key=${key}`;
-    const resource = await fetcher(prefix);
-    console.log(resource);
-    // _state[entity].push(resource);
-    // return JSON.parse(JSON.stringify(_state[entity]));
+    const response = await fetcher(prefix);
+
+    if (response.ok) {
+        const resource = await response.json();
+        console.log(resource);
+
+        _state[entity] = (resource);
+
+        PubSub.publish({ event: 'stateUpdated', detail: null });
+        // return response.ok;
+    } else {
+        alert(response.statusText);
+    }
 }
 
 async function fetcher(request) {
     try {
         let response = await fetch(request);
         console.log(response);
-
-        if (response.ok) {
-            return await response.json();
-        }
+        return response;
 
     } catch (error) {
         console.log(error);

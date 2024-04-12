@@ -1,8 +1,8 @@
 #clue-container {
-    background-color: goldenrod;
     border-radius: 10px;
     margin: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;

@@ -8,4 +8,9 @@ function sendJson ($data, $statuscode){
     exit();
 }
 
+function abort($status = 400, $message = "")
+{
+    sendJson(["error" => $message], $status);
+}
+
 ?>

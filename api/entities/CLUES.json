@@ -1,7 +1,8 @@
 [
     {
         "id": 1,
-        "password": "hej",
+        "key": "hej",
+        "destination": "turningtorso",
         "clues": [
             {
                 "clueId": 1,

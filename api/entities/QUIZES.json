@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "key": "lol",
+        "place": "turningtorso",
+        "quiz": [
+            {
+                "question": "Vilket land är den största investeraren i Västra Hamnen?",
+                "answers": [
+                    "Sverige",
+                    "Danmark",
+                    "Tyskland",
+                    "Nederländerna"
+                ],
+                "correctAnswer": "Sverige"
+            },
+            {
+                "question": "Vad är den totala ytan för Västra Hamnen?",
+                "answers": [
+                    "200 hektar",
+                    "500 hektar",
+                    "700 hektar",
+                    "1000 hektar"
+                ],
+                "correctAnswer": "200 hektar"
+            },
+            {
+                "question": "Vilken är den mest kända byggnaden i Västra Hamnen?",
+                "answers": [
+                    "Turning Torso",
+                    "Emporia",
+                    "Malmö Arena",
+                    "Malmö Live"
+                ],
+                "correctAnswer": "Turning Torso"
+            },
+            {
+                "question": "Vilket år invigdes Turning Torso?",
+                "answers": [
+                    "2005",
+                    "2008",
+                    "2010",
+                    "2012"
+                ],
+                "correctAnswer": "2005"
+            },
+            {
+                "question": "Vilket företag grundade Västra Hamnen?",
+                "answers": [
+                    "Peab",
+                    "Skanska",
+                    "JM",
+                    "NCC"
+                ],
+                "correctAnswer": "Peab"
+            }
+        ]
+    }
+]

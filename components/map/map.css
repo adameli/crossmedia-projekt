@@ -1,0 +1,11 @@
+#map-container {}
+
+#map-img-container {
+    margin: 10px;
+    overflow: hidden;
+
+    & img {
+        width: 150%;
+        object-position: -100px;
+    }
+}

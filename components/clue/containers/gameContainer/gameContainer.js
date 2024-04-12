@@ -1,16 +1,26 @@
 import { componentManger } from "../../../componentManager.js";
 import { PubSub } from "../../../../logic/pubsub.js";
+import { STATE } from "../../../../logic/state.js";
+import { createHeader } from "../../../../identity/gameHeader.js";
 
-function renderComponent() {
+async function renderComponent() {
+
+    createHeader('main');
     const component = {
         id: 'game-container',
         parentId: 'main',
         tag: 'div',
     }
 
-    const dom = componentManger(component);
+    componentManger(component);
 
     PubSub.publish({ event: 'renderClueComponents', detail: component.id });
 }
 
-PubSub.subscribe({ event: 'renderclue', listener: renderComponent });
+async function fillState() {
+
+    STATE.Get({ entity: 'CLUES', key: 'hej' });
+}
+
+PubSub.subscribe({ event: 'renderclue', listener: fillState });
+PubSub.subscribe({ event: 'stateUpdated', listener: renderComponent });

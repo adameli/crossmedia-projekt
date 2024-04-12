@@ -83,7 +83,7 @@ function startGame(e) {
             points: 0,
             currentClue: 0,
             currentQuiz: 0,
-            time: 0,
+            time: 30,
         }
 
         window.localStorage.setItem('game-data', JSON.stringify(localData));
