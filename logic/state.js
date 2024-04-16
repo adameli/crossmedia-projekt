@@ -16,8 +16,24 @@ function getEntity(entity) {
     return JSON.parse(JSON.stringify(_state[entity]));
 }
 
-function Post() {
-    console.log('hej');
+async function Post(data) {
+    const { entity, bodyData } = data;
+    const request = new Request('./api/POST.php', {
+        method: 'POST',
+        headers: { "Content-type": 'application/json' },
+        body: JSON.stringify(bodyData)
+    })
+
+    const response = await fetcher(request);
+
+    if (response.ok) {
+        const resource = await response.json();
+        console.log(resource);
+
+        return resource;
+    } else {
+        alert(response.statusText);
+    }
 }
 function Patch() {
 
@@ -27,8 +43,7 @@ function Delete() {
 }
 
 async function Get(data) {
-    const { entity, key } = data;
-    const prefix = `./api/GET.php?entity=${entity}&key=${key}`;
+    const { entity, prefix } = data;
     const response = await fetcher(prefix);
 
     if (response.ok) {

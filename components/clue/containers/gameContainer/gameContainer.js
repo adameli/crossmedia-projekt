@@ -19,7 +19,8 @@ async function renderComponent() {
 
 async function fillState() {
 
-    STATE.Get({ entity: 'CLUES', key: 'hej' });
+    const prefix = `./api/GET.php?entity=CLUES&key=hej`;
+    STATE.Get({ entity: 'CLUES', prefix: prefix });
 }
 
 PubSub.subscribe({ event: 'renderclue', listener: fillState });

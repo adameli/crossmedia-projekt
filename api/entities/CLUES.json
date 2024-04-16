@@ -25,5 +25,32 @@
                 "text": "Den berömda byggnaden, som har ett unikt vridet utseende, är känd som Turning Torso och är belägen i Västra Hamnen-området i Malmö, Sverige. Med sina 190 meter är det Nordens högsta bostadshus och har blivit en av stadens mest ikoniska landmärken."
             }
         ]
+    },
+    {
+        "id": 2,
+        "key": "bob",
+        "destination": "malmöc",
+        "clues": [
+            {
+                "clueId": 1,
+                "text": "Detta land har en lång kustlinje och är känt för sina många sjöar och skogar. Dess huvudstad är en av de mest innovativa och mångkulturella städerna i världen."
+            },
+            {
+                "clueId": 2,
+                "text": "Staden vi söker är känt för sin imponerande Öresundsbron, som förbinder den med en annan betydande stad i ett grannland."
+            },
+            {
+                "clueId": 3,
+                "text": "Den stora Malmö Arena och det moderna shoppingområdet Triangeln är två kända landmärken i denna stad."
+            },
+            {
+                "clueId": 4,
+                "text": "Denna stad har en av de mest trafikerade tågstationerna i Sverige, som även är knutpunkt för internationell tågtrafik."
+            },
+            {
+                "clueId": 5,
+                "text": "Du har kommit till Malmö C, den centrala järnvägsstationen i Malmö, som är en viktig knutpunkt för tågresor i södra Sverige och till andra europeiska destinationer."
+            }
+        ]
     }
 ]

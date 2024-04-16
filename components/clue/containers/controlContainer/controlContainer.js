@@ -50,7 +50,9 @@ function renderComponent(parentId) {
 
             document.querySelector("#points").textContent = points;
             gameData.points = points;
+            gameData.currentPlace = cleandString;
             window.localStorage.setItem('game-data', JSON.stringify(gameData));
+            window.location = './map';
         }
     });
 }
