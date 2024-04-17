@@ -86,6 +86,7 @@ function startGame(e) {
             currentPlace: '',
             currentKey: '',
             time: 30,
+            beenTo: [],
         }
 
         window.localStorage.setItem('game-data', JSON.stringify(localData));

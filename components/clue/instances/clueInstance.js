@@ -13,8 +13,9 @@ function renderInstance(parentId) {
     const clues = STATE.getEntity('CLUES').clues;
 
 
-    dom.textContent = clues[0].text;
     const gameData = JSON.parse(window.localStorage.getItem('game-data'));
+    console.log(gameData.beenTo);
+    dom.textContent = clues[gameData.currentClue].text;
     startTimer(gameData.time);
 
 
@@ -23,7 +24,6 @@ function renderInstance(parentId) {
         // Update timers and divs every second
         const timerIntervalId = setInterval(() => {
             const gameData = JSON.parse(window.localStorage.getItem('game-data'));
-            console.log(gameData.time);
             gameData.time = seconds;
 
             let sec = `${seconds.toString().padStart(2, '0')}`;

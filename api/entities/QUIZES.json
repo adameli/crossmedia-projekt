@@ -55,5 +55,119 @@
                 "correctAnswer": "Peab"
             }
         ]
+    },
+    {
+        "id": 2,
+        "key": "bob",
+        "place": "malmöc",
+        "quiz": [
+            {
+                "question": "Vad är den mest trafikerade tågstationen i Malmö och en viktig knutpunkt för tågresor i södra Sverige och till andra europeiska destinationer?",
+                "answers": [
+                    "Malmö C",
+                    "Triangeln",
+                    "Hyllie",
+                    "Värnhem"
+                ],
+                "correctAnswer": "Malmö C"
+            },
+            {
+                "question": "Hur många spår har Malmö C?",
+                "answers": [
+                    "8 spår",
+                    "10 spår",
+                    "12 spår",
+                    "14 spår"
+                ],
+                "correctAnswer": "8 spår"
+            },
+            {
+                "question": "Vilket år invigdes Malmö C i sin nuvarande form?",
+                "answers": [
+                    "1856",
+                    "1890",
+                    "1952",
+                    "2001"
+                ],
+                "correctAnswer": "2001"
+            },
+            {
+                "question": "Vilket företag ansvarar för driften av Malmö C?",
+                "answers": [
+                    "Jernhusen",
+                    "SJ",
+                    "MTR Express",
+                    "Green Cargo"
+                ],
+                "correctAnswer": "Jernhusen"
+            },
+            {
+                "question": "Hur många perronger finns det på Malmö C?",
+                "answers": [
+                    "4 perronger",
+                    "6 perronger",
+                    "8 perronger",
+                    "10 perronger"
+                ],
+                "correctAnswer": "8 perronger"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "key": "ses",
+        "place": "emporia",
+        "quiz": [
+            {
+                "question": "Vilket år öppnade Emporia för allmänheten?",
+                "answers": [
+                    "2012",
+                    "2014",
+                    "2016",
+                    "2018"
+                ],
+                "correctAnswer": "2012"
+            },
+            {
+                "question": "Vilken arkitektonisk stil är Emporia känt för?",
+                "answers": [
+                    "Modernism",
+                    "Funkis",
+                    "Postmodernism",
+                    "Organisk arkitektur"
+                ],
+                "correctAnswer": "Organisk arkitektur"
+            },
+            {
+                "question": "Hur många våningar har Emporia?",
+                "answers": [
+                    "3 våningar",
+                    "5 våningar",
+                    "7 våningar",
+                    "9 våningar"
+                ],
+                "correctAnswer": "3 våningar"
+            },
+            {
+                "question": "Vilket är Emporias mest kända varumärke?",
+                "answers": [
+                    "H&M",
+                    "IKEA",
+                    "Louis Vuitton",
+                    "Apple"
+                ],
+                "correctAnswer": "H&M"
+            },
+            {
+                "question": "Vilken är Emporias största parkeringsanläggning?",
+                "answers": [
+                    "P-huset Emporia",
+                    "P-huset Hyllie",
+                    "P-huset Triangeln",
+                    "P-huset Värnhem"
+                ],
+                "correctAnswer": "P-huset Emporia"
+            }
+        ]
     }
 ]

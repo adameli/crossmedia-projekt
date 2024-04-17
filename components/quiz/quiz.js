@@ -2,6 +2,7 @@ import { PubSub } from "../../logic/pubsub.js";
 import { componentManger } from "../componentManager.js";
 import { createHeader } from "../../identity/gameHeader.js";
 import { STATE } from "../../logic/state.js";
+import { localStorage } from "../../logic/helpers.js";
 
 
 async function renderComponent() {
@@ -32,9 +33,7 @@ async function renderComponent() {
     }
     componentManger(popupComponent);
 
-    const gameData = JSON.parse(window.localStorage.getItem('game-data'));
-    gameData.currentQuiz = 0
-    window.localStorage.setItem('game-data', JSON.stringify(gameData));
+    const gameData = localStorage.get();
 
     const quiz = STATE.getEntity('QUIZES');
     console.log(quiz);
@@ -45,7 +44,7 @@ async function renderComponent() {
 }
 
 function displayQuestion(quiz, quizNum) {
-    const gameData = JSON.parse(window.localStorage.getItem('game-data'));
+    const gameData = localStorage.get();
     const question = quiz[quizNum];
     const questionText = document.getElementById('question');
     const currentQuestion = document.getElementById('current-question');
@@ -75,8 +74,13 @@ function displayQuestion(quiz, quizNum) {
 
             if (gameData.currentQuiz === 5) {
                 console.log('slut');
+                gameData.currentQuiz = 0;
+                gameData.currentKey = '';
+                localStorage.set(gameData);
+                window.location = './clue';
+                return;
             }
-            window.localStorage.setItem('game-data', JSON.stringify(gameData));
+            localStorage.set(gameData);
             setTimeout(() => {
                 displayQuestion(quiz, quizNum);
             }, 2000);
