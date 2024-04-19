@@ -3,6 +3,8 @@
         "id": 1,
         "key": "lol",
         "destination": "turningtorso",
+        "img": "./resources/images/turningtorso.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
         "clues": [
             {
                 "clueId": 1,
@@ -30,6 +32,8 @@
         "id": 2,
         "key": "bob",
         "destination": "malmöc",
+        "img": "./resources/images/malmöc.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
         "clues": [
             {
                 "clueId": 1,
@@ -57,6 +61,8 @@
         "id": 3,
         "key": "ses",
         "destination": "emporia",
+        "img": "./resources/images/emporia.png",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
         "clues": [
             {
                 "clueId": 1,

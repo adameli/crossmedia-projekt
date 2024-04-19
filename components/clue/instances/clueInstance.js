@@ -1,6 +1,7 @@
 import { componentManger } from "../../componentManager.js";
 import { PubSub } from "../../../logic/pubsub.js";
 import { STATE } from "../../../logic/state.js";
+import { localStorage } from "../../../logic/helpers.js";
 
 function renderInstance(parentId) {
     const component = {
@@ -13,8 +14,7 @@ function renderInstance(parentId) {
     const clues = STATE.getEntity('CLUES').clues;
 
 
-    const gameData = JSON.parse(window.localStorage.getItem('game-data'));
-    console.log(gameData.beenTo);
+    const gameData = localStorage.get();
     dom.textContent = clues[gameData.currentClue].text;
     startTimer(gameData.time);
 
@@ -23,7 +23,7 @@ function renderInstance(parentId) {
         let timerSeconds = document.getElementById('timer');
         // Update timers and divs every second
         const timerIntervalId = setInterval(() => {
-            const gameData = JSON.parse(window.localStorage.getItem('game-data'));
+            const gameData = localStorage.get();
             gameData.time = seconds;
 
             let sec = `${seconds.toString().padStart(2, '0')}`;
@@ -42,7 +42,7 @@ function renderInstance(parentId) {
                 clearInterval(timerIntervalId); // Stop the interval
             }
 
-            window.localStorage.setItem('game-data', JSON.stringify(gameData))
+            localStorage.set(gameData);
 
             seconds--;
 

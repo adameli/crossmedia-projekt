@@ -2,6 +2,8 @@ import { PubSub } from "../../logic/pubsub.js";
 import { componentManger } from "../componentManager.js";
 import { createHeader } from "../../identity/gameHeader.js";
 import { STATE } from "../../logic/state.js";
+import { router } from "../../logic/router.js";
+import { localStorage } from "../../logic/helpers.js";
 
 
 async function renderComponent() {
@@ -15,12 +17,12 @@ async function renderComponent() {
 
     const dom = componentManger(component);
 
+    const cluesInfo = STATE.getEntity('CLUES');
     dom.innerHTML = `
         <div id="map-img-container">
-            <img src="./resources/images/turningtorso.png" alt="A map with a pin point on where to go next">
+            <img src="${cluesInfo.img}" alt="A map with a pin point on where to go next">
         </div>
-        <p id="map-description-text" class="regular-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Tenetur, libero inventore ea accusamus itaque</p>
+        <p id="map-description-text" class="regular-text">${cluesInfo.text}</p>
         <div class="btn-input-container">
             <input type="text" id="place-password" placeholder="Plats lösenord">
             <button id="submit-place-password" class="btn">OK</button>
@@ -28,13 +30,14 @@ async function renderComponent() {
     `;
 
     const popupComponent = {
-        id: 'start-popup',
+        id: 'map-popup',
         parentId: 'main',
         tag: 'dialog',
     }
     componentManger(popupComponent);
 
-    const gameData = JSON.parse(window.localStorage.getItem('game-data'));
+    const gameData = localStorage.get();
+    console.log(gameData.completed);
     const currentPlace = gameData.currentPlace;
 
     dom.querySelector('#submit-place-password').addEventListener('click', async (e) => {
@@ -55,12 +58,24 @@ async function renderComponent() {
         console.log(dbAnswer.isCorrect);
         if (dbAnswer.isCorrect) {
             gameData.currentKey = cleandString;
-            window.localStorage.setItem('game-data', JSON.stringify(gameData));
-            window.location = './quiz';
+            gameData.completed.push('map');
+            localStorage.set(gameData);
+            router('quiz');
+        } else {
+            alert('Fel lösenord');
         }
     })
 
 }
 
+async function fillState() {
 
-PubSub.subscribe({ event: 'rendermap', listener: renderComponent });
+    const gameData = localStorage.get();
+
+    const prefix = `./api/GET.php?entity=CLUES&key&place=${gameData.currentPlace}`;
+    STATE.Get({ entity: 'CLUES', prefix: prefix });
+}
+
+
+PubSub.subscribe({ event: 'stateUpdated', listener: renderComponent });
+PubSub.subscribe({ event: 'rendermap', listener: fillState });

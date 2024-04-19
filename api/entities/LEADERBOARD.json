@@ -3,5 +3,20 @@
         "name": "adde",
         "points": 10,
         "id": 1
+    },
+    {
+        "name": "adde",
+        "points": 7,
+        "id": 2
+    },
+    {
+        "name": "mos",
+        "points": 30,
+        "id": 3
+    },
+    {
+        "name": "der",
+        "points": 28,
+        "id": 4
     }
 ]

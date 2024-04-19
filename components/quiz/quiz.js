@@ -3,10 +3,10 @@ import { componentManger } from "../componentManager.js";
 import { createHeader } from "../../identity/gameHeader.js";
 import { STATE } from "../../logic/state.js";
 import { localStorage } from "../../logic/helpers.js";
+import { router } from "../../logic/router.js";
 
 
 async function renderComponent() {
-    // window.localStorage.removeItem('game-data');
     createHeader('main');
     const component = {
         id: 'quiz-container',
@@ -76,14 +76,15 @@ function displayQuestion(quiz, quizNum) {
                 console.log('slut');
                 gameData.currentQuiz = 0;
                 gameData.currentKey = '';
+                gameData.completed = [];
                 localStorage.set(gameData);
-                window.location = './clue';
+                router('clue');
                 return;
             }
             localStorage.set(gameData);
             setTimeout(() => {
                 displayQuestion(quiz, quizNum);
-            }, 2000);
+            }, 1000);
         })
 
         alternativesContainer.append(btn);

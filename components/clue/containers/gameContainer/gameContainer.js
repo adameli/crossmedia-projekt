@@ -3,6 +3,7 @@ import { PubSub } from "../../../../logic/pubsub.js";
 import { STATE } from "../../../../logic/state.js";
 import { createHeader } from "../../../../identity/gameHeader.js";
 import { localStorage } from "../../../../logic/helpers.js";
+import { router } from "../../../../logic/router.js";
 
 async function renderComponent() {
 
@@ -15,6 +16,13 @@ async function renderComponent() {
 
     componentManger(component);
 
+    const popupComponent = {
+        id: 'clue-popup',
+        parentId: 'main',
+        tag: 'dialog',
+    }
+    componentManger(popupComponent);
+
     PubSub.publish({ event: 'renderClueComponents', detail: component.id });
 }
 
@@ -22,8 +30,23 @@ async function fillState() {
 
     let key;
     const gameData = localStorage.get();
-    if (gameData.currentKey !== '') {
-        key = gameData.currentKey;
+    if (gameData.completed.find(milstone => milstone === 'clue')) {
+        const popupComponent = {
+            id: 'clue-popup',
+            parentId: 'main',
+            tag: 'dialog',
+        }
+        const dialog = componentManger(popupComponent);
+
+        dialog.innerHTML = `
+            <div class="dialog-text">
+                <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+            </div>
+            <button id="next-page" class="btn">Gå vidare!</button>
+        `;
+        dialog.querySelector("#next-page").addEventListener('click', (e) => { router('map') });
+        dialog.showModal();
+        return;
     } else {
         const bodyData = {
             entity: 'CLUES',
@@ -37,7 +60,7 @@ async function fillState() {
             return;
         }
         gameData.beenTo.push(dbAnswer.id);
-        gameData.currentKey = dbAnswer.key;
+        // gameData.currentKey = dbAnswer.key;
         localStorage.set(gameData);
         console.log(dbAnswer);
         key = dbAnswer.key;
@@ -63,7 +86,5 @@ async function renderLeaderboard() {
     }
 
     const dbAnswer = await STATE.Post({ entity: "LEADERBOARD", bodyData });
-    console.log(dbAnswer);
-
-    // window.location = './leaderboard';
+    router('leaderboard');
 }

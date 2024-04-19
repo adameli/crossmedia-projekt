@@ -1,6 +1,7 @@
 import { componentManger } from "../componentManager.js";
 import { PubSub } from "../../logic/pubsub.js";
 import { closePopup } from "../../identity/closePopup.js";
+import { router } from "../../logic/router.js";
 
 function renderComponent() {
     window.localStorage.removeItem('game-data');
@@ -37,7 +38,6 @@ PubSub.subscribe({ event: 'renderstart', listener: renderComponent });
 // renderComponent()
 
 function play(e) {
-    console.log(e.currentTarget);
     const dialog = document.getElementById('start-popup');
     dialog.innerHTML = `
         <button class="close-dialog btn">Tillbaka</button>
@@ -87,10 +87,12 @@ function startGame(e) {
             currentKey: '',
             time: 30,
             beenTo: [],
+            completed: [],
         }
 
         window.localStorage.setItem('game-data', JSON.stringify(localData));
-        window.location = '/clue';
+        // window.location = '/clue';
+        router('clue');
     });
 
 

@@ -1,10 +1,10 @@
 import { PubSub } from "../../logic/pubsub.js";
 import { STATE } from "../../logic/state.js";
 import { localStorage } from "../../logic/helpers.js";
+import { componentManger } from "../componentManager.js";
 
 async function renderComponent() {
 
-    createHeader('main');
     const component = {
         id: 'leaderboard-container',
         parentId: 'main',
@@ -12,6 +12,9 @@ async function renderComponent() {
     }
 
     const dom = componentManger(component);
+    dom.innerHTML = `
+        <h1>Poängliga</h1>
+    `
 
     const leaderboard = STATE.getEntity('LEADERBOARD');
 

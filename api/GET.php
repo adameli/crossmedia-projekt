@@ -12,6 +12,15 @@ if($requestMethod == "GET"){
     $key = $_GET["key"];
 
     if($_GET["entity"] == 'CLUES'){
+
+        if(isset($_GET['place'])){
+            foreach($entityData as $index => $clueElement){
+                if($clueElement["destination"] == $_GET['place']){
+                    sendJson(["img" => $clueElement["img"], "text" => $clueElement["text"]], 200);
+                }
+            }
+        }
+
         foreach($entityData as $index => $clueElement){
             if($clueElement["key"] == $key){
                 sendJson(["clues" => $clueElement["clues"], "destination" => $clueElement["destination"]], 200);
@@ -27,7 +36,13 @@ if($requestMethod == "GET"){
         }
 
         abort(400, "Wrong key value");
+    }
 
+    if($_GET["entity"] == 'LEADERBOARD'){
+        if($key == 'all'){
+            sendJson($entityData, 200);
+        }
+        abort(400, "Wrong key value");
     }
 
 

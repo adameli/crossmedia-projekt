@@ -1,6 +1,9 @@
 import { componentManger } from "../../../componentManager.js";
 import { PubSub } from "../../../../logic/pubsub.js";
 import { STATE } from "../../../../logic/state.js";
+import { localStorage } from "../../../../logic/helpers.js";
+import { router } from "../../../../logic/router.js";
+import { closePopup } from "../../../../identity/closePopup.js";
 
 function renderComponent(parentId) {
     const component = {
@@ -48,11 +51,28 @@ function renderComponent(parentId) {
                     points = 2;
             }
 
-            document.querySelector("#points").textContent = points;
-            gameData.points = points;
+            const dialog = document.getElementById('clue-popup');
+            dialog.innerHTML = `
+                <div class="dialog-text">
+                    <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+                </div>
+                <button id="next-page" class="btn">Gå vidare!</button>
+            `;
+
+            dialog.querySelector("#next-page").addEventListener('click', (e) => { router('map') });
+
+            setTimeout(() => {
+                dialog.showModal();
+            }, 100);
+
+            e.currentTarget.setAttribute('disabled', true);
+            document.querySelector("#points").textContent = gameData.points + points;
+            gameData.points += points;
             gameData.currentPlace = cleandString;
-            window.localStorage.setItem('game-data', JSON.stringify(gameData));
-            window.location = './map';
+            gameData.time = 30;
+            gameData.completed.push('clue');
+            localStorage.set(gameData);
+            router('map');
         }
     });
 }

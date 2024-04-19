@@ -51,9 +51,8 @@ async function Get(data) {
         console.log(resource);
 
         _state[entity] = (resource);
-
+        console.log(_state);
         PubSub.publish({ event: 'stateUpdated', detail: null });
-        // return response.ok;
     } else {
         alert(response.statusText);
     }

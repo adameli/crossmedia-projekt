@@ -1,11 +1,11 @@
-#map-container {}
-
 #map-img-container {
     margin: 10px;
     overflow: hidden;
+    max-height: 200px;
 
     & img {
         width: 150%;
         object-position: -100px;
+        object-fit: cover;
     }
 }

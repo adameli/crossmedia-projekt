@@ -1,13 +1,19 @@
 <?php
 
 $globalPath = ".";
-$currentPath = (substr($_SERVER['REQUEST_URI'], 1) === '') ? '/start' : $_SERVER['REQUEST_URI'];
+$currentPath = "";
 $ignore_files = [".", ".."];
+
+if(count($_GET) == 0){
+    $currentPath = "start";
+}else {
+    $currentPath = $_GET['view'];
+}
 
 $components = [];
 $cssLinks = [];
 
-$pathComponents = "$globalPath/components$currentPath";
+$pathComponents = "$globalPath/components/$currentPath";
 // $allComponentsSets = array_diff(scandir($pathComponents), $ignore_files);
 
 // foreach($allComponentsSets as $folder) find_components("$pathComponents/$folder");
@@ -79,19 +85,18 @@ function static_css_links ()
     <title>Vart är vi påväg: Malmö Edition</title>
 </head>
 <body>
-    
+  
     <main id="main"></main>
 
 <script type="module" id="my-script">
 
     import { PubSub } from './logic/pubsub.js';
-    import { STATE } from './logic/state.js'
-    import * as cm from './components/componentManager.js';
+
+    let name = '<?= $currentPath ?>';
+
     <?php 
         echo_static_import_lines(); 
-        $pathName = substr($currentPath, 1);
-        echo "PubSub.publish({ event: 'render$pathName', detail: null }); \n";
-    
+        echo "PubSub.publish({ event: 'render$currentPath', detail: null }); \n";
     ?>
 
 </script>
