@@ -18,5 +18,10 @@
         "name": "der",
         "points": 28,
         "id": 4
+    },
+    {
+        "name": "ress",
+        "points": 21,
+        "id": 5
     }
 ]

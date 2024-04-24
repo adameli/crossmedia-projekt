@@ -3,6 +3,10 @@ import { PubSub } from "../../logic/pubsub.js";
 import { closePopup } from "../../identity/closePopup.js";
 import { router } from "../../logic/router.js";
 
+let guide;
+let path;
+let transport;
+
 function renderComponent() {
     window.localStorage.removeItem('game-data');
 
@@ -29,7 +33,7 @@ function renderComponent() {
     }
     componentManger(popupComponent);
 
-    document.getElementById('spela-btn').addEventListener('click', play);
+    document.getElementById('spela-btn').addEventListener('click', chooseGuide);
     document.getElementById('info-btn').addEventListener('click', displayInfo);
 
 }
@@ -37,14 +41,14 @@ function renderComponent() {
 PubSub.subscribe({ event: 'renderstart', listener: renderComponent });
 // renderComponent()
 
-function play(e) {
+function chooseGuide(e) {
     const dialog = document.getElementById('start-popup');
     dialog.innerHTML = `
         <button class="close-dialog btn">Tillbaka</button>
-        <h2 class="sub-title">Välj din vagn</h2>
-        <div>
-            <button id="team-1" class="btn team-btn">VAGN 1</button>
-            <button id="team-2" class="btn team-btn">VAGN 2</button>
+        <h2 class="sub-title">VÄLJ GUIDE</h2>
+        <div id="guides-container">
+            <button id="guide-1" class="btn guide-btn">Kristian</button>
+            <button id="guide-2" class="btn guide-btn">Fredrik</button>
         </div>
     `;
 
@@ -52,14 +56,57 @@ function play(e) {
     const dialogBtns = Array.from(document.querySelectorAll('.close-dialog'));
     closePopup(dialog, dialogBtns);
 
-    dialog.querySelectorAll('.team-btn').forEach(btn => btn.addEventListener('click', startGame));
+    dialog.querySelectorAll('.guide-btn').forEach(btn => btn.addEventListener('click', (e) => {
+        guide = e.currentTarget.textContent;
+        choosePath();
+    }));
+}
+
+function choosePath() {
+    const dialog = document.getElementById('start-popup');
+    dialog.innerHTML = `
+        <button class="close-dialog btn">Tillbaka</button>
+        <h2 class="sub-title">VÄLJ SLINGA</h2>
+        <div id="paths-container">
+            <button id="path-1" class="btn path-btn">SLINGA 1</button>
+            <button id="path-2" class="btn path-btn">SLINGA 2</button>
+            <button id="path-2" class="btn path-btn">SLINGA 3</button>
+        </div>
+    `;
+
+    dialog.showModal();
+    dialog.querySelector('.close-dialog').addEventListener('click', chooseGuide);
+
+    dialog.querySelectorAll('.path-btn').forEach(btn => btn.addEventListener('click', (e) => {
+        path = e.currentTarget.textContent;
+        chooseTransport();
+    }));
+}
+function chooseTransport(e) {
+    const dialog = document.getElementById('start-popup');
+    dialog.innerHTML = `
+        <button class="close-dialog btn">Tillbaka</button>
+        <h2 class="sub-title">VÄLJ FÄRDMEDEL</h2>
+        <div id="paths-container">
+            <button id="transport-1" class="btn transport-btn">ELSPARK</button>
+            <button id="transport-2" class="btn transport-btn">CYKEL</button>
+        </div>
+    `;
+
+    dialog.showModal();
+    dialog.querySelector('.close-dialog').addEventListener('click', choosePath);
+
+    dialog.querySelectorAll('.transport-btn').forEach(btn => btn.addEventListener('click', (e) => {
+        transport = e.currentTarget.textContent;
+        startGame();
+    }));
 }
 
 function startGame(e) {
     const dialog = document.getElementById('start-popup');
     dialog.innerHTML = `
         <button class="close-dialog btn">Tillbaka</button>
-        <h2 class="sub-title">Välj ett lag namn sen börjar vi spela</h2>
+        <h2 class="sub-title">VÄLJ NAMN</h2>
         <p class="error-message"></p>
         <div id="start-game-container" class="btn-input-container">
             <input  maxlength="15" type="text" placeholder="Lagnamn" id="team-name"></input>
@@ -67,7 +114,7 @@ function startGame(e) {
         </div>
     `;
 
-    dialog.querySelector('.close-dialog').addEventListener('click', play);
+    dialog.querySelector('.close-dialog').addEventListener('click', chooseTransport);
 
     dialog.querySelector('#start-game').addEventListener('click', (e) => {
         const input = dialog.querySelector('#team-name');
@@ -80,6 +127,9 @@ function startGame(e) {
 
         const localData = {
             name: input.value,
+            guide: guide,
+            path: path,
+            transport: transport,
             points: 0,
             currentClue: 0,
             currentQuiz: 0,

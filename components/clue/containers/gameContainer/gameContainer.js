@@ -62,7 +62,6 @@ async function fillState() {
         gameData.beenTo.push(dbAnswer.id);
         // gameData.currentKey = dbAnswer.key;
         localStorage.set(gameData);
-        console.log(dbAnswer);
         key = dbAnswer.key;
     }
 

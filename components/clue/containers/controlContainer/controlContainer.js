@@ -3,7 +3,6 @@ import { PubSub } from "../../../../logic/pubsub.js";
 import { STATE } from "../../../../logic/state.js";
 import { localStorage } from "../../../../logic/helpers.js";
 import { router } from "../../../../logic/router.js";
-import { closePopup } from "../../../../identity/closePopup.js";
 
 function renderComponent(parentId) {
     const component = {
@@ -17,7 +16,7 @@ function renderComponent(parentId) {
 
     dom.innerHTML = `
         <input  maxlength="30" type="text" placeholder="Vart är vi påväg?" id="clue-answer"></input>
-        <button id="submit-clue-answer" class="btn ">OK</button>
+        <button id="submit-clue-answer" class="btn">OK</button>
    `;
 
     const destination = STATE.getEntity('CLUES').destination;
@@ -31,7 +30,7 @@ function renderComponent(parentId) {
 
         if (cleandString == destination) {
             console.log('right answer');
-            const gameData = JSON.parse(window.localStorage.getItem('game-data'));
+            const gameData = localStorage.get();
             let points;
             switch (gameData.currentClue) {
                 case 0:
@@ -70,7 +69,8 @@ function renderComponent(parentId) {
             gameData.points += points;
             gameData.currentPlace = cleandString;
             gameData.time = 30;
-            gameData.completed.push('clue');
+            gameData.currentClue = 0;
+            gameData.completed = ['quiz', 'clue'];
             localStorage.set(gameData);
             router('map');
         }

@@ -17,4 +17,23 @@
 #start-popup {
     border: none;
     background-color: var(--background-main);
+
+    & h2 {
+        text-align: center;
+    }
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    & #paths-container {
+        gap: 2rem;
+    }
+
+    & #guides-container {
+        gap: 1rem;
+        padding: 10px 30px;
+    }
 }

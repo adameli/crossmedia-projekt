@@ -54,11 +54,30 @@ async function renderComponent() {
             place: currentPlace,
         }
 
+        //* Skickar med platsen t.ex 'malmöc' för att hitta rätt quiz objekt för att sen
+        //* kolla i databasen om nycklen stämmer med det clienten har gett för lösenord
+        //* skickar tillbaka antingen sant eller falkt.
         const dbAnswer = await STATE.Post({ entity: "QUIZES", bodyData });
         console.log(dbAnswer.isCorrect);
         if (dbAnswer.isCorrect) {
+
+            //*Om clienten går tillbaka till map siden får de upp en popup att de har klarat steget
+            //*Sen hänvisar vi de till quiz sidan igen
+            const dialog = document.getElementById('map-popup');
+            dialog.innerHTML = `
+                <div class="dialog-text">
+                    <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+                </div>
+                <button id="next-page" class="btn">Gå vidare!</button>
+            `;
+
+            dialog.querySelector("#next-page").addEventListener('click', (e) => { router('quiz') });
+            setTimeout(() => {
+                dialog.showModal();
+            }, 200);
+
             gameData.currentKey = cleandString;
-            gameData.completed.push('map');
+            gameData.completed = ['clue', 'map'];
             localStorage.set(gameData);
             router('quiz');
         } else {
@@ -71,9 +90,28 @@ async function renderComponent() {
 async function fillState() {
 
     const gameData = localStorage.get();
+    if (gameData.completed.find(milstone => milstone === 'map')) {
+        const popupComponent = {
+            id: 'map-popup',
+            parentId: 'main',
+            tag: 'dialog',
+        }
+        const dialog = componentManger(popupComponent);
 
-    const prefix = `./api/GET.php?entity=CLUES&key&place=${gameData.currentPlace}`;
-    STATE.Get({ entity: 'CLUES', prefix: prefix });
+        dialog.innerHTML = `
+            <div class="dialog-text">
+                <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+            </div>
+            <button id="next-page" class="btn">Gå vidare!</button>
+        `;
+        dialog.querySelector("#next-page").addEventListener('click', (e) => { router('quiz') });
+        dialog.showModal();
+        return;
+    } else {
+        //* Skickar till databasen för att få tillbaka en bild och text som tillhör det CLUE objekt som stämmer överens med currentPlace
+        const prefix = `./api/GET.php?entity=CLUES&key&place=${gameData.currentPlace}`;
+        STATE.Get({ entity: 'CLUES', prefix: prefix });
+    }
 }
 
 

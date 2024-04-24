@@ -38,7 +38,6 @@ function renderInstance(parentId) {
 
             if (seconds === 0) {
                 gameData.time = 30;
-                gameData.currentClue = 0;
                 clearInterval(timerIntervalId); // Stop the interval
             }
 
