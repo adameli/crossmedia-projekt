@@ -33,14 +33,14 @@ function renderInstance(parentId) {
             countdownBar.style.width = precentageElapsed + '%';
 
             // Check if timer has reached zero
-            if (seconds === 25) changeClueText(1);
-            if (seconds === 20) changeClueText(2);
-            if (seconds === 15) changeClueText(3);
-            if (seconds === 10) changeClueText(4);
+            if (seconds === 20) changeClueText(1);
+            if (seconds === 15) changeClueText(2);
+            if (seconds === 10) changeClueText(3);
+            if (seconds === 5) changeClueText(4);
 
 
             if (seconds === 0) {
-                gameData.time = 30;
+                // gameData.time = 30;
                 clearInterval(timerIntervalId); // Stop the interval
             }
 

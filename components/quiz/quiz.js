@@ -85,6 +85,8 @@ function displayQuestion(quiz, quizNum) {
                     dialog.showModal();
                 }, 100);
                 gameData.currentQuiz = 0;
+                gameData.currentClue = 0;
+                gameData.time = 30;
                 gameData.currentKey = '';
                 gameData.completed = ['quiz', 'map'];
                 localStorage.set(gameData);

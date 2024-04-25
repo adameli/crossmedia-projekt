@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: var(--background-main);
+    background: var(--background-main);
     margin: 0;
 }
 
@@ -27,6 +27,7 @@ main {
     display: flex;
     flex-direction: column;
     color: var(--text-color-white);
+    overflow: auto;
 }
 
 header {
@@ -63,10 +64,6 @@ dialog {
     letter-spacing: 3px;
     cursor: pointer;
     font-weight: bold;
-
-    &:hover {
-        background-color: gray;
-    }
 }
 
 input {
