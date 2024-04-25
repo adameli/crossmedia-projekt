@@ -2,6 +2,7 @@ import { componentManger } from "../componentManager.js";
 import { PubSub } from "../../logic/pubsub.js";
 import { closePopup } from "../../identity/closePopup.js";
 import { router } from "../../logic/router.js";
+import { localStorage } from "../../logic/helpers.js";
 
 let guide;
 let path;
@@ -19,10 +20,13 @@ function renderComponent() {
     const dom = componentManger(component);
 
     dom.innerHTML = `
-        <h1 class="start-title">Vart är vi påväg?</h1>
-        <div class="controls-container-column">
-            <button id="spela-btn" class="btn start-btn">SPELA</button>
-            <button id="info-btn" class="btn start-btn">HUR FUNKAR DET?</button>
+        <div id="start-header-container" class="controls-container-column">
+                <h1 class="start-title">PÅ SPRÅNG MALMÖ EDITION</h1>
+                <button id="spela-btn" class="btn start-btn">SPELA</button>
+                <button id="info-btn" class="btn start-btn">HUR FUNKAR DET?</button>
+        </div>
+        <div id="start-img-container">
+            <img src="./resources/images/start_loggo.png" id="start-img"></
         </div>
     `;
 
@@ -47,8 +51,8 @@ function chooseGuide(e) {
         <button class="close-dialog btn">Tillbaka</button>
         <h2 class="sub-title">VÄLJ GUIDE</h2>
         <div id="guides-container">
-            <button id="guide-1" class="btn guide-btn">Kristian</button>
-            <button id="guide-2" class="btn guide-btn">Fredrik</button>
+            <button id="guide-1" class="btn guide-btn">KRISTIAN</button>
+            <button id="guide-2" class="btn guide-btn">FREDRIK</button>
         </div>
     `;
 
@@ -140,8 +144,7 @@ function startGame(e) {
             completed: [],
         }
 
-        window.localStorage.setItem('game-data', JSON.stringify(localData));
-        // window.location = '/clue';
+        localStorage.set(localData);
         router('clue');
     });
 
@@ -152,13 +155,23 @@ function displayInfo(e) {
 
     const dialog = document.getElementById('start-popup');
     dialog.innerHTML = `
-        <button class="close-dialog btn">Stäng</button>
-        <div class="dialog-text">
-            <p>Så här funkar vårat spel. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Sed eligendi, aperiam et fuga facilis aut asperiores quasi esse ipsum odio! Ullam porro minus blanditiis vel, 
-            at deserunt veritatis culpa fugiat.</p>
+        <h2>LÄS NOGA</h2>
+        <ul id="how-it-works" class="dialog-text">
+            <li class="list-element">Välj vem vill du vill ska guida dig</li>
+            <li class="list-element">Välj en slinga att utforska</li>
+            <li class="list-element">Välj ditt färdmedel</li>
+            <li class="list-element">Gör dig redo för "Vart är vi på väg?” Första ledtråden är värd 10 poäng, du har 30 sekunder på dig att gissa. Om du inte gissar rätt kommer ledtråd 2 (värd 8 poäng) osv</li>
+            <li class="list-element">Skriv in ditt svar och tryck på nöd-ringklockan när du tror dig veta svaret</li>
+            <li class="list-element">Vid rätt svar får du kartan till platsen</li>
+            <li class="list-element">Vid fel svar fortsätter du att gissa</li>
+            <li class="list-element">När du når platsen, får du en gåta, ditt uppdrag är att leta upp rätt lösenord på platsen</li>
+            <li class="list-element">Skriv in lösenordet för att påbörja ett quiz</li>
+            <li class="list-element"> Ju fler rätt svar, desto fler poäng</li>
+            <li class="list-element">Efter quizet, nya ledtrådar till nästa plats</li>
+        </ul>
+        <div>
+            <button class="close-dialog btn">Nu kör vi!</button>
         </div>
-        <button class="close-dialog btn">Nu kör vi!</button>
     `;
 
     dialog.showModal();

@@ -17,9 +17,8 @@ async function renderComponent() {
     const dom = componentManger(component);
 
     dom.innerHTML = `
-        <h1>QUIZ TIME</h1>
         <div id="question-container">
-            <h3 id="question"></h3>
+            <h2 id="question"></h2>
             <p id="current-question"></p>
         </div>
 

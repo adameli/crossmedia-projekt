@@ -1,0 +1,11 @@
+{
+    "name": "På språng malmö edition",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "resources/images/logga_rgb.svg",
+            "type": "image/svg",
+            "sizes": "512x512"
+        }
+    ]
+}

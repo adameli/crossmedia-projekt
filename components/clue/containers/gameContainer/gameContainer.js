@@ -28,8 +28,9 @@ async function renderComponent() {
 
 async function fillState() {
 
-    let key;
     const gameData = localStorage.get();
+    let key = gameData.currentKey;
+
     if (gameData.completed.find(milstone => milstone === 'clue')) {
         const popupComponent = {
             id: 'clue-popup',
@@ -47,7 +48,9 @@ async function fillState() {
         dialog.querySelector("#next-page").addEventListener('click', (e) => { router('map') });
         dialog.showModal();
         return;
-    } else {
+    }
+
+    if (gameData.currentKey === '') {
         const bodyData = {
             entity: 'CLUES',
             key: '',
@@ -60,7 +63,7 @@ async function fillState() {
             return;
         }
         gameData.beenTo.push(dbAnswer.id);
-        // gameData.currentKey = dbAnswer.key;
+        gameData.currentKey = dbAnswer.key;
         localStorage.set(gameData);
         key = dbAnswer.key;
     }

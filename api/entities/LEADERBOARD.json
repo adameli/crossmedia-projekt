@@ -1,27 +1,32 @@
 [
     {
-        "name": "adde",
+        "name": "Pålle",
         "points": 10,
         "id": 1
     },
     {
-        "name": "adde",
-        "points": 7,
-        "id": 2
-    },
-    {
-        "name": "mos",
+        "name": "Adam",
         "points": 30,
         "id": 3
     },
     {
-        "name": "der",
+        "name": "Kalle",
         "points": 28,
         "id": 4
     },
     {
-        "name": "ress",
+        "name": "Helen",
         "points": 21,
         "id": 5
+    },
+    {
+        "name": "Karin",
+        "points": 22,
+        "id": 9
+    },
+    {
+        "name": "Jacob",
+        "points": 20,
+        "id": 10
     }
 ]

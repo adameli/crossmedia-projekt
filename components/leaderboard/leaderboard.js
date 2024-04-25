@@ -2,9 +2,10 @@ import { PubSub } from "../../logic/pubsub.js";
 import { STATE } from "../../logic/state.js";
 import { localStorage } from "../../logic/helpers.js";
 import { componentManger } from "../componentManager.js";
+import { createHeader } from "../../identity/gameHeader.js";
 
 async function renderComponent() {
-
+    createHeader('main');
     const component = {
         id: 'leaderboard-container',
         parentId: 'main',
@@ -16,7 +17,7 @@ async function renderComponent() {
         <h1>Poängliga</h1>
     `
 
-    const leaderboard = STATE.getEntity('LEADERBOARD');
+    const leaderboard = STATE.getEntity('LEADERBOARD').sort((a, b) => b.points - a.points);
 
     leaderboard.forEach(user => {
         renderInstance(user, dom);

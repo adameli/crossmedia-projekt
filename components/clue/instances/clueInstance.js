@@ -19,15 +19,18 @@ function renderInstance(parentId) {
     startTimer(gameData.time);
 
 
-    function startTimer(seconds = 30) {
-        let timerSeconds = document.getElementById('timer');
+    function startTimer(seconds) {
+        let countdownBar = document.getElementById('countdown');
         // Update timers and divs every second
         const timerIntervalId = setInterval(() => {
             const gameData = localStorage.get();
             gameData.time = seconds;
 
-            let sec = `${seconds.toString().padStart(2, '0')}`;
-            timerSeconds.textContent = sec;
+            const totalTime = 30;
+            const timeRemaining = totalTime - seconds
+            const precentageElapsed = (timeRemaining / totalTime) * 100;
+
+            countdownBar.style.width = precentageElapsed + '%';
 
             // Check if timer has reached zero
             if (seconds === 25) changeClueText(1);

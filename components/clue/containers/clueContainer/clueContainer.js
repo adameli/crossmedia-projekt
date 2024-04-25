@@ -10,7 +10,9 @@ async function renderComponent(parentId) {
 
     const dom = componentManger(component);
     dom.innerHTML = `
-        <div id="timer"></div>
+        <div id="timer-container">
+            <div id="countdown"></div>
+        </div>
     `;
 
 
