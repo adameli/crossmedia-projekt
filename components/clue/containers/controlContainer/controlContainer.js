@@ -73,6 +73,12 @@ function renderComponent(parentId) {
             gameData.completed = ['quiz', 'clue'];
             localStorage.set(gameData);
             router('map');
+        } else {
+            dom.querySelector('#clue-answer').classList.add("wrong-input");
+            const animated = document.querySelector(".wrong-input");
+            animated.addEventListener("animationend", (event2) => {
+                event2.currentTarget.classList.remove("wrong-input");
+            });
         }
     });
 }

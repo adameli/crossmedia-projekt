@@ -1,11 +1,10 @@
 #clue-container {
     border-radius: 10px;
-    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     padding: 20px;
 }
 

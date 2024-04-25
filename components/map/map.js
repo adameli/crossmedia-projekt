@@ -81,7 +81,11 @@ async function renderComponent() {
             localStorage.set(gameData);
             router('quiz');
         } else {
-            alert('Fel lösenord');
+            dom.querySelector('#place-password').classList.add("wrong-input");
+            const animated = document.querySelector(".wrong-input");
+            animated.addEventListener("animationend", (event2) => {
+                event2.currentTarget.classList.remove("wrong-input");
+            });
         }
     })
 
