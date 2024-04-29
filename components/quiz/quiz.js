@@ -53,55 +53,85 @@ function displayQuestion(quiz, quizNum) {
     questionText.textContent = question.question;
     currentQuestion.textContent = ++quizNum + '/5';
 
-    question.answers.forEach(answer => {
-        const btn = document.createElement('button');
-        btn.classList.add('btn', 'answer');
-        btn.textContent = answer;
+    if (question.answers) {
+        question.answers.forEach(answer => {
+            const btn = document.createElement('button');
+            btn.classList.add('btn', 'answer');
+            btn.textContent = answer;
 
-        btn.addEventListener('click', (e) => {
-            const target = e.currentTarget;
+            btn.addEventListener('click', (e) => {
+                const target = e.currentTarget;
 
-            if (question.correctAnswer === target.textContent) {
-                target.classList.add('right');
+                if (question.correctAnswer === target.textContent) {
+                    target.classList.add('right');
+                    document.getElementById('points').textContent = ++gameData.points;
+                } else {
+                    target.classList.add('wrong');
+                }
+
+                disableButtons(document.querySelectorAll('.answer'));
+                gameData.currentQuiz++;
+                nextQuestion();
+            })
+
+            alternativesContainer.append(btn);
+        });
+    } else {
+        alternativesContainer.innerHTML = `
+        <input type="text" id="quiz-input-answer" placeholder="">
+        <button id="submit-answer" class="btn">OK</button>
+        `
+
+        document.querySelector('#submit-answer').addEventListener('click', async (e) => {
+            const input = document.querySelector('#quiz-input-answer');
+            const cleandString = input.value
+                .trim('')
+                .replace(/[\s]/g, '')
+                .toLowerCase();
+
+            if (question.correctAnswer === cleandString) {
+                input.classList.add('right');
                 document.getElementById('points').textContent = ++gameData.points;
             } else {
-                target.classList.add('wrong');
+                input.classList.add('wrong');
             }
 
-            disableButtons(document.querySelectorAll('.answer'));
             gameData.currentQuiz++;
+            nextQuestion();
+        });
+    }
 
-            if (gameData.currentQuiz === 5) {
-                const dialog = document.getElementById('quiz-popup');
-                dialog.innerHTML = `
-                <div class="dialog-text">
-                    <p>Du har redan klarat detta steget, gå vidare till nästa</p>
-                </div>
-                <button id="next-page" class="btn">Gå vidare!</button>
-            `;
+    if (gameData.currentQuiz === 5) {
+        const dialog = document.getElementById('quiz-popup');
+        dialog.innerHTML = `
+        <div class="dialog-text">
+            <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+        </div>
+        <button id="next-page" class="btn">Gå vidare!</button>
+    `;
 
-                dialog.querySelector("#next-page").addEventListener('click', (e) => { router('clue') });
-                setTimeout(() => {
-                    dialog.showModal();
-                }, 100);
-                gameData.currentQuiz = 0;
-                gameData.currentClue = 0;
-                gameData.time = 30;
-                gameData.currentKey = '';
-                gameData.completed = ['quiz', 'map'];
-                localStorage.set(gameData);
-                router('clue');
-                return;
-            }
-            localStorage.set(gameData);
-            setTimeout(() => {
-                displayQuestion(quiz, quizNum);
-            }, 1000);
-        })
+        dialog.querySelector("#next-page").addEventListener('click', (e) => { router('clue') });
+        setTimeout(() => {
+            dialog.showModal();
+        }, 100);
+        gameData.currentQuiz = 0;
+        gameData.currentClue = 0;
+        gameData.time = 30;
+        gameData.currentKey = '';
+        gameData.completed = ['quiz', 'map'];
+        localStorage.set(gameData);
+        router('clue');
+        return;
+    }
 
-        alternativesContainer.append(btn);
-    });
+    function nextQuestion() {
+        localStorage.set(gameData);
+        setTimeout(() => {
+            displayQuestion(quiz, quizNum);
+        }, 1000);
+    }
 }
+
 
 function disableButtons(buttons) {
     buttons.forEach(btn => btn.setAttribute('disabled', true))
@@ -131,6 +161,7 @@ async function fillState() {
     } else {
 
         const prefix = `./api/GET.php?entity=QUIZES&key=${currentKey}`;
+        // const prefix = `./api/GET.php?entity=QUIZES&key=lol`;
         STATE.Get({ entity: 'QUIZES', prefix });
     }
 }

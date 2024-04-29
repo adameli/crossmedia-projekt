@@ -48,11 +48,12 @@ dialog {
     max-width: 430px;
     /*the width of a iphone 15 pro max*/
     width: 100%;
-    height: 100dvh;
+    height: 100%;
     margin: 0 auto;
     background-color: var(--dark-purple);
     color: var(--text-color-white);
     border: none;
+    box-sizing: unset;
 }
 
 .btn {

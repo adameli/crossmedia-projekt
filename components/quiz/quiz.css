@@ -27,6 +27,14 @@
     flex-direction: column;
     gap: 1rem;
 
+    & input {
+        align-self: center;
+    }
+
+    & #submit-answer {
+        width: fit-content;
+        align-self: center;
+    }
 }
 
 .answer {

@@ -5,6 +5,10 @@
         "place": "turningtorso",
         "quiz": [
             {
+                "question": "Vilket år invigdes Turning Torso?",
+                "correctAnswer": "2005"
+            },
+            {
                 "question": "Vilket land är den största investeraren i Västra Hamnen?",
                 "answers": [
                     "Sverige",
@@ -33,16 +37,6 @@
                     "Malmö Live"
                 ],
                 "correctAnswer": "Turning Torso"
-            },
-            {
-                "question": "Vilket år invigdes Turning Torso?",
-                "answers": [
-                    "2005",
-                    "2008",
-                    "2010",
-                    "2012"
-                ],
-                "correctAnswer": "2005"
             },
             {
                 "question": "Vilket företag grundade Västra Hamnen?",

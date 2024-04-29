@@ -10,6 +10,12 @@ let transport;
 
 function renderComponent() {
     window.localStorage.removeItem('game-data');
+    const popupComponent = {
+        id: 'start-popup',
+        parentId: 'main',
+        tag: 'dialog',
+    }
+    componentManger(popupComponent);
 
     const component = {
         id: 'start-container',
@@ -23,27 +29,53 @@ function renderComponent() {
         <div id="start-header-container" class="controls-container-column">
                 <h1 class="start-title">PÅ SPRÅNG MALMÖ EDITION</h1>
                 <button id="spela-btn" class="btn start-btn">SPELA</button>
-                <button id="info-btn" class="btn start-btn">HUR FUNKAR DET?</button>
         </div>
         <div id="start-img-container">
             <img src="./resources/images/start_loggo.png" id="start-img"></
         </div>
     `;
 
-    const popupComponent = {
-        id: 'start-popup',
-        parentId: 'main',
-        tag: 'dialog',
-    }
-    componentManger(popupComponent);
 
-    document.getElementById('spela-btn').addEventListener('click', chooseGuide);
-    document.getElementById('info-btn').addEventListener('click', displayInfo);
 
+    document.getElementById('spela-btn').addEventListener('click', howItWorksInfo);
 }
 
 PubSub.subscribe({ event: 'renderstart', listener: renderComponent });
 // renderComponent()
+
+function howItWorksInfo(e) {
+
+    const dialog = document.getElementById('start-popup');
+    dialog.innerHTML = `
+        <button class="close-dialog btn">Tillbaka</button>
+        <h2>LÄS NOGA</h2>
+        <ul id="how-it-works" class="dialog-text">
+            <li class="list-element">Välj vem vill du vill ska guida dig</li>
+            <li class="list-element">Välj en slinga att utforska</li>
+            <li class="list-element">Välj ditt färdmedel</li>
+            <li class="list-element">Gör dig redo för "Vart är vi på väg?” Första ledtråden är värd 10 poäng, du har 30 sekunder på dig att gissa. Om du inte gissar rätt kommer ledtråd 2 (värd 8 poäng) osv</li>
+            <li class="list-element">Skriv in ditt svar och tryck på nöd-ringklockan när du tror dig veta svaret</li>
+            <li class="list-element">Vid rätt svar får du kartan till platsen</li>
+            <li class="list-element">Vid fel svar fortsätter du att gissa</li>
+            <li class="list-element">När du når platsen, får du en gåta, ditt uppdrag är att leta upp rätt lösenord på platsen</li>
+            <li class="list-element">Skriv in lösenordet för att påbörja ett quiz</li>
+            <li class="list-element"> Ju fler rätt svar, desto fler poäng</li>
+            <li class="list-element">Efter quizet, nya ledtrådar till nästa plats</li>
+        </ul>
+        <div>
+            <button id="continue"  class="btn">Nu kör vi!</button>
+        </div>
+    `;
+
+    dialog.showModal();
+
+    dialog.querySelector('.close-dialog').addEventListener('click', (e) => {
+        dialog.close();
+    });
+
+    dialog.querySelector('#continue').addEventListener('click', chooseGuide);
+}
+
 
 function chooseGuide(e) {
     const dialog = document.getElementById('start-popup');
@@ -57,8 +89,8 @@ function chooseGuide(e) {
     `;
 
     dialog.showModal();
-    const dialogBtns = Array.from(document.querySelectorAll('.close-dialog'));
-    closePopup(dialog, dialogBtns);
+    dialog.querySelector('.close-dialog').addEventListener('click', howItWorksInfo);
+
 
     dialog.querySelectorAll('.guide-btn').forEach(btn => btn.addEventListener('click', (e) => {
         guide = e.currentTarget.textContent;
@@ -151,31 +183,3 @@ function startGame(e) {
 
 }
 
-function displayInfo(e) {
-
-    const dialog = document.getElementById('start-popup');
-    dialog.innerHTML = `
-        <h2>LÄS NOGA</h2>
-        <ul id="how-it-works" class="dialog-text">
-            <li class="list-element">Välj vem vill du vill ska guida dig</li>
-            <li class="list-element">Välj en slinga att utforska</li>
-            <li class="list-element">Välj ditt färdmedel</li>
-            <li class="list-element">Gör dig redo för "Vart är vi på väg?” Första ledtråden är värd 10 poäng, du har 30 sekunder på dig att gissa. Om du inte gissar rätt kommer ledtråd 2 (värd 8 poäng) osv</li>
-            <li class="list-element">Skriv in ditt svar och tryck på nöd-ringklockan när du tror dig veta svaret</li>
-            <li class="list-element">Vid rätt svar får du kartan till platsen</li>
-            <li class="list-element">Vid fel svar fortsätter du att gissa</li>
-            <li class="list-element">När du når platsen, får du en gåta, ditt uppdrag är att leta upp rätt lösenord på platsen</li>
-            <li class="list-element">Skriv in lösenordet för att påbörja ett quiz</li>
-            <li class="list-element"> Ju fler rätt svar, desto fler poäng</li>
-            <li class="list-element">Efter quizet, nya ledtrådar till nästa plats</li>
-        </ul>
-        <div>
-            <button class="close-dialog btn">Nu kör vi!</button>
-        </div>
-    `;
-
-    dialog.showModal();
-
-    const dialogBtns = Array.from(document.querySelectorAll('.close-dialog'));
-    closePopup(dialog, dialogBtns);
-}

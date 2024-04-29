@@ -1,6 +1,6 @@
 [
     {
-        "name": "Pålle",
+        "name": "P\u00e5lle",
         "points": 10,
         "id": 1
     },
@@ -28,5 +28,10 @@
         "name": "Jacob",
         "points": 20,
         "id": 10
+    },
+    {
+        "name": "halle",
+        "points": 39,
+        "id": 11
     }
 ]
