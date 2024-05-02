@@ -41,7 +41,9 @@ async function fillState() {
 
         dialog.innerHTML = `
             <div class="dialog-text">
-                <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+                <h2>BRA JOBBAT</h2>
+                <img src="./resources/images/start_loggo.png">
+                <p>Bra jobbat du ska nu ta dig till ${gameData.currentPlace} för att leta upp lösenordet för att leta upp quizet</p>
             </div>
             <button id="next-page" class="btn">Gå vidare!</button>
         `;
@@ -54,7 +56,8 @@ async function fillState() {
         const bodyData = {
             entity: 'CLUES',
             key: '',
-            clueIds: gameData.beenTo
+            clueIds: gameData.beenTo,
+            path: gameData.path
         }
 
         const dbAnswer = await STATE.Post({ entity: "CLUES", bodyData });
@@ -68,7 +71,7 @@ async function fillState() {
         key = dbAnswer.key;
     }
 
-    const prefix = `./api/GET.php?entity=CLUES&key=${key}`;
+    const prefix = `./api/GET.php?entity=CLUES&key=${key}&path=${gameData.path}`;
     STATE.Get({ entity: 'CLUES', prefix: prefix });
 }
 

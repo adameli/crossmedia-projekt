@@ -31,22 +31,30 @@ if($requestMethod == "POST"){
 
     if(isset($requestData["clueIds"])){
         $clueIds = $requestData["clueIds"];
+        $pathId = $requestData["path"];
 
-        if(count($clueIds) == count($entityData)){
-            sendJson(["finished" => true], 200);
-        }
-
-        $clues = [];
-        foreach($entityData as $index => $clueElement){
-
-            if(!in_array($clueElement["id"], $clueIds)){
-                $clues[] = $clueElement;
+        $destinations;
+        foreach ($entityData as $pathElement){
+            if($pathElement["path"] == $pathId){
+                $destinations = $pathElement["destinations"];
             }
         }
 
-        $randomNum = random_int(0, count($clues) -1);
-        $clue = $clues[$randomNum];
-        sendJson(["key" => $clue["key"], "id" => $clue["id"]], 200);
+        if(count($clueIds) == count($destinations)){
+            sendJson(["finished" => true], 200);
+        }
+
+        $avalibleDestinations = [];
+        foreach($destinations as $index => $destinationElement){
+
+            if(!in_array($destinationElement["id"], $clueIds)){
+                $avalibleDestinations[] = $destinationElement;
+            }
+        }
+
+        $randomNum = random_int(0, count($avalibleDestinations) -1);
+        $clueElement = $avalibleDestinations[$randomNum];
+        sendJson(["key" => $clueElement["key"], "id" => $clueElement["id"]], 200);
         // abort(400, "Can't find the quiz");
     }
 
@@ -72,9 +80,9 @@ if($requestMethod == "POST"){
 
     //* fixa så att du kan radera en user via delete när appen är uppe
     // if($_GET["entity"] == 'CLUES'){
-    //     foreach($entityData as $index => $clueElement){
-    //         if($clueElement["key"] == $key){
-    //             sendJson(["clues" => $clueElement["clues"], "destination" => $clueElement["destination"]], 200);
+    //     foreach($entityData as $index => $destinationElement){
+    //         if($destinationElement["key"] == $key){
+    //             sendJson(["avalibleDestinations" => $destinationElement["avalibleDestinations"], "destination" => $destinationElement["destination"]], 200);
     //         }
     //     }
     // }

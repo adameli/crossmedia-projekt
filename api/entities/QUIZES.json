@@ -1,58 +1,7 @@
 [
     {
         "id": 1,
-        "key": "lol",
-        "place": "turningtorso",
-        "quiz": [
-            {
-                "question": "Vilket år invigdes Turning Torso?",
-                "correctAnswer": "2005"
-            },
-            {
-                "question": "Vilket land är den största investeraren i Västra Hamnen?",
-                "answers": [
-                    "Sverige",
-                    "Danmark",
-                    "Tyskland",
-                    "Nederländerna"
-                ],
-                "correctAnswer": "Sverige"
-            },
-            {
-                "question": "Vad är den totala ytan för Västra Hamnen?",
-                "answers": [
-                    "200 hektar",
-                    "500 hektar",
-                    "700 hektar",
-                    "1000 hektar"
-                ],
-                "correctAnswer": "200 hektar"
-            },
-            {
-                "question": "Vilken är den mest kända byggnaden i Västra Hamnen?",
-                "answers": [
-                    "Turning Torso",
-                    "Emporia",
-                    "Malmö Arena",
-                    "Malmö Live"
-                ],
-                "correctAnswer": "Turning Torso"
-            },
-            {
-                "question": "Vilket företag grundade Västra Hamnen?",
-                "answers": [
-                    "Peab",
-                    "Skanska",
-                    "JM",
-                    "NCC"
-                ],
-                "correctAnswer": "Peab"
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "key": "bob",
+        "key": "kungalängan",
         "place": "malmöc",
         "quiz": [
             {
@@ -108,59 +57,233 @@
         ]
     },
     {
-        "id": 3,
-        "key": "ses",
-        "place": "emporia",
+        "id": 2,
+        "key": "777",
+        "place": "kungsparken",
         "quiz": [
             {
-                "question": "Vilket år öppnade Emporia för allmänheten?",
-                "answers": [
-                    "2012",
-                    "2014",
-                    "2016",
-                    "2018"
-                ],
-                "correctAnswer": "2012"
+                "question": "I promenadstråket i kungsparken möts man av den otroligt vackra Dubbla kärleksallén på väg från slottsparken mot kasinot. Hur många träd består den av?",
+                "correctAnswer": "32"
             },
             {
-                "question": "Vilken arkitektonisk stil är Emporia känt för?",
+                "question": "Casinot grundades 2001 och har varit verksamt fram till februari 2024. Innan det blev ett casino så var det en annan typ av samlingsplats, vad?",
                 "answers": [
-                    "Modernism",
-                    "Funkis",
-                    "Postmodernism",
-                    "Organisk arkitektur"
+                    "Restaurang",
+                    "Bowlinghall",
+                    "Butik",
+                    "Militär byggnad"
                 ],
-                "correctAnswer": "Organisk arkitektur"
+                "correctAnswer": "Restaurang"
             },
             {
-                "question": "Hur många våningar har Emporia?",
-                "answers": [
-                    "3 våningar",
-                    "5 våningar",
-                    "7 våningar",
-                    "9 våningar"
-                ],
-                "correctAnswer": "3 våningar"
+                "question": "Casino Cosmopol stoltserar i den anrika byggnaden i Kungsparken där gamla Restaurang Kungsparken uppfördes 1881. På invigningen befann sig Kung Oscar II, en anledning till symbolen som stoltserar sig högst upp på byggnaden. Vad är det för symbol?",
+                "correctAnswer": "krona"
             },
             {
-                "question": "Vilket är Emporias mest kända varumärke?",
-                "answers": [
-                    "H&M",
-                    "IKEA",
-                    "Louis Vuitton",
-                    "Apple"
-                ],
-                "correctAnswer": "H&M"
+                "question": "Kungsparken och slottsparken var på 1800-talet ett militärt övningsområde. Idag finns det flera broar som sammanfogar de två parkerna. Hade kommendantbron, som är en av broarna, klarat av vikten av en stridsvagn enligt brons maxvikt?",
+                "correctAnswer": "nej"
             },
             {
-                "question": "Vilken är Emporias största parkeringsanläggning?",
+                "question": "Kungsparken har satts på kartan i Sverige pga parkens unika egenskaper. Det finns ingen annan park i Sverige som har detta breda utbud av, vad?",
                 "answers": [
-                    "P-huset Emporia",
-                    "P-huset Hyllie",
-                    "P-huset Triangeln",
-                    "P-huset Värnhem"
+                    "Insekter",
+                    "Fåglar",
+                    "Gnagare",
+                    "Exotiska träd"
                 ],
-                "correctAnswer": "P-huset Emporia"
+                "correctAnswer": "Exotiska träd"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "key": "2000",
+        "place": "triangeln",
+        "quiz": [
+            {
+                "question": "Malmö är en mångkulturell stad där människor runt om i världen har hittat sina hem. En känd tecknad film med ett budskap av att 'hitta hem' har två karaktärer som går att återfinna innanför ena ingången av köpcentrumet, vilka?",
+                "correctAnswer": "dorisochnemo"
+            },
+            {
+                "question": "Vilken busslinje sjunger Timbuktu om som passerar via Triangeln?",
+                "answers": [
+                    "2an",
+                    "8an",
+                    "5an",
+                    "32an"
+                ],
+                "correctAnswer": "2an"
+            },
+            {
+                "question": "Triangelområdet har varit en lantlig idyll med gårdar och möllor. Under vilket årtal?",
+                "answers": [
+                    "1900-talet",
+                    "1600-talet",
+                    "1800-talet",
+                    "1700-talet"
+                ],
+                "correctAnswer": "1700-talet"
+            },
+            {
+                "question": "Taylor Swift är en av världens mest kända artister och år 2023 släppte hon en ny version av ett tidigare album. Titeln på albumet har samma årtal som Triangelns köpcentrum öppnade. Vilket år öppnade triangeln?",
+                "answers": [
+                    "1999",
+                    "1989",
+                    "1983",
+                    "1998"
+                ],
+                "correctAnswer": "1989"
+            },
+            {
+                "question": "Under sommarhalvåret stängs denna gata av för biltrafik och förvandlas till en härlig mötesplats för människor att samlas och restauranger att låta sina uteserveringar ta plats. Vad heter gatan som löper hela vägen till triangeln och som var Malmös första sommargata?",
+                "answers": [
+                    "Kärleksgatan",
+                    "Regementsgatan",
+                    "Nobelgatan",
+                    "Friisgatan"
+                ],
+                "correctAnswer": "Friisgatan"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "key": "johnbörjeson",
+        "place": "stortorget",
+        "quiz": [
+            {
+                "question": "Banan, Melon, Kiwi & Citron sjöng Hooja på Stortorget år 2023. I vilket sammanhang?",
+                "answers": [
+                    "Pride Festivalen1",
+                    "Malmöfestivalen",
+                    "Big Slap",
+                    "Eurovision"
+                ],
+                "correctAnswer": "Malmöfestivalen"
+            },
+            {
+                "question": "Under 1900-talet målades de första reklamskyltarna på Lejonets Apotek fasad ägd av apotekaren John Tesch. John Tesch använde en brandvägg som reklamplats, vilket ledde till att upp till åtta lager av reklam samlades på väggen. Vilken dryck marknadsförs?",
+                "correctAnswer": "cognac"
+            },
+            {
+                "question": "Optimistorkestern står ståtligt på Malmös gågata. Åt vilket väderstreck vandrar den kända orkestern åt? ",
+                "answers": [
+                    "söderut",
+                    "västerut",
+                    "norrut",
+                    "österut"
+                ],
+                "correctAnswer": "söderut"
+            },
+            {
+                "question": "Yngve Lundell som är skaparen av Optimistorkestern gick bort samma år som Måns Zelmerlöw vann Eurovision. Vilket år gick Yngve bort? ",
+                "correctAnswer": "2015"
+            },
+            {
+                "question": "På Stortorget passerar meridianen 13° östlig längd. Om klockan är 12:00 enligt centraleuropeisk tid (svensk normaltid), hur mycket är klockan exakt på Stortorget om du står på den exakta meridianen? ",
+                "answers": [
+                    "12:08",
+                    "12:00",
+                    "12:18",
+                    "11:58"
+                ],
+                "correctAnswer": "12:08"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "key": "88",
+        "place": "fiskehoddorna",
+        "quiz": [
+            {
+                "question": "En antingen älskad eller hatad traditionellt tillbehör under svenska högtider som också är en signatur för fiskehoddorna?",
+                "answers": [
+                    "Lax",
+                    "Sill",
+                    "Torsk",
+                    "Sej"
+                ],
+                "correctAnswer": "Sill"
+            },
+            {
+                "question": "På den blåfärgade hoddans fisk finns olika sillsorter utmärkta. Det finns två senapssiller, men vad är det som skiljer dessa åt?",
+                "answers": [
+                    "-",
+                    "Skånsk",
+                    "-",
+                    "-"
+                ],
+                "correctAnswer": "Skånsk"
+            },
+            {
+                "question": "Som ett gammalt sätt att filtrera kaffet användes denna otippade ingrediens som även går att finna på tork bakom hoddorna. Vad är det som hänger på tork?",
+                "answers": [
+                    "Fiskskinn",
+                    "Näver",
+                    "Citron",
+                    "Timjan"
+                ],
+                "correctAnswer": "Fiskskinn"
+            },
+            {
+                "question": "Som ett inseglingsmärke för båtar utanför Malmö Hamn strax fram till 1979 användes denna angöringsbojen. Vad kallas just denna boj?",
+                "answers": [
+                    "Röda faran",
+                    "Bästebojen",
+                    "Rödeprick",
+                    "Blåbojen"
+                ],
+                "correctAnswer": "Rödeprick"
+            },
+            {
+                "question": "Precis som Andreas har Leif Mannerström gett Blå Hoddans fish and chips ett väldigt gott betyg. Trots sitt något höga pris är den väl värd att testas. Vad kostar en Fish and chips?",
+                "correctAnswer": "185"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "key": "tupp",
+        "place": "malmöstadsbibliotek",
+        "quiz": [
+            {
+                "question": "Inredningsarkitekten Eva-Johanna Sandberg har i samarbete med LSI skapat en upplevelsevärld för unga mellan åldrarna 9-12 år. Namnet på avdelningen har fått namnet Balagan som på hebreiska betyder vad?",
+                "answers": [
+                    "Lek",
+                    "HoppOchSpring",
+                    "Barn",
+                    "Kaos/oordning"
+                ],
+                "correctAnswer": "Kaos/oordning"
+            },
+            {
+                "question": "Ljusets kalender som en av tre huskroppar har en imponerande glasfasad som är uppmätt till 14 000 kvadratmeter. Höjden på denna del är 7 meter högre än delen 'slottet'. Hur hög är ljusets kalender?",
+                "answers": [
+                    "28m",
+                    "35m",
+                    "10m",
+                    "18m"
+                ],
+                "correctAnswer": "18m"
+            },
+            {
+                "question": "Vid entren in till biblioteket skyltas specifikt två stycken förbud. Vilka?",
+                "correctAnswer": "hundarochsparkcyklar"
+            },
+            {
+                "question": "Sagolekplatsen bygger på föreställningen om det ljusa och det mörka i sagans värld. En del av lekplatsen smyckas av fjärilar. Hur många fjärilar går det att finna i sagolekplatsen?",
+                "correctAnswer": "19&&20"
+            },
+            {
+                "question": "Alice Lyttkens är en feministisk författare, född och uppvuxen i Malmö 1897 som är en av 1900-talets mest uppskattade svenska författare. Under sin tid skrev hon om kvinnofrågor, moderna kvinnans situation och frigörelse och i sin debutroman Synkoper från 1932 diskuterar hon bland annat abortfrågan, kvinnoförtryck och samhällets orättvisor. Vad är sista ordet i boken på sidan (...)?",
+                "answers": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": ""
             }
         ]
     }

@@ -113,7 +113,7 @@ async function fillState() {
         return;
     } else {
         //* Skickar till databasen för att få tillbaka en bild och text som tillhör det CLUE objekt som stämmer överens med currentPlace
-        const prefix = `./api/GET.php?entity=CLUES&key&place=${gameData.currentPlace}`;
+        const prefix = `./api/GET.php?entity=CLUES&key&place=${gameData.currentPlace}&path=${gameData.path}`;
         STATE.Get({ entity: 'CLUES', prefix: prefix });
     }
 }

@@ -29,7 +29,6 @@ function renderComponent(parentId) {
             .toLowerCase();
 
         if (cleandString == destination) {
-            console.log('right answer');
             const gameData = localStorage.get();
             let points;
             switch (gameData.currentClue) {
@@ -45,24 +44,14 @@ function renderComponent(parentId) {
                 case 3:
                     points = 4;
                     break;
-
-                default:
+                case 4:
                     points = 2;
+                    break;
+                case 5:
+                    points = 0;
+                    break;
+
             }
-
-            const dialog = document.getElementById('clue-popup');
-            dialog.innerHTML = `
-                <div class="dialog-text">
-                    <p>Du har redan klarat detta steget, gå vidare till nästa</p>
-                </div>
-                <button id="next-page" class="btn">Gå vidare!</button>
-            `;
-
-            dialog.querySelector("#next-page").addEventListener('click', (e) => { router('map') });
-
-            setTimeout(() => {
-                dialog.showModal();
-            }, 100);
 
             e.currentTarget.setAttribute('disabled', true);
             document.querySelector("#points").textContent = gameData.points + points;
@@ -72,7 +61,21 @@ function renderComponent(parentId) {
             gameData.currentClue = 0;
             gameData.completed = ['quiz', 'clue'];
             localStorage.set(gameData);
-            router('map');
+
+            const dialog = document.getElementById('clue-popup');
+            dialog.innerHTML = `
+                <div class="dialog-text">
+                    <h2>BRA JOBBAT</h2>
+                    <img src="./resources/images/start_loggo.png">
+                    <p>Du ska nu ta dig till ${gameData.currentPlace} för att leta upp lösenordet för att leta upp quizet</p>
+                </div>
+                <button id="next-page" class="btn">Gå vidare!</button>
+            `;
+            dialog.showModal()
+            dialog.querySelector("#next-page").addEventListener('click', (e) => {
+                router('map')
+            });
+
         } else {
             dom.querySelector('#clue-answer').classList.add("wrong-input");
             const animated = document.querySelector(".wrong-input");

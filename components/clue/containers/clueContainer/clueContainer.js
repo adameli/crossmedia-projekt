@@ -12,8 +12,9 @@ async function renderComponent(parentId) {
     dom.innerHTML = `
         <div id="timer-container">
             <div id="countdown"></div>
-            </div>
+        </div>
         <h2>VART ÄR VI PÅVÄG?</h2>
+        <div id="clue-point"></div>
     `;
 
 

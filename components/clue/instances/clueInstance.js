@@ -15,8 +15,16 @@ function renderInstance(parentId) {
 
 
     const gameData = localStorage.get();
-    dom.textContent = clues[gameData.currentClue].text;
+    // changeClueContent(gameData.currentClue)
+    speachToText(clues[gameData.currentClue].text);
+
     startTimer(gameData.time);
+
+    function speachToText(text) {
+        const synth = window.speechSynthesis;
+        const utterThis = new SpeechSynthesisUtterance(text);
+        synth.speak(utterThis);
+    }
 
 
     function startTimer(seconds) {
@@ -24,6 +32,7 @@ function renderInstance(parentId) {
         // Update timers and divs every second
         const timerIntervalId = setInterval(() => {
             const gameData = localStorage.get();
+            changeClueContent(gameData.currentClue)
             gameData.time = seconds;
 
             const totalTime = 30;
@@ -33,30 +42,56 @@ function renderInstance(parentId) {
             countdownBar.style.width = precentageElapsed + '%';
 
             // Check if timer has reached zero
-            if (seconds === 20) changeClueText(1);
-            if (seconds === 15) changeClueText(2);
-            if (seconds === 10) changeClueText(3);
-            if (seconds === 5) changeClueText(4);
+            if (seconds === 20) changeClueContent(1);
+            if (seconds === 15) changeClueContent(2);
+            if (seconds === 10) changeClueContent(3);
+            if (seconds === 5) changeClueContent(4);
 
 
             if (seconds === 0) {
-                // gameData.time = 30;
                 clearInterval(timerIntervalId); // Stop the interval
+                changeClueContent(5);
+            }
+
+            function changeClueContent(index) {
+                let cluePoint;
+                switch (index) {
+                    case 0:
+                        cluePoint = 10;
+                        break;
+                    case 1:
+                        cluePoint = 8;
+                        break;
+                    case 2:
+                        cluePoint = 6;
+                        break;
+                    case 3:
+                        cluePoint = 4;
+                        break;
+                    case 4:
+                        cluePoint = 2;
+                        break;
+                    case 5:
+                        cluePoint = 0;
+                        break;
+                }
+                document.getElementById('clue-point').textContent = cluePoint;
+                if (index !== 5) {
+                    dom.textContent = clues[index].text;
+                    gameData.currentClue = index;
+                }
+                // speachToText(clues[index].text);
             }
 
             localStorage.set(gameData);
 
             seconds--;
 
-            function changeClueText(index) {
-                dom.textContent = clues[index].text;
-                gameData.currentClue = index;
-            }
 
         }, 1000); // Interval set to 1000 milliseconds (1 second)
 
-
     }
+
 }
 
 PubSub.subscribe({ event: 'renderClueInstance', listener: renderInstance });

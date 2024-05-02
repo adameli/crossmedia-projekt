@@ -27,7 +27,7 @@ function renderComponent() {
 
     dom.innerHTML = `
         <div id="start-header-container" class="controls-container-column">
-                <h1 class="start-title">PÅ SPRÅNG MALMÖ EDITION</h1>
+                <h1 class="start-title">PÅ SPRÅNG<br>MALMÖ EDITION</h1>
                 <button id="spela-btn" class="btn start-btn">SPELA</button>
         </div>
         <div id="start-img-container">
@@ -68,9 +68,12 @@ function howItWorksInfo(e) {
     `;
 
     dialog.showModal();
+    // dialog.classList.add('slide-down');
 
     dialog.querySelector('.close-dialog').addEventListener('click', (e) => {
         dialog.close();
+        // dialog.classList.remove('slide-down');
+
     });
 
     dialog.querySelector('#continue').addEventListener('click', chooseGuide);
@@ -88,7 +91,6 @@ function chooseGuide(e) {
         </div>
     `;
 
-    dialog.showModal();
     dialog.querySelector('.close-dialog').addEventListener('click', howItWorksInfo);
 
 
@@ -110,7 +112,6 @@ function choosePath() {
         </div>
     `;
 
-    dialog.showModal();
     dialog.querySelector('.close-dialog').addEventListener('click', chooseGuide);
 
     dialog.querySelectorAll('.path-btn').forEach(btn => btn.addEventListener('click', (e) => {
@@ -153,6 +154,7 @@ function startGame(e) {
     dialog.querySelector('.close-dialog').addEventListener('click', chooseTransport);
 
     dialog.querySelector('#start-game').addEventListener('click', (e) => {
+
         const input = dialog.querySelector('#team-name');
         console.log(input.value);
 
@@ -161,11 +163,16 @@ function startGame(e) {
             return;
         }
 
+        dialog.innerHTML = `
+        <div id="loader-container">
+            <div class="loader"></div>
+        </div>`
+
         const localData = {
             name: input.value,
-            guide: guide,
-            path: path,
-            transport: transport,
+            guide: guide.toLowerCase(),
+            path: path.split(' ')[1],
+            transport: transport.toLowerCase(),
             points: 0,
             currentClue: 0,
             currentQuiz: 0,

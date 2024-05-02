@@ -13,15 +13,25 @@ if($requestMethod == "GET"){
 
     if($_GET["entity"] == 'CLUES'){
 
+        $pathId = $_GET["path"];
+        $destinations;
+
+        foreach ($entityData as $pathElement){
+            if($pathElement["path"] == $pathId){
+                $destinations = $pathElement["destinations"];
+            }
+        }
+
         if(isset($_GET['place'])){
-            foreach($entityData as $index => $clueElement){
+            foreach($destinations as $index => $clueElement){
                 if($clueElement["destination"] == $_GET['place']){
                     sendJson(["img" => $clueElement["img"], "text" => $clueElement["text"]], 200);
                 }
             }
         }
 
-        foreach($entityData as $index => $clueElement){
+
+        foreach($destinations as $index => $clueElement){
             if($clueElement["key"] == $key){
                 sendJson(["clues" => $clueElement["clues"], "destination" => $clueElement["destination"]], 200);
             }

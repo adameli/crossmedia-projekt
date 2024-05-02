@@ -1,88 +1,277 @@
 [
     {
-        "id": 1,
-        "key": "lol",
-        "destination": "turningtorso",
-        "img": "./resources/images/turningtorso.png",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
-        "clues": [
+        "path": 1,
+        "destinations": [
             {
-                "clueId": 1,
-                "text": "Detta land har en lång kustlinje och är känt för sina många sjöar och skogar. Dess huvudstad är en av de mest innovativa och mångkulturella städerna i världen."
+                "id": 1,
+                "key": "bob",
+                "destination": "malmöc",
+                "img": "./resources/images/malmöc.png",
+                "text": "Vad heter den äldsta delen av Malmö C (svaret finns mittemot subway)?",
+                "clues": [
+                    {
+                        "clueId": 1,
+                        "text": "Sedan 1858 har platsen varit en samlingsplats för över 17 miljoner människor varje år"
+                    },
+                    {
+                        "clueId": 2,
+                        "text": "Hur platsen såg ut förr"
+                    },
+                    {
+                        "clueId": 3,
+                        "text": "Sverige fjärde största..vad?"
+                    },
+                    {
+                        "clueId": 4,
+                        "text": "Du har tre val. Hoppa av, hoppa på eller sitt kvar"
+                    },
+                    {
+                        "clueId": 5,
+                        "text": "Inte Lund C men.."
+                    }
+                ]
             },
             {
-                "clueId": 2,
-                "text": "I denna stad finns ett välkänt operahus som har en unik design inspirerad av en isbergskristall. Staden är också känd för sin moderna arkitektur, inklusive en imponerande tornbyggnad som ser ut som en roterande spiral."
+                "id": 2,
+                "key": "kung",
+                "destination": "kungsparken",
+                "img": "./resources/images/malmöc.png",
+                "text": "Vilken sifferkombination är förknippad med Casino Jackpot?",
+                "clues": [
+                    {
+                        "clueId": 1,
+                        "text": "Ett av dem fyra klädda korten i en kortlek"
+                    },
+                    {
+                        "clueId": 2,
+                        "text": "En lund mindre än staden Lund, på ca 8,4 hektar"
+                    },
+                    {
+                        "clueId": 3,
+                        "text": "På vinst eller förlust"
+                    },
+                    {
+                        "clueId": 4,
+                        "text": "Malmös äldsta park"
+                    },
+                    {
+                        "clueId": 5,
+                        "text": "Bild"
+                    }
+                ]
             },
             {
-                "clueId": 3,
-                "text": "Den spiralliknande byggnaden är känd som en av världens mest spektakulära skyskrapor och är belägen i en hamnstad som är Sveriges tredje största stad. Byggnaden är ett landmärke som har blivit en symbol för staden och landet."
-            },
-            {
-                "clueId": 4,
-                "text": "Skyskrapan är en del av ett område som genomgått omfattande stadsförnyelse under de senaste årtiondena. Området runt skyskrapan erbjuder inte bara modern arkitektur utan också grönområden, promenadstråk och närhet till havet."
-            },
-            {
-                "clueId": 5,
-                "text": "Den berömda byggnaden, som har ett unikt vridet utseende, är känd som Turning Torso och är belägen i Västra Hamnen-området i Malmö, Sverige. Med sina 190 meter är det Nordens högsta bostadshus och har blivit en av stadens mest ikoniska landmärken."
+                "id": 3,
+                "key": "tri",
+                "destination": "triangeln",
+                "img": "./resources/images/emporia.png",
+                "text": "Vilken tid stänger Triangeln på torsdagar?",
+                "clues": [
+                    {
+                        "clueId": 1,
+                        "text": "Den äldsta bevarade vägkorsningen i Malmö"
+                    },
+                    {
+                        "clueId": 2,
+                        "text": "Har med geometri att göra"
+                    },
+                    {
+                        "clueId": 3,
+                        "text": "Bild (på refug)"
+                    },
+                    {
+                        "clueId": 4,
+                        "text": "Alla vinklar tillsammans blir 180 grader"
+                    },
+                    {
+                        "clueId": 5,
+                        "text": "Vad heter detta triangulära köpcentrum"
+                    }
+                ]
             }
         ]
     },
     {
-        "id": 2,
-        "key": "bob",
-        "destination": "malmöc",
-        "img": "./resources/images/malmöc.png",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
-        "clues": [
+        "path": 2,
+        "destinations": [
             {
-                "clueId": 1,
-                "text": "Malmö bor tar sig ofta till denna plats för att c sina kära och nära komma hem eller åka bort"
+                "id": 1,
+                "key": "mos",
+                "destination": "stortorget",
+                "img": "./resources/images/turningtorso.png",
+                "text": "Karl X Gustav är mest känd för sitt lyckosamma krig mot Danmark som gav Sverige de nya landskapen bl.a. Skåne och Blekinge. Vem har skapat statyn av Karl X Gustav (svaret står på statyn)",
+                "clues": [
+                    {
+                        "clueId": 1,
+                        "text": "70% av denna plats har på 1500-talet varit en kyrkogård"
+                    },
+                    {
+                        "clueId": 2,
+                        "text": "Sydväst om Lilla torg "
+                    },
+                    {
+                        "clueId": 3,
+                        "text": "Karl X Gustav kan kopplas till denna plats"
+                    },
+                    {
+                        "clueId": 4,
+                        "text": "Hur platsen såg ut förr"
+                    },
+                    {
+                        "clueId": 5,
+                        "text": "Ett cirkulärt torg"
+                    }
+                ]
             },
             {
-                "clueId": 2,
-                "text": "Staden vi söker är känt för sin imponerande Öresundsbron, som förbinder den med en annan betydande stad i ett grannland."
+                "id": 2,
+                "key": "fisk",
+                "destination": "fiskehoddorna",
+                "img": "./resources/images/malmöc.png",
+                "text": "På hodda sju finns ett telefonnummer. Vilka är de två sista siffrorna?",
+                "clues": [
+                    {
+                        "clueId": 1,
+                        "text": "Kulturminnesmärkt"
+                    },
+                    {
+                        "clueId": 2,
+                        "text": "Stjärntecken mellan 19e februari och 20e mars"
+                    },
+                    {
+                        "clueId": 3,
+                        "text": "Malmöregionens största marknadsplats"
+                    },
+                    {
+                        "clueId": 4,
+                        "text": "Bild"
+                    },
+                    {
+                        "clueId": 5,
+                        "text": "Fiskmarknad"
+                    }
+                ]
             },
             {
-                "clueId": 3,
-                "text": "Den stora Malmö Arena och det moderna shoppingområdet Triangeln är två kända landmärken i denna stad."
-            },
-            {
-                "clueId": 4,
-                "text": "Denna stad har en av de mest trafikerade tågstationerna i Sverige, som även är knutpunkt för internationell tågtrafik."
-            },
-            {
-                "clueId": 5,
-                "text": "Du har kommit till Malmö C, den centrala järnvägsstationen i Malmö, som är en viktig knutpunkt för tågresor i södra Sverige och till andra europeiska destinationer."
+                "id": 3,
+                "key": "bok",
+                "destination": "malmöstadsbibliotek",
+                "img": "./resources/images/emporia.png",
+                "text": "På stadsbiblioteket finns det ett symboliskt djur, vilket?",
+                "clues": [
+                    {
+                        "clueId": 1,
+                        "text": "H βιβλιοθήκη της πόλης"
+                    },
+                    {
+                        "clueId": 2,
+                        "text": "Röda rummet"
+                    },
+                    {
+                        "clueId": 3,
+                        "text": "Slottet, cylindern och ljusets kalender"
+                    },
+                    {
+                        "clueId": 4,
+                        "text": "Bild"
+                    },
+                    {
+                        "clueId": 5,
+                        "text": "Här kan du låna böcker"
+                    }
+                ]
             }
         ]
     },
     {
-        "id": 3,
-        "key": "ses",
-        "destination": "emporia",
-        "img": "./resources/images/emporia.png",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
-        "clues": [
+        "path": 3,
+        "destinations": [
             {
-                "clueId": 1,
-                "text": "Detta köpcentrum är beläget i en stad som är en av Sveriges största och mest mångkulturella. Det är känt för sin rika historia och sin dynamiska stadsmiljö."
+                "id": 1,
+                "key": "lol",
+                "destination": "turningtorso",
+                "img": "./resources/images/turningtorso.png",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
+                "clues": [
+                    {
+                        "clueId": 1,
+                        "text": "Detta land har en lång kustlinje och är känt för sina många sjöar och skogar. Dess huvudstad är en av de mest innovativa och mångkulturella städerna i världen."
+                    },
+                    {
+                        "clueId": 2,
+                        "text": "I denna stad finns ett välkänt operahus som har en unik design inspirerad av en isbergskristall. Staden är också känd för sin moderna arkitektur, inklusive en imponerande tornbyggnad som ser ut som en roterande spiral."
+                    },
+                    {
+                        "clueId": 3,
+                        "text": "Den spiralliknande byggnaden är känd som en av världens mest spektakulära skyskrapor och är belägen i en hamnstad som är Sveriges tredje största stad. Byggnaden är ett landmärke som har blivit en symbol för staden och landet."
+                    },
+                    {
+                        "clueId": 4,
+                        "text": "Skyskrapan är en del av ett område som genomgått omfattande stadsförnyelse under de senaste årtiondena. Området runt skyskrapan erbjuder inte bara modern arkitektur utan också grönområden, promenadstråk och närhet till havet."
+                    },
+                    {
+                        "clueId": 5,
+                        "text": "Den berömda byggnaden, som har ett unikt vridet utseende, är känd som Turning Torso och är belägen i Västra Hamnen-området i Malmö, Sverige. Med sina 190 meter är det Nordens högsta bostadshus och har blivit en av stadens mest ikoniska landmärken."
+                    }
+                ]
             },
             {
-                "clueId": 2,
-                "text": "Staden där detta köpcentrum finns är också känd för sin närhet till Öresund och för att vara en viktig knutpunkt för internationell handel och kommunikation."
+                "id": 2,
+                "key": "bob",
+                "destination": "malmöc",
+                "img": "./resources/images/malmöc.png",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
+                "clues": [
+                    {
+                        "clueId": 1,
+                        "text": "Malmö bor tar sig ofta till denna plats för att c sina kära och nära komma hem eller åka bort"
+                    },
+                    {
+                        "clueId": 2,
+                        "text": "Staden vi söker är känt för sin imponerande Öresundsbron, som förbinder den med en annan betydande stad i ett grannland."
+                    },
+                    {
+                        "clueId": 3,
+                        "text": "Den stora Malmö Arena och det moderna shoppingområdet Triangeln är två kända landmärken i denna stad."
+                    },
+                    {
+                        "clueId": 4,
+                        "text": "Denna stad har en av de mest trafikerade tågstationerna i Sverige, som även är knutpunkt för internationell tågtrafik."
+                    },
+                    {
+                        "clueId": 5,
+                        "text": "Du har kommit till Malmö C, den centrala järnvägsstationen i Malmö, som är en viktig knutpunkt för tågresor i södra Sverige och till andra europeiska destinationer."
+                    }
+                ]
             },
             {
-                "clueId": 3,
-                "text": "Detta köpcentrum är en populär destination för både lokalbefolkningen och turister och erbjuder ett brett utbud av butiker, restauranger och underhållning."
-            },
-            {
-                "clueId": 4,
-                "text": "En närliggande station för kollektivtrafik är belägen vid ett stort torg som också är en central knutpunkt för många andra transportmedel, inklusive tåg och bussar."
-            },
-            {
-                "clueId": 5,
-                "text": "Grattis, du har hittat rätt! Det köpcentrum vi söker är en av stadens mest populära shoppingdestinationer och lockar besökare från när och fjärran för sin unika atmosfär och sitt varierade utbud."
+                "id": 3,
+                "key": "ses",
+                "destination": "emporia",
+                "img": "./resources/images/emporia.png",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
+                "clues": [
+                    {
+                        "clueId": 1,
+                        "text": "Detta köpcentrum är beläget i en stad som är en av Sveriges största och mest mångkulturella. Det är känt för sin rika historia och sin dynamiska stadsmiljö."
+                    },
+                    {
+                        "clueId": 2,
+                        "text": "Staden där detta köpcentrum finns är också känd för sin närhet till Öresund och för att vara en viktig knutpunkt för internationell handel och kommunikation."
+                    },
+                    {
+                        "clueId": 3,
+                        "text": "Detta köpcentrum är en populär destination för både lokalbefolkningen och turister och erbjuder ett brett utbud av butiker, restauranger och underhållning."
+                    },
+                    {
+                        "clueId": 4,
+                        "text": "En närliggande station för kollektivtrafik är belägen vid ett stort torg som också är en central knutpunkt för många andra transportmedel, inklusive tåg och bussar."
+                    },
+                    {
+                        "clueId": 5,
+                        "text": "Grattis, du har hittat rätt! Det köpcentrum vi söker är en av stadens mest populära shoppingdestinationer och lockar besökare från när och fjärran för sin unika atmosfär och sitt varierade utbud."
+                    }
+                ]
             }
         ]
     }

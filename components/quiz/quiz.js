@@ -101,30 +101,34 @@ function displayQuestion(quiz, quizNum) {
         });
     }
 
-    if (gameData.currentQuiz === 5) {
-        const dialog = document.getElementById('quiz-popup');
-        dialog.innerHTML = `
-        <div class="dialog-text">
-            <p>Du har redan klarat detta steget, gå vidare till nästa</p>
-        </div>
-        <button id="next-page" class="btn">Gå vidare!</button>
-    `;
-
-        dialog.querySelector("#next-page").addEventListener('click', (e) => { router('clue') });
-        setTimeout(() => {
-            dialog.showModal();
-        }, 100);
-        gameData.currentQuiz = 0;
-        gameData.currentClue = 0;
-        gameData.time = 30;
-        gameData.currentKey = '';
-        gameData.completed = ['quiz', 'map'];
-        localStorage.set(gameData);
-        router('clue');
-        return;
-    }
 
     function nextQuestion() {
+        if (gameData.currentQuiz === 5) {
+            const dialog = document.getElementById('quiz-popup');
+            dialog.innerHTML = `
+            <div class="dialog-text">
+                <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+            </div>
+            <button id="next-page" class="btn">Gå vidare!</button>
+        `;
+
+            dialog.querySelector("#next-page").addEventListener('click', (e) => { router('clue') });
+            setTimeout(() => {
+                dialog.showModal();
+            }, 100);
+            gameData.currentQuiz = 0;
+            gameData.currentClue = 0;
+            gameData.time = 30;
+            gameData.currentKey = '';
+            gameData.completed = ['quiz', 'map'];
+            localStorage.set(gameData);
+            router('clue');
+            setInterval(() => {
+                console.log('hello');
+            }, 1000);
+            return;
+        }
+
         localStorage.set(gameData);
         setTimeout(() => {
             displayQuestion(quiz, quizNum);

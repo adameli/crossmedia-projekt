@@ -33,5 +33,20 @@
         "name": "halle",
         "points": 39,
         "id": 11
+    },
+    {
+        "name": "defe",
+        "points": 40,
+        "id": 12
+    },
+    {
+        "name": "tree",
+        "points": 24,
+        "id": 13
+    },
+    {
+        "name": "tred",
+        "points": 18,
+        "id": 14
     }
 ]

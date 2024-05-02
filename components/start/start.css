@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    margin: auto;
     height: 100%;
 }
 
@@ -15,6 +14,10 @@
 
 #start-popup {
     border: none;
+    /* height: 0%;
+    padding: 0;
+
+    transition: height 1s; */
 
     & h2 {
         text-align: center;
@@ -36,6 +39,11 @@
     }
 }
 
+.slide-down {
+    height: 100% !important;
+    padding: 16px !important;
+}
+
 #how-it-works {
     margin-block: 40px;
 
@@ -53,6 +61,7 @@
     padding: 60px 0 30px 0;
     background-color: var(--dark-purple);
     border-radius: 0 0 40px 40px;
+    width: 100%;
 }
 
 #start-img {

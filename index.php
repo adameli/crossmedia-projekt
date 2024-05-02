@@ -87,9 +87,10 @@ function static_css_links ()
     <?php echo static_css_links(); ?>
     <title>Vart är vi påväg: Malmö Edition</title>
 </head>
-<body>
+<body id="body">
   
-    <main id="main"></main>
+    <main id="main">
+    </main>
 
 <script type="module" id="my-script">
 

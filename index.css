@@ -1,10 +1,25 @@
 :root {
 
-    --background-main: linear-gradient(180deg, #463973 0%, #251840 100%);
-    --dark-purple: #251840;
+    --background-main: rgba(146, 171, 180, 1);
+    --dark-purple: rgba(88, 131, 145, 1);
     --text-color-white: white;
     --btn-back-color: white;
 
+}
+
+@font-face {
+    font-family: 'fredoka-regular';
+    src: url('./resources/fonts/Fredoka-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'fredoka-light';
+    src: url('./resources/fonts/Fredoka-Light.ttf');
+}
+
+@font-face {
+    font-family: 'fredoka-medium';
+    src: url('./resources/fonts/Fredoka-Medium.ttf');
 }
 
 * {
@@ -14,6 +29,7 @@
 body {
     background: var(--background-main);
     margin: 0;
+    font-family: 'fredoka-regular';
 }
 
 main {
@@ -46,6 +62,7 @@ header {
 
 dialog {
     max-width: 430px;
+    max-height: 100%;
     /*the width of a iphone 15 pro max*/
     width: 100%;
     height: 100%;
@@ -53,7 +70,8 @@ dialog {
     background-color: var(--dark-purple);
     color: var(--text-color-white);
     border: none;
-    box-sizing: unset;
+    padding: 10px 20px;
+    /* box-sizing: unset; */
 }
 
 .btn {
@@ -65,6 +83,7 @@ dialog {
     letter-spacing: 3px;
     cursor: pointer;
     font-weight: bold;
+    font-family: 'fredoka-medium';
 }
 
 input {
@@ -74,6 +93,8 @@ input {
     border-radius: 10px;
     box-shadow: 1px 1px 1px gray;
 }
+
+
 
 .btn-input-container {
     display: flex;
@@ -94,7 +115,7 @@ input {
 .regular-text {
     margin: 10px;
     font-size: 16px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'fredoka-light';
     line-height: 19px;
 }
 
@@ -114,5 +135,43 @@ input {
 
     75% {
         transform: translateX(4px);
+    }
+}
+
+/* HTML: <div class="loader"></div> */
+
+#loader-container {
+    height: 100%;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    --c: no-repeat linear-gradient(orange 0 0);
+    background: var(--c), var(--c), var(--c), var(--c);
+    background-size: 21px 21px;
+    animation: l5 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+@keyframes l5 {
+    0% {
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%
+    }
+
+    33% {
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        width: 60px;
+        height: 60px
+    }
+
+    66% {
+        background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+        width: 60px;
+        height: 60px
+    }
+
+    100% {
+        background-position: 100% 0, 100% 100%, 0 100%, 0 0
     }
 }
