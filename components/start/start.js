@@ -25,6 +25,7 @@ function renderComponent() {
 
     const dom = componentManger(component);
 
+    // chooseTransport()
     dom.innerHTML = `
         <div id="start-header-container" class="controls-container-column">
                 <h1 class="start-title">PÅ SPRÅNG<br>MALMÖ EDITION</h1>
@@ -47,8 +48,12 @@ function howItWorksInfo(e) {
 
     const dialog = document.getElementById('start-popup');
     dialog.innerHTML = `
-        <button class="close-dialog btn">Tillbaka</button>
-        <h2>LÄS NOGA</h2>
+        <div class="start-popup-header">
+            <button class="close-dialog btn">
+                <img src="./resources/icons/arrow_back.png" alt="Back to previus">
+            </button>
+            <h2 class="sub-title">LÄS NOGA!</h2>
+        </div>
         <ul id="how-it-works" class="dialog-text">
             <li class="list-element">Välj vem vill du vill ska guida dig</li>
             <li class="list-element">Välj en slinga att utforska</li>
@@ -62,7 +67,7 @@ function howItWorksInfo(e) {
             <li class="list-element"> Ju fler rätt svar, desto fler poäng</li>
             <li class="list-element">Efter quizet, nya ledtrådar till nästa plats</li>
         </ul>
-        <div>
+        <div id="lets-go-btn">
             <button id="continue"  class="btn">Nu kör vi!</button>
         </div>
     `;
@@ -83,11 +88,21 @@ function howItWorksInfo(e) {
 function chooseGuide(e) {
     const dialog = document.getElementById('start-popup');
     dialog.innerHTML = `
-        <button class="close-dialog btn">Tillbaka</button>
-        <h2 class="sub-title">VÄLJ GUIDE</h2>
-        <div id="guides-container">
-            <button id="guide-1" class="btn guide-btn">KRISTIAN</button>
-            <button id="guide-2" class="btn guide-btn">FREDRIK</button>
+        <div class="start-popup-header">
+            <button class="close-dialog btn">
+                <img src="./resources/icons/arrow_back.png" alt="Back to previus">
+            </button>
+            <h2 class="sub-title">VÄLJ GUIDE</h2>
+        </div>
+        <div id="guides-container" class="flex-column">
+            <div class="guide-wrapper">
+                <img src="./resources/images/kristian.png" alt="Bild på Kristian">
+                <button id="guide-1" class="btn guide-btn">KRISTIAN</button>
+            </div>
+            <div class="guide-wrapper">
+                <img src="./resources/images/fredrik.png" alt="Bild på Fredrik">
+                <button id="guide-2" class="btn guide-btn">FREDRIK</button>
+            </div>
         </div>
     `;
 
@@ -103,15 +118,20 @@ function chooseGuide(e) {
 function choosePath() {
     const dialog = document.getElementById('start-popup');
     dialog.innerHTML = `
-        <button class="close-dialog btn">Tillbaka</button>
-        <h2 class="sub-title">VÄLJ SLINGA</h2>
-        <div id="paths-container">
+        <div id="map-img"></div>
+        <div class="start-popup-header">
+            <button class="close-dialog btn">
+            <img src="./resources/icons/arrow_back.png" alt="Back to previus">
+            </button>
+            <h2 class="sub-title">VÄLJ SLINGA</h2>
+        </div>
+        <div id="paths-container" class="flex-column">
             <button id="path-1" class="btn path-btn">SLINGA 1</button>
             <button id="path-2" class="btn path-btn">SLINGA 2</button>
             <button id="path-2" class="btn path-btn">SLINGA 3</button>
         </div>
     `;
-
+    dialog.showModal();
     dialog.querySelector('.close-dialog').addEventListener('click', chooseGuide);
 
     dialog.querySelectorAll('.path-btn').forEach(btn => btn.addEventListener('click', (e) => {
@@ -122,11 +142,21 @@ function choosePath() {
 function chooseTransport(e) {
     const dialog = document.getElementById('start-popup');
     dialog.innerHTML = `
-        <button class="close-dialog btn">Tillbaka</button>
-        <h2 class="sub-title">VÄLJ FÄRDMEDEL</h2>
-        <div id="paths-container">
-            <button id="transport-1" class="btn transport-btn">ELSPARK</button>
-            <button id="transport-2" class="btn transport-btn">CYKEL</button>
+        <div class="start-popup-header">
+            <button class="close-dialog btn">
+                <img src="./resources/icons/arrow_back.png" alt="Back to previus">
+            </button>
+            <h2 class="sub-title">VÄLJ FÄRDMEDEL</h2>
+        </div>
+        <div id="transport-container" class="flex-column">
+        <div class="transport-wrapper">
+                <img src="./resources/images/elspark.png" alt="Bild på Elspark">
+                <button id="transport-1" class="btn transport-btn">ELSPARK</button>
+            </div>
+            <div class="transport-wrapper">
+                <img src="./resources/images/cykel.png" alt="Bild på Cykel">
+                <button id="transport-2" class="btn transport-btn">CYKEL</button>
+            </div>
         </div>
     `;
 
@@ -142,10 +172,14 @@ function chooseTransport(e) {
 function startGame(e) {
     const dialog = document.getElementById('start-popup');
     dialog.innerHTML = `
-        <button class="close-dialog btn">Tillbaka</button>
-        <h2 class="sub-title">VÄLJ NAMN</h2>
+        <div class="start-popup-header">
+            <button class="close-dialog btn">
+                <img src="./resources/icons/arrow_back.png" alt="Back to previus">
+            </button>
+            <h2 class="sub-title">VÄLJ NAMN</h2>
+        </div>
         <p class="error-message"></p>
-        <div id="start-game-container" class="btn-input-container">
+        <div id="start-game-container" class="btn-input-container flex-column">
             <input  maxlength="15" type="text" placeholder="Lagnamn" id="team-name"></input>
             <button id="start-game" class="btn ">START</button>
         </div>

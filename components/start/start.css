@@ -19,24 +19,84 @@
 
     transition: height 1s; */
 
+    & .close-dialog {
+        background: none;
+        border: none;
+        padding: 5px 8px;
+
+        & img {
+            height: 30px;
+            width: 30px;
+        }
+    }
+
     & h2 {
         text-align: center;
     }
 
-    & div {
+    & .flex-column {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    & .start-popup-header {
+        background: var(--dark-purple);
+        padding: 20px;
+        border-radius: 0 0 40px 40px;
+    }
+
     & #paths-container {
-        gap: 2rem;
+        gap: 3rem;
+        margin-top: 22vh;
     }
 
     & #guides-container {
         gap: 1rem;
         padding: 10px 30px;
+
+        & .guide-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            & img {
+                height: 250px;
+            }
+        }
     }
+
+    & #transport-container {
+        gap: 2rem;
+        margin-top: 5vh;
+
+        & .transport-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* gap: 2rem; */
+
+            & img {
+                height: 230px;
+            }
+        }
+    }
+
+    #lets-go-btn {
+        margin-top: 4vh;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#map-img {
+    position: absolute;
+    inset: 0;
+
+    background-image: url('../../resources/images/malmomap.png') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
 
 .slide-down {
@@ -45,7 +105,8 @@
 }
 
 #how-it-works {
-    margin-block: 40px;
+    margin: 0;
+    padding-right: 20px;
 
     &>li {
         list-style: decimal;
@@ -66,10 +127,4 @@
 
 #start-img {
     width: 340px;
-    object-position: -15px;
-    /* background-image: url('../../resources/images/start_loggo.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 300px; */
 }

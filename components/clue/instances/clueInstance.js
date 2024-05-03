@@ -6,7 +6,7 @@ import { localStorage } from "../../../logic/helpers.js";
 function renderInstance(parentId) {
     const component = {
         id: 'clue',
-        parentId: parentId,
+        parentId: 'game-container',
         tag: 'h4',
     }
 

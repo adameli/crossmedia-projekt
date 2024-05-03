@@ -64,12 +64,12 @@ function renderComponent(parentId) {
 
             const dialog = document.getElementById('clue-popup');
             dialog.innerHTML = `
-                <div class="dialog-text">
+                <div class="clue-correct">
                     <h2>BRA JOBBAT</h2>
-                    <img src="./resources/images/start_loggo.png">
+                    <img src="./resources/images/${gameData.guide}.png">
                     <p>Du ska nu ta dig till ${gameData.currentPlace} för att leta upp lösenordet för att leta upp quizet</p>
+                    <button id="next-page" class="btn">Gå vidare!</button>
                 </div>
-                <button id="next-page" class="btn">Gå vidare!</button>
             `;
             dialog.showModal()
             dialog.querySelector("#next-page").addEventListener('click', (e) => {
