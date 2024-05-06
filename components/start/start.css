@@ -53,7 +53,7 @@
 
     & #guides-container {
         gap: 1rem;
-        padding: 10px 30px;
+        padding: 10px 20px var(--padding-bottom) 20px;
 
         & .guide-wrapper {
             display: flex;
@@ -69,6 +69,8 @@
     & #transport-container {
         gap: 2rem;
         margin-top: 5vh;
+        overflow: hidden;
+        padding-bottom: var(--padding-bottom);
 
         & .transport-wrapper {
             display: flex;
@@ -86,6 +88,7 @@
         margin-top: 4vh;
         display: flex;
         justify-content: center;
+        padding-bottom: var(--padding-bottom);
     }
 }
 
