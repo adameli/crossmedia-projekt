@@ -14,7 +14,6 @@ export function createHeader(parentId) {
         tag: 'dialog',
     }
     const dialog = componentManger(dialogComponent);
-    console.log(dialog);
 
     const gameData = JSON.parse(window.localStorage.getItem('game-data'));
 
@@ -29,8 +28,6 @@ export function createHeader(parentId) {
     `;
 
     dom.querySelector('#leave-game').addEventListener('click', (e) => {
-        console.log('hej');
-        // dialog.setAttribute('modal-mode', 'mini');
         dialog.innerHTML = `
         <div class="dialog-text">
             <p>Är du säker på att du vill lämna?</p>

@@ -118,7 +118,7 @@ function displayQuestion(quiz, quizNum) {
             }, 100);
             gameData.currentQuiz = 0;
             gameData.currentClue = 0;
-            gameData.time = 30;
+            gameData.time = 60;
             gameData.currentKey = '';
             gameData.completed = ['quiz', 'map'];
             localStorage.set(gameData);

@@ -1,0 +1,37 @@
+#control-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#stopwatch-container {
+    position: absolute;
+    bottom: 0;
+}
+
+.transport-img {
+    max-width: 430px;
+    width: 100%;
+}
+
+#stopwatch-btn {
+    all: unset;
+    position: absolute;
+    left: 25px;
+    top: -13px;
+
+    & #stopwatch {
+        width: 120px;
+    }
+}
+
+.hide {
+    display: none !important;
+}
+
+#short-timer {
+    margin: 0;
+    align-self: center;
+    font-size: 18px;
+    color: rgb(198, 55, 55);
+}

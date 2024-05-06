@@ -12,17 +12,47 @@ function renderComponent(parentId) {
         clas: 'btn-input-container'
     }
 
-    const dom = componentManger(component);
+    const component2 = {
+        id: 'stopwatch-container',
+        parentId: parentId,
+        tag: 'div',
+    }
 
-    dom.innerHTML = `
-        <input  maxlength="30" type="text" placeholder="Vart är vi påväg?" id="clue-answer"></input>
-        <button id="submit-clue-answer" class="btn">OK</button>
+    componentManger(component);
+    const stopwatchDom = componentManger(component2);
+    const gameData = localStorage.get();
+    console.log(gameData.emergencyStop);
+    stopwatchDom.innerHTML = `
+        <img class="transport-img" src="./resources/images/${gameData.transport}.png" alt="Bild på ${gameData.transport}">
+        <button id="stopwatch-btn" class="${gameData.emergencyStop ? 'hide' : ''}">
+            <img id="stopwatch" src="./resources/images/stop_klocka.png" alt="Bild på stopklocka">
+        </button>
    `;
 
-    const destination = STATE.getEntity('CLUES').destination;
+    document.querySelector('#stopwatch-btn').addEventListener('click', (e) => {
+        PubSub.publish({ event: 'emergencyStop', detail: 10 });
+    })
 
-    dom.querySelector('#submit-clue-answer').addEventListener('click', (e) => {
-        const inputValue = dom.querySelector('#clue-answer').value;
+
+}
+
+PubSub.subscribe({ event: 'renderClueComponents', listener: renderComponent });
+PubSub.subscribe({ event: 'emergencyStop', listener: submitClueAnwser });
+PubSub.subscribe({ event: 'endOfClues', listener: submitClueAnwser });
+
+function submitClueAnwser(detail = 10) {
+    document.querySelector('#stopwatch-btn').classList.add('hide');
+    document.getElementById('control-container').innerHTML = `
+        <div id="popup-anwser" class="btn-input-container">
+            <p id="short-timer">${detail}</p>
+            <input  maxlength="30" type="text" placeholder="Vart är vi påväg?" id="clue-answer"></input>
+            <button id="submit-clue-answer" class="btn">OK</button>
+        </div>
+    `
+
+    document.querySelector('#submit-clue-answer').addEventListener('click', (e) => {
+        const destination = STATE.getEntity('CLUES').destination;
+        const inputValue = document.querySelector('#clue-answer').value;
         const cleandString = inputValue
             .trim('')
             .replace(/[\s]/g, '')
@@ -47,18 +77,16 @@ function renderComponent(parentId) {
                 case 4:
                     points = 2;
                     break;
-                case 5:
-                    points = 0;
-                    break;
-
             }
 
+            if (detail !== 10) points = 0;
             e.currentTarget.setAttribute('disabled', true);
             document.querySelector("#points").textContent = gameData.points + points;
             gameData.points += points;
             gameData.currentPlace = cleandString;
             gameData.time = 30;
             gameData.currentClue = 0;
+            gameData.emergencyStop = false;
             gameData.completed = ['quiz', 'clue'];
             localStorage.set(gameData);
 
@@ -77,7 +105,7 @@ function renderComponent(parentId) {
             });
 
         } else {
-            dom.querySelector('#clue-answer').classList.add("wrong-input");
+            document.querySelector('#clue-answer').classList.add("wrong-input");
             const animated = document.querySelector(".wrong-input");
             animated.addEventListener("animationend", (event2) => {
                 event2.currentTarget.classList.remove("wrong-input");
@@ -85,5 +113,3 @@ function renderComponent(parentId) {
         }
     });
 }
-
-PubSub.subscribe({ event: 'renderClueComponents', listener: renderComponent });

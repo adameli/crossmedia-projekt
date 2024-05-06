@@ -3,11 +3,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 11vh;
+    /* justify-content: space-evenly; */
 }
 
 #clue-popup {
-    padding: 20px;
+    padding: var(--padding-inline);
 
     & .clue-correct {
         display: flex;

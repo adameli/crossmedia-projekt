@@ -48,10 +48,8 @@ async function Get(data) {
 
     if (response.ok) {
         const resource = await response.json();
-        console.log(resource);
 
         _state[entity] = (resource);
-        console.log(_state);
         PubSub.publish({ event: 'stateUpdated', detail: null });
     } else {
         alert(response.statusText);
@@ -61,7 +59,6 @@ async function Get(data) {
 async function fetcher(request) {
     try {
         let response = await fetch(request);
-        console.log(response);
         return response;
 
     } catch (error) {

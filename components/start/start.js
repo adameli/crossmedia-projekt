@@ -1,6 +1,5 @@
 import { componentManger } from "../componentManager.js";
 import { PubSub } from "../../logic/pubsub.js";
-import { closePopup } from "../../identity/closePopup.js";
 import { router } from "../../logic/router.js";
 import { localStorage } from "../../logic/helpers.js";
 
@@ -31,9 +30,13 @@ function renderComponent() {
                 <h1 class="start-title">PÅ SPRÅNG<br>MALMÖ EDITION</h1>
                 <button id="spela-btn" class="btn start-btn">SPELA</button>
         </div>
+
         <div id="start-img-container">
-            <img src="./resources/images/start_loggo.png" id="start-img"></
+            <img src="./resources/images/start_loggo.png" id="start-img">
         </div>
+
+        <img src="./resources/images/start_img_kf.png" id="start-img-kf">
+        
     `;
 
 
@@ -77,8 +80,6 @@ function howItWorksInfo(e) {
 
     dialog.querySelector('.close-dialog').addEventListener('click', (e) => {
         dialog.close();
-        // dialog.classList.remove('slide-down');
-
     });
 
     dialog.querySelector('#continue').addEventListener('click', chooseGuide);
@@ -87,6 +88,7 @@ function howItWorksInfo(e) {
 
 function chooseGuide(e) {
     const dialog = document.getElementById('start-popup');
+    dialog.classList.add('lightblue');
     dialog.innerHTML = `
         <div class="start-popup-header">
             <button class="close-dialog btn">
@@ -179,7 +181,7 @@ function startGame(e) {
             <h2 class="sub-title">VÄLJ NAMN</h2>
         </div>
         <p class="error-message"></p>
-        <div id="start-game-container" class="btn-input-container flex-column">
+        <div id="start-game-container" class="btn-input-container">
             <input  maxlength="15" type="text" placeholder="Lagnamn" id="team-name"></input>
             <button id="start-game" class="btn ">START</button>
         </div>
@@ -204,15 +206,16 @@ function startGame(e) {
 
         const localData = {
             name: input.value,
-            guide: guide.toLowerCase(),
-            path: path.split(' ')[1],
-            transport: transport.toLowerCase(),
+            emergencyStop: false,
+            time: 60,
             points: 0,
             currentClue: 0,
             currentQuiz: 0,
             currentPlace: '',
             currentKey: '',
-            time: 30,
+            transport: transport.toLowerCase(),
+            guide: guide.toLowerCase(),
+            path: path.split(' ')[1],
             beenTo: [],
             completed: [],
         }

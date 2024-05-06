@@ -19,6 +19,10 @@
 
     transition: height 1s; */
 
+    &.lightblue {
+        background: var(--background-main) !important;
+    }
+
     & .close-dialog {
         background: none;
         border: none;
@@ -30,9 +34,6 @@
         }
     }
 
-    & h2 {
-        text-align: center;
-    }
 
     & .flex-column {
         display: flex;
@@ -45,6 +46,8 @@
         padding: 20px;
         border-radius: 0 0 40px 40px;
     }
+
+
 
     & #paths-container {
         gap: 3rem;
@@ -109,7 +112,7 @@
 
 #how-it-works {
     margin: 0;
-    padding-right: 20px;
+    padding-right: var(--padding-inline);
 
     &>li {
         list-style: decimal;
@@ -130,4 +133,18 @@
 
 #start-img {
     width: 340px;
+}
+
+#start-img-kf-container {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+
+}
+
+#start-img-kf {
+    width: 340px;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
 }
