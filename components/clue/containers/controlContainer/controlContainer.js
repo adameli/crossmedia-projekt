@@ -24,7 +24,7 @@ function renderComponent(parentId) {
     const gameData = localStorage.get();
     console.log(gameData.emergencyStop);
     stopwatchDom.innerHTML = `
-        <img class="transport-img" src="./resources/images/${gameData.transport}.png" alt="Bild på ${gameData.transport}">
+        <img class="responsive-img" src="./resources/images/${gameData.transport}.png" alt="Bild på ${gameData.transport}">
         <button id="stopwatch-btn" class="${gameData.emergencyStop ? 'hide' : ''}">
             <img id="stopwatch" src="./resources/images/stop_klocka.png" alt="Bild på stopklocka">
         </button>

@@ -152,11 +152,11 @@ function chooseTransport(e) {
         </div>
         <div id="transport-container" class="flex-column">
         <div class="transport-wrapper">
-                <img src="./resources/images/elspark.png" alt="Bild på Elspark">
+                <img class="responsive-img" src="./resources/images/elspark.png" alt="Bild på Elspark">
                 <button id="transport-1" class="btn transport-btn">ELSPARK</button>
             </div>
             <div class="transport-wrapper">
-                <img src="./resources/images/cykel.png" alt="Bild på Cykel">
+                <img class="responsive-img" src="./resources/images/cykel.png" alt="Bild på Cykel">
                 <button id="transport-2" class="btn transport-btn">CYKEL</button>
             </div>
         </div>
@@ -166,7 +166,7 @@ function chooseTransport(e) {
     dialog.querySelector('.close-dialog').addEventListener('click', choosePath);
 
     dialog.querySelectorAll('.transport-btn').forEach(btn => btn.addEventListener('click', (e) => {
-        transport = e.currentTarget.textContent;
+        transport = e.currentTarget.textContent.toLowerCase();
         startGame();
     }));
 }
@@ -185,7 +185,7 @@ function startGame(e) {
             <input  maxlength="15" type="text" placeholder="Lagnamn" id="team-name"></input>
             <button id="start-game" class="btn ">START</button>
         </div>
-        <img  class="transport-img absolute-bottom" src="./resources/images/${transport}.png" alt="Bild på ${transport}">
+        <img  class="responsive-img absolute-bottom" src="./resources/images/${transport}.png" alt="Bild på ${transport}">
     `;
 
     dialog.querySelector('.close-dialog').addEventListener('click', chooseTransport);
@@ -214,7 +214,7 @@ function startGame(e) {
             currentQuiz: 0,
             currentPlace: '',
             currentKey: '',
-            transport: transport.toLowerCase(),
+            transport: transport,
             guide: guide.toLowerCase(),
             path: path.split(' ')[1],
             beenTo: [],

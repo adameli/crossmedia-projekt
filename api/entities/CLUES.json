@@ -15,7 +15,7 @@
                     },
                     {
                         "clueId": 2,
-                        "text": "Hur platsen såg ut förr"
+                        "img": "centralstationen.jpeg"
                     },
                     {
                         "clueId": 3,
@@ -56,7 +56,7 @@
                     },
                     {
                         "clueId": 5,
-                        "text": "Bild"
+                        "img": "kungsparken.jpf"
                     }
                 ]
             },
@@ -77,7 +77,7 @@
                     },
                     {
                         "clueId": 3,
-                        "text": "Bild (på refug)"
+                        "img": "davidshall.jpeg"
                     },
                     {
                         "clueId": 4,
@@ -115,7 +115,7 @@
                     },
                     {
                         "clueId": 4,
-                        "text": "Hur platsen såg ut förr"
+                        "img": "stortorget.jpf"
                     },
                     {
                         "clueId": 5,
@@ -144,7 +144,7 @@
                     },
                     {
                         "clueId": 4,
-                        "text": "Bild"
+                        "img": "fiskhoddorna.jpeg"
                     },
                     {
                         "clueId": 5,
@@ -173,7 +173,7 @@
                     },
                     {
                         "clueId": 4,
-                        "text": "Bild"
+                        "img": "stadsbib.jpf"
                     },
                     {
                         "clueId": 5,

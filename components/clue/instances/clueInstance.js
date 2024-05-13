@@ -6,9 +6,9 @@ import { localStorage } from "../../../logic/helpers.js";
 let timerIntervalId;
 function renderInstance() {
     const component = {
-        id: 'clue',
+        id: 'clue-text-container',
         parentId: 'game-container',
-        tag: 'h4',
+        tag: 'div',
     }
 
     componentManger(component);
@@ -93,7 +93,12 @@ function startTimer(seconds) {
         }
         document.getElementById('clue-point').textContent = cluePoint;
         if (index !== 5) {
-            document.getElementById('clue').textContent = clues[index].text;
+            const textContainer = document.getElementById('clue-text-container');
+            if (clues[index].text) {
+                textContainer.innerHTML = `<h4>${clues[index].text}</h4>`;
+            } else {
+                textContainer.innerHTML = `<img class="responsive-img" src="./resources/images/place_images/${clues[index].img}">`;
+            }
             gameData.currentClue = index;
         }
         localStorage.set(gameData);
