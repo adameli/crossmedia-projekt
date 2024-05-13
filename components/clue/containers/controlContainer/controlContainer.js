@@ -16,6 +16,7 @@ function renderComponent(parentId) {
         id: 'stopwatch-container',
         parentId: parentId,
         tag: 'div',
+        clas: 'absolute-bottom'
     }
 
     componentManger(component);
@@ -49,7 +50,7 @@ function submitClueAnwser(detail = 10) {
             <button id="submit-clue-answer" class="btn">OK</button>
         </div>
     `
-
+    document.querySelector('#clue-answer').focus();
     document.querySelector('#submit-clue-answer').addEventListener('click', (e) => {
         const destination = STATE.getEntity('CLUES').destination;
         const inputValue = document.querySelector('#clue-answer').value;
@@ -100,9 +101,7 @@ function submitClueAnwser(detail = 10) {
                 </div>
             `;
             dialog.showModal()
-            dialog.querySelector("#next-page").addEventListener('click', (e) => {
-                router('map')
-            });
+            dialog.querySelector("#next-page").addEventListener('click', (e) => router('map'));
 
         } else {
             document.querySelector('#clue-answer').classList.add("wrong-input");

@@ -53,8 +53,8 @@ function startTimer(seconds) {
         // Check if timer has reached zero
         if (seconds === 0) {
             clearInterval(timerIntervalId); // Stop the interval
-            changeClueContent(5, gameData.emergencyStop, gameData);
-            PubSub.publish({ event: 'endOfClues', detail: 'Du är sämst' })
+            // changeClueContent(5, gameData.emergencyStop, gameData);
+            // PubSub.publish({ event: 'endOfClues', detail: 'Du är sämst' })
         }
 
 

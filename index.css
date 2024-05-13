@@ -6,7 +6,7 @@
     --btn-back-color: white;
     --padding-bottom: 30px;
     --padding-inline: 20px;
-
+    --deg: 5deg;
 }
 
 @font-face {
@@ -46,6 +46,7 @@ main {
     flex-direction: column;
     color: var(--text-color-white);
     overflow: auto;
+    position: relative;
 }
 
 header {
@@ -103,6 +104,16 @@ input {
     margin-block: 15px;
     font-size: 30px;
     font-family: 'fredoka-medium';
+}
+
+.transport-img {
+    max-width: 430px;
+    width: 100%;
+}
+
+.absolute-bottom {
+    position: absolute;
+    bottom: 0;
 }
 
 

@@ -185,6 +185,7 @@ function startGame(e) {
             <input  maxlength="15" type="text" placeholder="Lagnamn" id="team-name"></input>
             <button id="start-game" class="btn ">START</button>
         </div>
+        <img  class="transport-img absolute-bottom" src="./resources/images/${transport}.png" alt="Bild på ${transport}">
     `;
 
     dialog.querySelector('.close-dialog').addEventListener('click', chooseTransport);

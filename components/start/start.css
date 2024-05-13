@@ -93,7 +93,10 @@
         justify-content: center;
         padding-bottom: var(--padding-bottom);
     }
+
+
 }
+
 
 #map-img {
     position: absolute;

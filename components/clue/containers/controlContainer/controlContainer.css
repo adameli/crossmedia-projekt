@@ -4,16 +4,6 @@
     width: 100%;
 }
 
-#stopwatch-container {
-    position: absolute;
-    bottom: 0;
-}
-
-.transport-img {
-    max-width: 430px;
-    width: 100%;
-}
-
 #stopwatch-btn {
     all: unset;
     position: absolute;
@@ -22,6 +12,28 @@
 
     & #stopwatch {
         width: 120px;
+    }
+
+    animation: shakeStopWatch 1s infinite;
+
+}
+
+@keyframes shakeStopWatch {
+
+    20% {
+        transform: rotateZ(var(--deg));
+    }
+
+    40% {
+        transform: rotateZ(-(var(--deg)));
+    }
+
+    60% {
+        transform: rotateZ(var(--deg));
+    }
+
+    80% {
+        transform: rotateZ(-(var(--deg)));
     }
 }
 
