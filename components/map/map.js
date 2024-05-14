@@ -8,7 +8,8 @@ import { localStorage } from "../../logic/helpers.js";
 
 async function renderComponent() {
     // window.localStorage.removeItem('game-data');
-    createHeader('main');
+    const gameData = localStorage.get();
+    createHeader('main', gameData.currentPlace.toUpperCase());
     const component = {
         id: 'map-container',
         parentId: 'main',
@@ -17,12 +18,17 @@ async function renderComponent() {
 
     const dom = componentManger(component);
 
+    // poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+    // <p id="map-description-text" class="regular-text">${cluesInfo.text}</p>
     const cluesInfo = STATE.getEntity('CLUES');
     dom.innerHTML = `
         <div id="map-img-container">
-            <img src="${cluesInfo.img}" alt="A map with a pin point on where to go next">
+            <video
+                controls
+                src="./resources/videos/${cluesInfo.img}"
+                >
+            </video>
         </div>
-        <p id="map-description-text" class="regular-text">${cluesInfo.text}</p>
         <div class="btn-input-container">
             <input type="text" id="place-password" placeholder="Plats lösenord">
             <button id="submit-place-password" class="btn">OK</button>
@@ -36,18 +42,19 @@ async function renderComponent() {
     }
     componentManger(popupComponent);
 
-    const gameData = localStorage.get();
     console.log(gameData.completed);
     const currentPlace = gameData.currentPlace;
 
-    dom.querySelector('#submit-place-password').addEventListener('click', async (e) => {
+    document.querySelector('#place-password').addEventListener('keyup', (e) => { if (e.key === 'Enter') checkAnwser() });
+    dom.querySelector('#submit-place-password').addEventListener('click', checkAnwser)
+
+    async function checkAnwser() {
         const inputValue = dom.querySelector('#place-password').value;
         const cleandString = inputValue
             .trim('')
             .replace(/[\s]/g, '')
             .toLowerCase();
 
-        console.log(cleandString);
         const bodyData = {
             entity: 'QUIZES',
             key: cleandString,
@@ -65,10 +72,10 @@ async function renderComponent() {
             //*Sen hänvisar vi de till quiz sidan igen
             const dialog = document.getElementById('map-popup');
             dialog.innerHTML = `
-                <div class="dialog-text">
-                    <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+                <div class="next-step-container">
+                    <h2 class="sub-title" >Du har redan klarat detta steget, gå vidare till nästa</h2>
+                    <button id="next-page" class="btn">Gå vidare!</button>
                 </div>
-                <button id="next-page" class="btn">Gå vidare!</button>
             `;
 
             dialog.querySelector("#next-page").addEventListener('click', (e) => { router('quiz') });
@@ -87,8 +94,7 @@ async function renderComponent() {
                 event2.currentTarget.classList.remove("wrong-input");
             });
         }
-    })
-
+    }
 }
 
 async function fillState() {
@@ -103,10 +109,10 @@ async function fillState() {
         const dialog = componentManger(popupComponent);
 
         dialog.innerHTML = `
-            <div class="dialog-text">
-                <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+            <div class="next-step-container">
+                <h2 class="sub-title" >Du har redan klarat detta steget, gå vidare till nästa</h2>
+                <button id="next-page" class="btn">Gå vidare!</button>
             </div>
-            <button id="next-page" class="btn">Gå vidare!</button>
         `;
         dialog.querySelector("#next-page").addEventListener('click', (e) => { router('quiz') });
         dialog.showModal();

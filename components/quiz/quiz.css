@@ -11,10 +11,14 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    margin-top: 2vh;
+
+    & #question {
+        font-size: 18px;
+
+    }
 
     & #current-question {
-        font-size: 24px;
+        font-size: 20px;
         background-color: var(--dark-purple);
         box-shadow: 0px 0px 18px white;
         padding: 20px;
@@ -34,13 +38,16 @@
     }
 }
 
+
 .answer {
-    font-size: 18px;
     background-color: var(--dark-purple);
     color: var(--text-color-white);
-    border-radius: 5px;
-    padding-block: 20px;
     border: none;
+    font-size: 1.25rem;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
 }
 
 

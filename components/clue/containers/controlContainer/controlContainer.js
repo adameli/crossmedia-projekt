@@ -24,7 +24,7 @@ function renderComponent(parentId) {
     const gameData = localStorage.get();
     console.log(gameData.emergencyStop);
     stopwatchDom.innerHTML = `
-        <img class="responsive-img" src="./resources/images/${gameData.transport}.png" alt="Bild på ${gameData.transport}">
+        <img id="clue-transport" class="" src="./resources/images/${gameData.transport}.png" alt="Bild på ${gameData.transport}">
         <button id="stopwatch-btn" class="${gameData.emergencyStop ? 'hide' : ''}">
             <img id="stopwatch" src="./resources/images/stop_klocka.png" alt="Bild på stopklocka">
         </button>
@@ -51,7 +51,10 @@ function submitClueAnwser(detail = 10) {
         </div>
     `
     document.querySelector('#clue-answer').focus();
-    document.querySelector('#submit-clue-answer').addEventListener('click', (e) => {
+    document.querySelector('#clue-answer').addEventListener('keyup', (e) => { if (e.key === 'Enter') checkAnwser() })
+    document.querySelector('#submit-clue-answer').addEventListener('click', checkAnwser);
+
+    function checkAnwser() {
         const destination = STATE.getEntity('CLUES').destination;
         const inputValue = document.querySelector('#clue-answer').value;
         const cleandString = inputValue
@@ -81,7 +84,6 @@ function submitClueAnwser(detail = 10) {
             }
 
             if (detail !== 10) points = 0;
-            e.currentTarget.setAttribute('disabled', true);
             document.querySelector("#points").textContent = gameData.points + points;
             gameData.points += points;
             gameData.currentPlace = cleandString;
@@ -110,5 +112,5 @@ function submitClueAnwser(detail = 10) {
                 event2.currentTarget.classList.remove("wrong-input");
             });
         }
-    });
+    }
 }

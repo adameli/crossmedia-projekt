@@ -1,9 +1,22 @@
 #leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    & a {
+        margin: auto;
+        color: black;
+        text-decoration: none;
+    }
+}
+
+#list-container {
+    position: relative;
     padding-right: 40px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    height: 100%;
+    gap: .75rem;
+    max-height: 70vh;
     overflow: scroll;
 
     & h1 {
@@ -20,6 +33,10 @@
     border-radius: 10px;
     /* list-style: decimal; */
 
+    & p {
+        margin: 10px 0;
+    }
+
     &:nth-child(2) {
         background-color: #FFD700;
     }
@@ -31,4 +48,9 @@
     &:nth-child(4) {
         background-color: #CD7F32;
     }
+}
+
+#firework {
+    position: absolute;
+    inset: 0;
 }

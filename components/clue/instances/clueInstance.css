@@ -1,14 +1,18 @@
 #clue-text-container {
     width: 100%;
+    max-height: 170px;
+    height: 100%;
     margin: 0;
-    font-size: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 
     & h4 {
+        font-size: 20px;
+        margin: 0;
         margin-inline: var(--padding-inline);
+        align-self: center;
+        text-align: center;
     }
-
-    /* background-color: goldenrod; */
 }
 
 #timer {

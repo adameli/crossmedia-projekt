@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding: var(--padding-inline);
+    padding-inline: var(--padding-inline);
     padding-bottom: 30px;
     position: relative;
     background: var(--dark-purple);
@@ -35,15 +35,15 @@
 }
 
 #clue-point {
-    font-size: 48px;
+    font-size: 32px;
     font-family: 'fredoka-medium';
     background-color: var(--dark-purple);
     box-shadow: 0px 0px 3px rgb(172, 172, 172, 50);
     border-radius: 50%;
     position: absolute;
-    bottom: -50px;
-    height: 80px;
-    width: 80px;
+    bottom: -40px;
+    height: 60px;
+    width: 60px;
     display: flex;
     justify-content: center;
     align-items: center;

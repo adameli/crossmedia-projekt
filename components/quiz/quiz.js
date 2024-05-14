@@ -7,7 +7,9 @@ import { router } from "../../logic/router.js";
 
 
 async function renderComponent() {
-    createHeader('main');
+    const gameData = localStorage.get();
+
+    createHeader('main', gameData.currentPlace.toUpperCase());
     const component = {
         id: 'quiz-container',
         parentId: 'main',
@@ -32,7 +34,6 @@ async function renderComponent() {
     }
     componentManger(popupComponent);
 
-    const gameData = localStorage.get();
 
     const quiz = STATE.getEntity('QUIZES');
     console.log(quiz);
@@ -106,10 +107,10 @@ function displayQuestion(quiz, quizNum) {
         if (gameData.currentQuiz === 5) {
             const dialog = document.getElementById('quiz-popup');
             dialog.innerHTML = `
-            <div class="dialog-text">
-                <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+            <div class="next-step-container">
+                <h2 class="sub-title" >Du har redan klarat detta steget, gå vidare till nästa</h2>
+                <button id="next-page" class="btn">Gå vidare!</button>
             </div>
-            <button id="next-page" class="btn">Gå vidare!</button>
         `;
 
             dialog.querySelector("#next-page").addEventListener('click', (e) => { router('clue') });
@@ -154,10 +155,10 @@ async function fillState() {
         const dialog = componentManger(popupComponent);
 
         dialog.innerHTML = `
-            <div class="dialog-text">
-                <p>Du har redan klarat detta steget, gå vidare till nästa</p>
+            <div class="next-step-container">
+                <h2 class="sub-title" >Du har redan klarat detta steget, gå vidare till nästa</h2>
+                <button id="next-page" class="btn">Gå vidare!</button>
             </div>
-            <button id="next-page" class="btn">Gå vidare!</button>
         `;
         dialog.querySelector("#next-page").addEventListener('click', (e) => { router('clue') });
         dialog.showModal();

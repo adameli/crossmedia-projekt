@@ -7,7 +7,7 @@ import { router } from "../../../../logic/router.js";
 
 async function renderComponent() {
 
-    createHeader('main');
+    createHeader('main', 'VART ÄR VI PÅ VÄG?');
     const component = {
         id: 'game-container',
         parentId: 'main',

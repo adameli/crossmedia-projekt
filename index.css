@@ -49,19 +49,6 @@ main {
     position: relative;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-
-    & #logo-container {
-        width: 60px;
-        object-fit: cover;
-        object-position: center;
-    }
-
-}
 
 dialog {
     max-width: 430px;
@@ -84,7 +71,7 @@ dialog {
     box-shadow: 1px 1px 2px black;
     border-radius: 15px;
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
     font-weight: bold;
     font-family: 'fredoka-medium';
@@ -92,17 +79,21 @@ dialog {
 
 input {
     padding: 10px;
-    font-size: 22px;
+    font-size: 18px;
     border-radius: 5px;
     box-shadow: 1px 1px 1px gray;
     text-align: center;
     border: none;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 .sub-title {
     text-align: center;
     margin-block: 15px;
-    font-size: 30px;
+    font-size: 22px;
     font-family: 'fredoka-medium';
 }
 
@@ -116,11 +107,24 @@ input {
     bottom: 0;
 }
 
+.next-step-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85vw;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 .btn-input-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
 
     & button {
@@ -200,14 +204,18 @@ input {
 }
 
 #game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px var(--padding-inline);
 
     & #leave-game {
         background: none;
         border: none;
 
         & img {
-            height: 40px;
-            width: 40px;
+            height: 30px;
+            width: 30px;
         }
 
     }
@@ -219,7 +227,7 @@ input {
 
 #leave-popup {
     height: 200px;
-    width: 350px;
+    width: 80vw;
     top: 30%;
     border-radius: 20px;
 

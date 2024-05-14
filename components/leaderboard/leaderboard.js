@@ -3,24 +3,43 @@ import { STATE } from "../../logic/state.js";
 import { localStorage } from "../../logic/helpers.js";
 import { componentManger } from "../componentManager.js";
 import { createHeader } from "../../identity/gameHeader.js";
+import { Fireworks } from 'https://esm.run/fireworks-js';
 
 async function renderComponent() {
-    createHeader('main');
+
+
+    createHeader('main', 'POÄNGLIGA');
     const component = {
         id: 'leaderboard-container',
         parentId: 'main',
-        tag: 'ul',
+        tag: 'div',
     }
 
     const dom = componentManger(component);
-    dom.innerHTML = `
-        <h1>Poängliga</h1>
-    `
 
+    dom.innerHTML = `
+    
+    <ul id="list-container">
+        <div id="firework"></div>
+    </ul>
+    <a href="https://forms.gle/1ySzzNQeXibLx3nP6" target="_blank" class="btn">TILL ENKÄT</a>
+    `
+    let container = document.querySelector('#firework');
+    let options = {
+        gravity: 2.4,
+        opacity: 0.4,
+        autoresize: true,
+        acceleration: 1.00,
+    };
+
+    let fireworks = new Fireworks(container, options);
+
+    // fireworks.start();
     const leaderboard = STATE.getEntity('LEADERBOARD').sort((a, b) => b.points - a.points);
 
+    const ulDom = document.querySelector('#list-container');
     leaderboard.forEach(user => {
-        renderInstance(user, dom);
+        renderInstance(user, ulDom);
     })
 
 }

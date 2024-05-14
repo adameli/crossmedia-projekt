@@ -1,6 +1,6 @@
 import { componentManger } from "../components/componentManager.js";
 
-export function createHeader(parentId) {
+export function createHeader(parentId, title) {
     const component = {
         id: 'game-header',
         parentId: parentId,
@@ -21,10 +21,8 @@ export function createHeader(parentId) {
         <button id="leave-game" class="btn-icon">
             <img src="./resources/icons/logout.png" alt="leave game button">
         </button>
+        <h2 class="sub-title">${title}</h2>
         <p id="points">${gameData.points}</p>
-        <div id="logo-container">
-            <img src="./resources/images/logga_rgb.svg" alt="Logo of the game">
-        </div>
     `;
 
     dom.querySelector('#leave-game').addEventListener('click', (e) => {

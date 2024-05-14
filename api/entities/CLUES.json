@@ -6,7 +6,7 @@
                 "id": 1,
                 "key": "bob",
                 "destination": "malmöc",
-                "img": "./resources/images/malmöc.png",
+                "img": "Malmöc.mp4",
                 "text": "Vad heter den äldsta delen av Malmö C (svaret finns mittemot subway)?",
                 "clues": [
                     {
@@ -15,7 +15,7 @@
                     },
                     {
                         "clueId": 2,
-                        "img": "centralstationen.jpeg"
+                        "img": "centralstationen.jpg"
                     },
                     {
                         "clueId": 3,
@@ -35,7 +35,7 @@
                 "id": 2,
                 "key": "kung",
                 "destination": "kungsparken",
-                "img": "./resources/images/malmöc.png",
+                "img": "Kungsparken.mp4",
                 "text": "Vilken sifferkombination är förknippad med Casino Jackpot?",
                 "clues": [
                     {
@@ -56,7 +56,7 @@
                     },
                     {
                         "clueId": 5,
-                        "img": "kungsparken.jpf"
+                        "img": "kungsparken.JPG"
                     }
                 ]
             },
@@ -64,7 +64,7 @@
                 "id": 3,
                 "key": "tri",
                 "destination": "triangeln",
-                "img": "./resources/images/emporia.png",
+                "img": "Triangeln.mp4",
                 "text": "Vilken tid stänger Triangeln på torsdagar?",
                 "clues": [
                     {
@@ -77,7 +77,7 @@
                     },
                     {
                         "clueId": 3,
-                        "img": "davidshall.jpeg"
+                        "img": "triangeln.jpg"
                     },
                     {
                         "clueId": 4,
@@ -98,7 +98,7 @@
                 "id": 1,
                 "key": "mos",
                 "destination": "stortorget",
-                "img": "./resources/images/turningtorso.png",
+                "img": "Stortorget.mp4",
                 "text": "Karl X Gustav är mest känd för sitt lyckosamma krig mot Danmark som gav Sverige de nya landskapen bl.a. Skåne och Blekinge. Vem har skapat statyn av Karl X Gustav (svaret står på statyn)",
                 "clues": [
                     {
@@ -115,7 +115,7 @@
                     },
                     {
                         "clueId": 4,
-                        "img": "stortorget.jpf"
+                        "img": "stortorget.JPG"
                     },
                     {
                         "clueId": 5,
@@ -127,7 +127,7 @@
                 "id": 2,
                 "key": "fisk",
                 "destination": "fiskehoddorna",
-                "img": "./resources/images/malmöc.png",
+                "img": "Fiskhoddorna.mp4",
                 "text": "På hodda sju finns ett telefonnummer. Vilka är de två sista siffrorna?",
                 "clues": [
                     {
@@ -156,7 +156,7 @@
                 "id": 3,
                 "key": "bok",
                 "destination": "malmöstadsbibliotek",
-                "img": "./resources/images/emporia.png",
+                "img": "Stadsbiblioteket.mp4",
                 "text": "På stadsbiblioteket finns det ett symboliskt djur, vilket?",
                 "clues": [
                     {
@@ -173,7 +173,7 @@
                     },
                     {
                         "clueId": 4,
-                        "img": "stadsbib.jpf"
+                        "img": "stadsbib.JPG"
                     },
                     {
                         "clueId": 5,

@@ -13,7 +13,6 @@ async function renderComponent(parentId) {
         <div id="timer-container">
             <div id="countdown"></div>
         </div>
-        <h2 class="sub-title">VART ÄR VI PÅ VÄG?</h2>
         <div id="clue-point"></div>
     `;
 
