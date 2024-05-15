@@ -188,88 +188,88 @@
         "destinations": [
             {
                 "id": 1,
-                "key": "lol",
-                "destination": "turningtorso",
-                "img": "./resources/images/turningtorso.png",
+                "key": "gustav",
+                "destination": "gustavadolfstorg",
+                "img": "Gustav.mp4",
                 "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
                 "clues": [
                     {
                         "clueId": 1,
-                        "text": "Detta land har en lång kustlinje och är känt för sina många sjöar och skogar. Dess huvudstad är en av de mest innovativa och mångkulturella städerna i världen."
+                        "text": "Nästintill destinationen finns det en väg mellan det förflutna"
                     },
                     {
                         "clueId": 2,
-                        "text": "I denna stad finns ett välkänt operahus som har en unik design inspirerad av en isbergskristall. Staden är också känd för sin moderna arkitektur, inklusive en imponerande tornbyggnad som ser ut som en roterande spiral."
+                        "text": "Tidigare våtmark utanför den gamla stadsvallen"
                     },
                     {
                         "clueId": 3,
-                        "text": "Den spiralliknande byggnaden är känd som en av världens mest spektakulära skyskrapor och är belägen i en hamnstad som är Sveriges tredje största stad. Byggnaden är ett landmärke som har blivit en symbol för staden och landet."
+                        "img": "gustav.JPG"
                     },
                     {
                         "clueId": 4,
-                        "text": "Skyskrapan är en del av ett område som genomgått omfattande stadsförnyelse under de senaste årtiondena. Området runt skyskrapan erbjuder inte bara modern arkitektur utan också grönområden, promenadstråk och närhet till havet."
+                        "text": "Stämningsfullt under jultid"
                     },
                     {
                         "clueId": 5,
-                        "text": "Den berömda byggnaden, som har ett unikt vridet utseende, är känd som Turning Torso och är belägen i Västra Hamnen-området i Malmö, Sverige. Med sina 190 meter är det Nordens högsta bostadshus och har blivit en av stadens mest ikoniska landmärken."
+                        "text": "Torg döpt efter en kung"
                     }
                 ]
             },
             {
                 "id": 2,
-                "key": "bob",
-                "destination": "malmöc",
-                "img": "./resources/images/malmöc.png",
+                "key": "slott",
+                "destination": "slottsparken",
+                "img": "Slottsparken.mp4",
                 "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
                 "clues": [
                     {
                         "clueId": 1,
-                        "text": "Malmö bor tar sig ofta till denna plats för att c sina kära och nära komma hem eller åka bort"
+                        "text": "Lördagsplanen"
                     },
                     {
                         "clueId": 2,
-                        "text": "Staden vi söker är känt för sin imponerande Öresundsbron, som förbinder den med en annan betydande stad i ett grannland."
+                        "img": "slottsparken.JPG"
                     },
                     {
                         "clueId": 3,
-                        "text": "Den stora Malmö Arena och det moderna shoppingområdet Triangeln är två kända landmärken i denna stad."
+                        "text": "Gränsar till en annan lund"
                     },
                     {
                         "clueId": 4,
-                        "text": "Denna stad har en av de mest trafikerade tågstationerna i Sverige, som även är knutpunkt för internationell tågtrafik."
+                        "text": "En prinsessas hem"
                     },
                     {
                         "clueId": 5,
-                        "text": "Du har kommit till Malmö C, den centrala järnvägsstationen i Malmö, som är en viktig knutpunkt för tågresor i södra Sverige och till andra europeiska destinationer."
+                        "text": "I vilken park ligger slottsträdgården"
                     }
                 ]
             },
             {
                 "id": 3,
-                "key": "ses",
-                "destination": "emporia",
-                "img": "./resources/images/emporia.png",
+                "key": "dave",
+                "destination": "davidshall",
+                "img": "Davidshall.mp4",
                 "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
                 "clues": [
                     {
                         "clueId": 1,
-                        "text": "Detta köpcentrum är beläget i en stad som är en av Sveriges största och mest mångkulturella. Det är känt för sin rika historia och sin dynamiska stadsmiljö."
+                        "text": "Gammal bondgård"
                     },
                     {
                         "clueId": 2,
-                        "text": "Staden där detta köpcentrum finns är också känd för sin närhet till Öresund och för att vara en viktig knutpunkt för internationell handel och kommunikation."
+                        "text": "divaD"
                     },
                     {
                         "clueId": 3,
-                        "text": "Detta köpcentrum är en populär destination för både lokalbefolkningen och turister och erbjuder ett brett utbud av butiker, restauranger och underhållning."
+                        "text": "Annat ord för entré"
                     },
                     {
                         "clueId": 4,
-                        "text": "En närliggande station för kollektivtrafik är belägen vid ett stort torg som också är en central knutpunkt för många andra transportmedel, inklusive tåg och bussar."
+                        "img": "davidshall.JPG"
                     },
                     {
                         "clueId": 5,
-                        "text": "Grattis, du har hittat rätt! Det köpcentrum vi söker är en av stadens mest populära shoppingdestinationer och lockar besökare från när och fjärran för sin unika atmosfär och sitt varierade utbud."
+                        "text": ""
                     }
                 ]
             }

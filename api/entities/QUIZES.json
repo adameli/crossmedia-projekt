@@ -286,5 +286,134 @@
                 "correctAnswer": ""
             }
         ]
+    },
+    {
+        "id": 7,
+        "key": "pressbyrån",
+        "place": "gustavadolfstorg",
+        "quiz": [
+            {
+                "question": "En gammal liga delar namn med personen som år 1915 skapade statyn 'Lekande barn' på torget. Vad heter skulptören i efternamn?",
+                "correctAnswer": "jönsson"
+            },
+            {
+                "question": "12 stycken gula vänskapsbänkar finns placerade runt om i Malmö för att lyfta ett viktigt ämne. En av dessa bänkar finns placerade här. Vilket ämne/budskap lyfts av bänkarna?  ",
+                "answers": [
+                    "Psykisk ohälsa",
+                    "Pride festivalen",
+                    "Cancer",
+                    "Missbruk"
+                ],
+                "correctAnswer": "Psykisk ohälsa"
+            },
+            {
+                "question": "Öresund är sundet mellan Skåne och Själland och är ett av världens mest trafikerade sund. I vilket objekt kan man återfinna namnet Öresund på Gustav Adolfs torg? ",
+                "answers": [
+                    "Skylt",
+                    "Byggnad",
+                    "Träd",
+                    "Staty"
+                ],
+                "correctAnswer": "Staty"
+            },
+            {
+                "question": "Till WorldPride 2021 valde Malmö stad att investera i denna staty. Hur mycket skattepengar kostade den Malmöborna?",
+                "answers": [
+                    "150.000",
+                    "900.000",
+                    "1.500.000",
+                    "500.000"
+                ],
+                "correctAnswer": "900.000"
+            },
+            {
+                "question": "Blomsterhandlarna på torget erbjuder Malmöborna färska blommor varje dag. Hur mycket kostar en bukett 10 röda rosor?",
+                "correctAnswer": "80"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "key": "morotskaka",
+        "place": "slottsparken",
+        "quiz": [
+            {
+                "question": "När Carola var 16 år uppträdde hon live med sin låt 'Främling' för första gången i Malmö. 40 år senare bjöd hon Malmö på comeback i slottsparken. Vilket år?",
+                "correctAnswer": "2023"
+            },
+            {
+                "question": "Den 3e oktober år 1940 hände det något stort i slottsparken, vad?",
+                "answers": [
+                    "Parken brann ner",
+                    "Tyskarna invaderade",
+                    "Första Pridefestivalen",
+                    "En bomb exploderade"
+                ],
+                "correctAnswer": "En bomb exploderade"
+            },
+            {
+                "question": "Varje sommar får ett antal getter flytta ut på en ö i slottsparken för att rensa upp bland buskar och träd. Hur tar sig getterna ut på ön?",
+                "answers": [
+                    "Simmar",
+                    "Åker båt",
+                    "Åker helikopter",
+                    "Portabel bro"
+                ],
+                "correctAnswer": "Åker båt"
+            },
+            {
+                "question": "I parken finns en populär sevärdhet för turisterna i Malmö. För malmöiterna kallas den för en mölla men vilket annat ord används för detta maskineri?",
+                "correctAnswer": "väderkvarn"
+            },
+            {
+                "question": "Med sina 23 SM-guld är MFF Malmöbornas stolthet. På slottsträdgårdens café går det att finna spår av detta framgångsrika fotbollslag. I vilken form?",
+                "correctAnswer": "öl"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "key": "14",
+        "place": "davidshall",
+        "quiz": [
+            {
+                "question": "Davidshall har länge varit en plats för musik, konst, Vem är den berömda nöjeskungen som stadsdelen är döpt efter?",
+                "correctAnswer": "davidlenander"
+            },
+            {
+                "question": "Davidshall är ett namn igenkänt genom tiderna, hur många ställen kan man koppla till David?",
+                "answers": [
+                    "Den ena är skånsk",
+                    "Den ena innehåller chilli",
+                    "Den ena är blå",
+                    "Den ena är vegetarisk"
+                ],
+                "correctAnswer": "Den ena är skånsk"
+            },
+            {
+                "question": "Vilka linjer trafikeras på busshållsplatsen davidshall?",
+                "answers": [
+                    "7, 47, 10, 8, 5",
+                    "4, 6, 7, 8",
+                    "1, 2, 7, 8, 35, 84",
+                    "1, 2, 7, 8, 35"
+                ],
+                "correctAnswer": "1, 2, 7, 8, 35, 84"
+            },
+            {
+                "question": "Torgets södra del, som ursprungligen tänkt för byggnad åt Malmö Stadsbibliotek, något som aldrig blev förverkligat. Vad ligger där idag?",
+                "answers": [
+                    "En lekplats",
+                    "Sommartorget",
+                    "En torghandel",
+                    "En parkeringsplats"
+                ],
+                "correctAnswer": "Sommartorget"
+            },
+            {
+                "question": "Precis som Andreas har Leif Mannerström gett Blå Hoddans fish and chips ett väldigt gott betyg. Trots sitt något höga pris är den väl värd att testas. Vad kostar en Fish and chips?",
+                "correctAnswer": "185"
+            }
+        ]
     }
 ]

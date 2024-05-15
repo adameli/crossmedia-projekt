@@ -34,7 +34,7 @@ async function renderComponent() {
 
     let fireworks = new Fireworks(container, options);
 
-    // fireworks.start();
+    fireworks.start();
     const leaderboard = STATE.getEntity('LEADERBOARD').sort((a, b) => b.points - a.points);
 
     const ulDom = document.querySelector('#list-container');
