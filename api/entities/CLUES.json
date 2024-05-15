@@ -6,7 +6,7 @@
                 "id": 1,
                 "key": "bob",
                 "destination": "malmöc",
-                "img": "Malmöc.mp4",
+                "img": "Malmöc",
                 "text": "Vad heter den äldsta delen av Malmö C (svaret finns mittemot subway)?",
                 "clues": [
                     {
@@ -35,7 +35,7 @@
                 "id": 2,
                 "key": "kung",
                 "destination": "kungsparken",
-                "img": "Kungsparken.mp4",
+                "img": "Kungsparken",
                 "text": "Vilken sifferkombination är förknippad med Casino Jackpot?",
                 "clues": [
                     {
@@ -64,7 +64,7 @@
                 "id": 3,
                 "key": "tri",
                 "destination": "triangeln",
-                "img": "Triangeln.mp4",
+                "img": "Triangeln",
                 "text": "Vilken tid stänger Triangeln på torsdagar?",
                 "clues": [
                     {
@@ -98,7 +98,7 @@
                 "id": 1,
                 "key": "mos",
                 "destination": "stortorget",
-                "img": "Stortorget.mp4",
+                "img": "Stortorget",
                 "text": "Karl X Gustav är mest känd för sitt lyckosamma krig mot Danmark som gav Sverige de nya landskapen bl.a. Skåne och Blekinge. Vem har skapat statyn av Karl X Gustav (svaret står på statyn)",
                 "clues": [
                     {
@@ -127,7 +127,7 @@
                 "id": 2,
                 "key": "fisk",
                 "destination": "fiskehoddorna",
-                "img": "Fiskhoddorna.mp4",
+                "img": "Fiskhoddorna",
                 "text": "På hodda sju finns ett telefonnummer. Vilka är de två sista siffrorna?",
                 "clues": [
                     {
@@ -156,7 +156,7 @@
                 "id": 3,
                 "key": "bok",
                 "destination": "malmöstadsbibliotek",
-                "img": "Stadsbiblioteket.mp4",
+                "img": "Stadsbiblioteket",
                 "text": "På stadsbiblioteket finns det ett symboliskt djur, vilket?",
                 "clues": [
                     {
@@ -190,7 +190,7 @@
                 "id": 1,
                 "key": "gustav",
                 "destination": "gustavadolfstorg",
-                "img": "Gustav.mp4",
+                "img": "Gustav",
                 "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
                 "clues": [
                     {
@@ -219,7 +219,7 @@
                 "id": 2,
                 "key": "slott",
                 "destination": "slottsparken",
-                "img": "Slottsparken.mp4",
+                "img": "Slottsparken",
                 "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
                 "clues": [
                     {
@@ -248,7 +248,7 @@
                 "id": 3,
                 "key": "dave",
                 "destination": "davidshall",
-                "img": "Davidshall.mp4",
+                "img": "Davidshall",
                 "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
                 "clues": [
                     {

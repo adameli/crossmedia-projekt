@@ -20,13 +20,14 @@ async function renderComponent() {
 
     // poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
     // <p id="map-description-text" class="regular-text">${cluesInfo.text}</p>
+    // <video controls autoplay src="./resources/videos/${cluesInfo.img}">
+    // </video>
+    // <source src="./resources/videos/${cluesInfo.img}.webm">
     const cluesInfo = STATE.getEntity('CLUES');
     dom.innerHTML = `
         <div id="map-img-container">
-            <video
-                controls
-                src="./resources/videos/${cluesInfo.img}"
-                >
+            <video controls autoplay>
+                <source src="./resources/videos/davidshall.mp4" type="video/mp4">
             </video>
         </div>
         <div class="btn-input-container">
