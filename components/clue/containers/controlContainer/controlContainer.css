@@ -1,12 +1,20 @@
 #control-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    margin-top: 3vh;
+
+    & #short-timer {
+        margin: 0;
+        align-self: center;
+        font-size: clamp(1rem, 4.2vw, 1.25rem);
+        color: rgb(198, 55, 55);
+
+    }
 }
+
+
 
 #clue-transport {
     height: 28vh;
-    max-width: 430px;
+    max-width: 420px;
 }
 
 #stopwatch-container {
@@ -54,16 +62,4 @@
 
 .hide {
     display: none !important;
-}
-
-#popup-anwser {
-    gap: 1rem;
-
-    & #short-timer {
-        margin: 0;
-        align-self: center;
-        font-size: 18px;
-        color: rgb(198, 55, 55);
-
-    }
 }

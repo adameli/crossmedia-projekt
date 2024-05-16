@@ -10,12 +10,9 @@
     padding-bottom: 30px;
     position: relative;
     background: var(--dark-purple);
-    border-radius: 0 0 40px 40px;
+    border-radius: 0;
 }
 
-#game-header {
-    background: var(--dark-purple);
-}
 
 #timer-container {
     width: 80%;
@@ -35,15 +32,14 @@
 }
 
 #clue-point {
-    font-size: 32px;
+    font-size: clamp(1.75rem, 7.1vw, 2rem);
     font-family: 'fredoka-medium';
     background-color: var(--dark-purple);
     box-shadow: 0px 0px 3px rgb(172, 172, 172, 50);
     border-radius: 50%;
     position: absolute;
     bottom: -40px;
-    height: 60px;
-    width: 60px;
+    padding: .4em .7em;
     display: flex;
     justify-content: center;
     align-items: center;

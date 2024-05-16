@@ -14,25 +14,23 @@ function renderInstance() {
     componentManger(component);
 
     const gameData = localStorage.get();
-    // changeClueContent(gameData.currentClue)
-    // speachToText(clues[gameData.currentClue].text);
 
     startTimer(gameData.time);
 
-    function speachToText(text) {
-        const synth = window.speechSynthesis;
-        const utterThis = new SpeechSynthesisUtterance(text);
-        synth.speak(utterThis);
-    }
+    // function speachToText(text) {
+    //     const synth = window.speechSynthesis;
+    //     const utterThis = new SpeechSynthesisUtterance(text);
+    //     synth.speak(utterThis);
+    // }
 
 }
 
 function startTimer(seconds) {
-    if (document.getElementById('popup-anwser')) document.getElementById('popup-anwser').remove();
+    if (document.getElementById('popup-answer')) document.getElementById('popup-answer').remove();
     const clues = STATE.getEntity('CLUES').clues;
     const gameData = localStorage.get();
     let countdownBar = document.getElementById('countdown');
-    // Update timers and divs every second
+
     changeClueContent(gameData.currentClue, gameData.emergencyStop, gameData)
     timerIntervalId = setInterval(() => {
         const gameData = localStorage.get();
@@ -49,13 +47,13 @@ function startTimer(seconds) {
         if (seconds === 10) { changeClueContent(3, false, gameData); }
         if (seconds === 5) { changeClueContent(4, false, gameData); }
 
-
-        // Check if timer has reached zero
-        if (seconds === 0) {
+        if (gameData.time === 0) {
             clearInterval(timerIntervalId); // Stop the interval
             changeClueContent(5, gameData.emergencyStop, gameData);
-            PubSub.publish({ event: 'endOfClues', detail: 'Du är sämst' })
+            PubSub.publish({ event: 'endOfClues', detail: STATE.getEntity('CLUES').destination })
         }
+
+        // Check if timer has reached zero
 
 
         localStorage.set(gameData);
@@ -95,7 +93,7 @@ function startTimer(seconds) {
         if (index !== 5) {
             const textContainer = document.getElementById('clue-text-container');
             if (clues[index].text) {
-                textContainer.innerHTML = `<h4>${clues[index].text}</h4>`;
+                textContainer.innerHTML = `<h4 class="text-style">${clues[index].text}</h4>`;
             } else {
                 textContainer.innerHTML = `<img class="responsive-img" src="./resources/images/place_images/${clues[index].img}">`;
             }
@@ -109,12 +107,12 @@ function startTimer(seconds) {
 PubSub.subscribe({ event: 'renderClueInstance', listener: renderInstance });
 PubSub.subscribe({ event: 'emergencyStop', listener: stopTime });
 
-function stopTime() {
+function stopTime(detail) {
     clearInterval(timerIntervalId);
     const gameData = localStorage.get();
     gameData.emergencyStop = true;
     localStorage.set(gameData);
-    let seconds = 10;
+    let seconds = detail;
 
     const timerIntervalId2 = setInterval(() => {
         document.getElementById('short-timer').textContent = seconds;

@@ -7,7 +7,9 @@ Hasha lösenordet som du skickar från backenden.
 
 När man inte kan svaret på ledtråden - ska man få svaret så man kan gå vidare.
 
-Vid map.js få in frågan också.
+
+Malmö stadsbibliotek ska bara heta stadsbibliotek
+
 
 
 

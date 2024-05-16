@@ -19,9 +19,12 @@ async function renderComponent() {
     const dom = componentManger(component);
 
     dom.innerHTML = `
-        <div id="question-container">
-            <h2 id="question"></h2>
+        <div id="second-quiz-header">
             <p id="current-question"></p>
+        </div>
+
+        <div id="question-container">
+            <h4 id="question" class="text-style"></h4>
         </div>
 
         <div id="alternatives-container"></div>
@@ -36,7 +39,6 @@ async function renderComponent() {
 
 
     const quiz = STATE.getEntity('QUIZES');
-    console.log(quiz);
 
     displayQuestion(quiz, gameData.currentQuiz);
     // displayQuestion(quiz,);
@@ -72,7 +74,10 @@ function displayQuestion(quiz, quizNum) {
 
                 disableButtons(document.querySelectorAll('.answer'));
                 gameData.currentQuiz++;
-                nextQuestion();
+                setTimeout(() => {
+                    nextQuestion();
+                    // displayQuestion(quiz, quizNum);
+                }, 1000);
             })
 
             alternativesContainer.append(btn);
@@ -80,7 +85,7 @@ function displayQuestion(quiz, quizNum) {
     } else {
         alternativesContainer.innerHTML = `
         <input type="text" id="quiz-input-answer" placeholder="">
-        <button id="submit-answer" class="btn">OK</button>
+        <button id="submit-answer" class="btn">SVARA</button>
         `
 
         document.querySelector('#submit-answer').addEventListener('click', async (e) => {
@@ -90,7 +95,11 @@ function displayQuestion(quiz, quizNum) {
                 .replace(/[\s]/g, '')
                 .toLowerCase();
 
-            if (question.correctAnswer === cleandString) {
+            let isCorrect = false;
+            if (Array.isArray(question.correctAnswer)) isCorrect = isCorrectAnswer(cleandString, question.correctAnswer, question.type)
+            else isCorrect = question.correctAnswer === cleandString;
+
+            if (isCorrect) {
                 input.classList.add('right');
                 document.getElementById('points').textContent = ++gameData.points;
             } else {
@@ -98,14 +107,32 @@ function displayQuestion(quiz, quizNum) {
             }
 
             gameData.currentQuiz++;
-            nextQuestion();
+            setTimeout(() => {
+                nextQuestion();
+            }, 1000);
         });
+    }
+
+    function isCorrectAnswer(value, words, type) {
+
+        let booleans = [];
+        words.forEach(word => {
+            booleans.push(value.includes(word));
+        })
+
+        //* xx bestämer att alla orden i arrayen måste vara inkluderad i spelarens svar ex "doris och nemo"
+        if (type === 'xx') {
+            return booleans[0] && booleans[1];
+        }
+        //* xy bestämer att ett av orden i arrayen måste vara inkluderad i spelarens svar ex "10", "tio"
+        if (type === 'xy') {
+            return booleans[0] || booleans[1];
+        }
     }
 
 
     function nextQuestion() {
         if (gameData.currentQuiz === 5) {
-            console.log(gameData.beenTo);
             let text = '';
             switch (gameData.beenTo.length) {
                 case 1:
@@ -123,6 +150,7 @@ function displayQuestion(quiz, quizNum) {
             const dialog = document.getElementById('quiz-popup');
             dialog.innerHTML = `
             <div class="next-step-container">
+                <img class="popup-guide" src="./resources/images/${gameData.guide}.png">
                 <h2 class="sub-title" >${text}</h2>
                 <button id="next-page" class="btn">REDO</button>
             </div>
@@ -141,9 +169,7 @@ function displayQuestion(quiz, quizNum) {
         }
 
         localStorage.set(gameData);
-        setTimeout(() => {
-            displayQuestion(quiz, quizNum);
-        }, 1000);
+        displayQuestion(quiz, quizNum);
     }
 }
 

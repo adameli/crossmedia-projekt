@@ -4,8 +4,8 @@
         "destinations": [
             {
                 "id": 1,
-                "key": "bob",
-                "destination": "malmöc",
+                "key": "tuf",
+                "destination": "Malmö C",
                 "img": "Malmoc",
                 "text": "Vad heter den äldsta delen av Malmö C (svaret finns mittemot subway)?",
                 "clues": [
@@ -15,7 +15,7 @@
                     },
                     {
                         "clueId": 2,
-                        "img": "centralstationen.jpg"
+                        "img": "Malmoc.png"
                     },
                     {
                         "clueId": 3,
@@ -34,7 +34,7 @@
             {
                 "id": 2,
                 "key": "kung",
-                "destination": "kungsparken",
+                "destination": "Kungsparken",
                 "img": "Kungsparken",
                 "text": "Vilken sifferkombination är förknippad med Casino Jackpot?",
                 "clues": [
@@ -52,18 +52,18 @@
                     },
                     {
                         "clueId": 4,
-                        "text": "Malmös äldsta park"
+                        "text": "Ligger jämte Malmös äldsta park"
                     },
                     {
                         "clueId": 5,
-                        "img": "kungsparken.JPG"
+                        "img": "Kungsparken.png"
                     }
                 ]
             },
             {
                 "id": 3,
                 "key": "tri",
-                "destination": "triangeln",
+                "destination": "Triangeln",
                 "img": "Triangeln",
                 "text": "Vilken tid stänger Triangeln på torsdagar?",
                 "clues": [
@@ -77,7 +77,7 @@
                     },
                     {
                         "clueId": 3,
-                        "img": "triangeln.jpg"
+                        "img": "Triangeln.png"
                     },
                     {
                         "clueId": 4,
@@ -96,8 +96,8 @@
         "destinations": [
             {
                 "id": 1,
-                "key": "mos",
-                "destination": "stortorget",
+                "key": "grande",
+                "destination": "Stortorget",
                 "img": "Stortorget",
                 "text": "Karl X Gustav är mest känd för sitt lyckosamma krig mot Danmark som gav Sverige de nya landskapen bl.a. Skåne och Blekinge. Vem har skapat statyn av Karl X Gustav (svaret står på statyn)",
                 "clues": [
@@ -115,7 +115,7 @@
                     },
                     {
                         "clueId": 4,
-                        "img": "stortorget.JPG"
+                        "img": "Stortorget.png"
                     },
                     {
                         "clueId": 5,
@@ -125,9 +125,9 @@
             },
             {
                 "id": 2,
-                "key": "fisk",
-                "destination": "fiskehoddorna",
-                "img": "Fiskhoddorna",
+                "key": "fisse",
+                "destination": "Fiskehoddorna",
+                "img": "Fiskehoddorna",
                 "text": "På hodda sju finns ett telefonnummer. Vilka är de två sista siffrorna?",
                 "clues": [
                     {
@@ -144,7 +144,7 @@
                     },
                     {
                         "clueId": 4,
-                        "img": "fiskhoddorna.jpeg"
+                        "img": "Fiskehoddorna.png"
                     },
                     {
                         "clueId": 5,
@@ -155,7 +155,7 @@
             {
                 "id": 3,
                 "key": "bok",
-                "destination": "malmöstadsbibliotek",
+                "destination": "Stadsbiblioteket",
                 "img": "Stadsbiblioteket",
                 "text": "På stadsbiblioteket finns det ett symboliskt djur, vilket?",
                 "clues": [
@@ -173,7 +173,7 @@
                     },
                     {
                         "clueId": 4,
-                        "img": "stadsbib.JPG"
+                        "img": "Stadsbiblioteket.png"
                     },
                     {
                         "clueId": 5,
@@ -188,10 +188,10 @@
         "destinations": [
             {
                 "id": 1,
-                "key": "gustav",
-                "destination": "gustavadolfstorg",
+                "key": "gurra",
+                "destination": "Gustav Adolfs Torg",
                 "img": "Gustav",
-                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
+                "text": "Vilken kedja ligger mitt på torget?",
                 "clues": [
                     {
                         "clueId": 1,
@@ -203,7 +203,7 @@
                     },
                     {
                         "clueId": 3,
-                        "img": "gustav.JPG"
+                        "img": "Gustav.png"
                     },
                     {
                         "clueId": 4,
@@ -217,10 +217,10 @@
             },
             {
                 "id": 2,
-                "key": "slott",
-                "destination": "slottsparken",
+                "key": "sessan",
+                "destination": "Slottsparken",
                 "img": "Slottsparken",
-                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
+                "text": " Scanna QR-koden på tavlan och välj ljudfil 1. I detta klipp berättar personen om ett bakverk som har blivit särskilt omtalat för slottsparkens café. Vilket bakverk?",
                 "clues": [
                     {
                         "clueId": 1,
@@ -228,7 +228,7 @@
                     },
                     {
                         "clueId": 2,
-                        "img": "slottsparken.JPG"
+                        "img": "Slottsparken.png"
                     },
                     {
                         "clueId": 3,
@@ -247,17 +247,17 @@
             {
                 "id": 3,
                 "key": "dave",
-                "destination": "davidshall",
+                "destination": "Davidshall",
                 "img": "Davidshall",
-                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, libero inventore ea accusamus itaque",
+                "text": "Hur många lampskärmar finns det på Davidshallstorg utöver lampan Andreas visar?",
                 "clues": [
                     {
                         "clueId": 1,
-                        "text": "Gammal bondgård"
+                        "text": "divaD"
                     },
                     {
                         "clueId": 2,
-                        "text": "divaD"
+                        "img": "Davidshall.png"
                     },
                     {
                         "clueId": 3,
@@ -265,11 +265,11 @@
                     },
                     {
                         "clueId": 4,
-                        "img": "davidshall.JPG"
+                        "text": "Från parkering till sommartorg"
                     },
                     {
                         "clueId": 5,
-                        "text": ""
+                        "text": "Där David möter hall"
                     }
                 ]
             }

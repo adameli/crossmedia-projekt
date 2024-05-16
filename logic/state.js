@@ -28,7 +28,6 @@ async function Post(data) {
 
     if (response.ok) {
         const resource = await response.json();
-        console.log(resource);
 
         return resource;
     } else {
@@ -48,7 +47,6 @@ async function Get(data) {
 
     if (response.ok) {
         const resource = await response.json();
-
         _state[entity] = (resource);
         PubSub.publish({ event: 'stateUpdated', detail: null });
     } else {

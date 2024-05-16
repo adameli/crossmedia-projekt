@@ -30,9 +30,14 @@ async function renderComponent() {
                 <source src="./resources/videos/${cluesInfo.img}.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="btn-input-container">
-            <input type="text" id="place-password" placeholder="Plats lösenord">
-            <button id="submit-place-password" class="btn">OK</button>
+
+        <p id="password-question" class="text-style">${cluesInfo.text}</p>
+
+        <div class="input-btn-align">
+            <input maxlength="30" type="text" id="place-password" placeholder="Plats lösenord">
+            <div id="submit-place-password">
+                <img src="./resources/icons/arrow_back.png" alt="Submit password">
+            </div>
         </div>
     `;
     const popupComponent = {
@@ -42,7 +47,6 @@ async function renderComponent() {
     }
     componentManger(popupComponent);
 
-    console.log(gameData.completed);
     const currentPlace = gameData.currentPlace;
 
     document.querySelector('#place-password').addEventListener('keyup', (e) => { if (e.key === 'Enter') checkAnwser() });
@@ -65,7 +69,6 @@ async function renderComponent() {
         //* kolla i databasen om nycklen stämmer med det clienten har gett för lösenord
         //* skickar tillbaka antingen sant eller falkt.
         const dbAnswer = await STATE.Post({ entity: "QUIZES", bodyData });
-        console.log(dbAnswer.isCorrect);
         if (dbAnswer.isCorrect) {
 
             //*Om clienten går tillbaka till map siden får de upp en popup att de har klarat steget

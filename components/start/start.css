@@ -25,7 +25,8 @@
 
     .error-message {
         align-self: center;
-        height: 20px;
+        text-align: center;
+        height: 40px;
     }
 
     & .close-dialog {
@@ -51,7 +52,6 @@
     & .start-popup-header {
         background: var(--dark-purple);
         padding: 20px;
-        border-radius: 0 0 40px 40px;
         position: relative;
         display: flex;
         align-items: center;
@@ -67,7 +67,7 @@
 
     & #guides-container {
         gap: 1rem;
-        padding: 10px 20px var(--padding-bottom) 20px;
+        margin-top: 5vh;
 
         & .guide-wrapper {
             display: flex;
@@ -75,7 +75,8 @@
             gap: 1rem;
 
             & img {
-                height: 190px;
+                height: 26vh;
+                max-width: 246px;
             }
         }
     }
@@ -109,6 +110,9 @@
 
 }
 
+.path-btn {
+    font-size: var(--responsive-fs-20);
+}
 
 #map-img {
     position: absolute;
@@ -142,12 +146,11 @@
     align-items: center;
     padding: 10px 0 20px 0;
     background-color: var(--dark-purple);
-    border-radius: 0 0 40px 40px;
     width: 100%;
 
     & h1 {
         margin-block: 5px;
-        font-size: 28px;
+        font-size: clamp(1.375rem, 6.6vw, 1.875rem);
     }
 }
 

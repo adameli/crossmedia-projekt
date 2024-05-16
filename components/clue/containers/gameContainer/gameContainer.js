@@ -41,9 +41,9 @@ async function fillState() {
 
         dialog.innerHTML = `
             <div class="clue-correct">
-                <h2>BRA JOBBAT</h2>
-                <img src="./resources/images/${gameData.guide}.png">
-                <p>Bra jobbat du ska nu ta dig till ${gameData.currentPlace} för att leta upp lösenordet för att leta upp quizet</p>
+                <h2 class="sub-title">BRA JOBBAT</h2>
+                <img class="popup-guide" src="./resources/images/${gameData.guide}.png">
+                <p>Ni ska nu ta er till ${gameData.currentPlace} för att leta upp lösenordet till quizet.</p>
                 <button id="next-page" class="btn">Gå vidare!</button>
             </div>
         `;

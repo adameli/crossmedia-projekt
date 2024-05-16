@@ -58,17 +58,15 @@ function howItWorksInfo(e) {
             <h2 class="sub-title">LÄS NOGA!</h2>
         </div>
         <ul id="how-it-works" class="dialog-text">
-            <li class="list-element">Välj vem vill du vill ska guida dig</li>
-            <li class="list-element">Välj en slinga att utforska</li>
-            <li class="list-element">Välj ditt färdmedel</li>
-            <li class="list-element">Gör dig redo för "Vart är vi på väg?” Första ledtråden är värd 10 poäng, du har 30 sekunder på dig att gissa. Om du inte gissar rätt kommer ledtråd 2 (värd 8 poäng) osv</li>
-            <li class="list-element">Skriv in ditt svar och tryck på nöd-ringklockan när du tror dig veta svaret</li>
-            <li class="list-element">Vid rätt svar får du kartan till platsen</li>
-            <li class="list-element">Vid fel svar fortsätter du att gissa</li>
-            <li class="list-element">När du når platsen, får du en gåta, ditt uppdrag är att leta upp rätt lösenord på platsen</li>
-            <li class="list-element">Skriv in lösenordet för att påbörja ett quiz</li>
-            <li class="list-element"> Ju fler rätt svar, desto fler poäng</li>
-            <li class="list-element">Efter quizet, nya ledtrådar till nästa plats</li>
+            <li class="list-element">Välj en guide.</li>
+            <li class="list-element">Välj en slinga att utforska.</li>
+            <li class="list-element">Välj ett färdmedel.</li>
+            <li class="list-element">Gör dig redo för "Vart är vi på väg?” Första ledtråden är värd 10 poäng, ni har 30 sekunder på er att gissa. Om ni inte gissar rätt kommer ledtråd 2 (värd 8 poäng) osv.</li>
+            <li class="list-element">Tryck på nödringklockan när ni tror er veta svaret. Fyll i svaret i fältet och tryck sedan på pilen eller enter.</li>
+            <li class="list-element">Vid fel svar fortsätter ni att gissa. Vid rätt svar tar ni er till platsen.</li>
+            <li class="list-element">När ni når platsen får ni en gåta uppläst av Andreas. Ert uppdrag är att ta reda på rätt lösenord.</li>
+            <li class="list-element">Skriv in lösenordet för att påbörja ett quiz. Ju fler rätt svar, desto fler poäng.</li>
+            <li class="list-element">Efter quizet ställer vi frågan “Vart är vi på väg?” igen.</li>
         </ul>
         <div id="lets-go-btn">
             <button id="continue"  class="btn">Nu kör vi!</button>
@@ -108,7 +106,10 @@ function chooseGuide(e) {
         </div>
     `;
 
-    dialog.querySelector('.close-dialog').addEventListener('click', howItWorksInfo);
+    dialog.querySelector('.close-dialog').addEventListener('click', (e) => {
+        dialog.classList.remove('lightblue');
+        howItWorksInfo()
+    });
 
 
     dialog.querySelectorAll('.guide-btn').forEach(btn => btn.addEventListener('click', (e) => {
@@ -181,7 +182,7 @@ function startGame(e) {
             <h2 class="sub-title">VÄLJ NAMN</h2>
         </div>
         <div id="start-game-container" class="btn-input-container">
-            <p class="error-message"></p>   
+            <p class="error-message text-style"></p>   
             <input  maxlength="15" type="text" placeholder="Lagnamn" id="team-name"></input>
             <button id="start-game" class="btn ">START</button>
         </div>
@@ -195,8 +196,8 @@ function startGame(e) {
         const input = dialog.querySelector('#team-name');
         console.log(input.value);
 
-        if (input.value.length < 3) {
-            dialog.querySelector('.error-message').textContent = 'Invalid name must be more then 4 characters';
+        if (input.value.length <= 2 || input.value.length >= 11) {
+            dialog.querySelector('.error-message').textContent = 'Ogiltigt namn, du måste ha minst 2 och högst 10 karaktärer';
             return;
         }
 

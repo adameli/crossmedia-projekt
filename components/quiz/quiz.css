@@ -3,7 +3,27 @@
     flex-direction: column;
     gap: 2rem;
     height: 100%;
-    padding-inline: var(--padding-inline);
+}
+
+
+#second-quiz-header {
+    background: var(--dark-purple);
+    position: relative;
+    height: 30px;
+}
+
+#current-question {
+    position: absolute;
+    font-size: var(--responsive-fs-20);
+    background-color: var(--dark-purple);
+    box-shadow: 0px 0px 3px white;
+    padding: 20px;
+    border-radius: 50%;
+    width: fit-content;
+    margin: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #question-container {
@@ -11,23 +31,11 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-
-    & #question {
-        font-size: 18px;
-        color: var(--text-color-black);
-    }
-
-    & #current-question {
-        font-size: 20px;
-        background-color: var(--dark-purple);
-        box-shadow: 0px 0px 18px white;
-        padding: 20px;
-        border-radius: 50%;
-        width: fit-content;
-    }
+    margin-inline: var(--padding-inline);
 }
 
 #alternatives-container {
+    margin-inline: var(--padding-inline);
     display: flex;
     flex-direction: column;
     gap: 1rem;

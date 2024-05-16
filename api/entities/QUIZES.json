@@ -2,64 +2,50 @@
     {
         "id": 1,
         "key": "kungalängan",
-        "place": "malmöc",
+        "place": "Malmö C",
         "quiz": [
             {
-                "question": "Vad är den mest trafikerade tågstationen i Malmö och en viktig knutpunkt för tågresor i södra Sverige och till andra europeiska destinationer?",
-                "answers": [
-                    "Malmö C",
-                    "Triangeln",
-                    "Hyllie",
-                    "Värnhem"
+                "question": "Året 1858 hade Malmö C tre spår, hur många spår finns det på Malmö C idag?",
+                "correctAnswer": [
+                    "10",
+                    "tio"
                 ],
-                "correctAnswer": "Malmö C"
+                "type": "xy"
             },
             {
-                "question": "Hur många spår har Malmö C?",
-                "answers": [
-                    "8 spår",
-                    "10 spår",
-                    "12 spår",
-                    "14 spår"
-                ],
-                "correctAnswer": "8 spår"
+                "question": "Malmö Redhawks har blivit svenska mästare två gånger. Vilken symbol som kan kopplas till ishockey finns även på fasaden av centralen?",
+                "correctAnswer": "krona"
             },
             {
-                "question": "Vilket år invigdes Malmö C i sin nuvarande form?",
-                "answers": [
-                    "1856",
-                    "1890",
-                    "1952",
-                    "2001"
-                ],
-                "correctAnswer": "2001"
+                "question": "Anna och hennes dotter ska åka hem från Malmöfestivalen. Hennes dotter håller ett föremål i handen som är förbjudet att ta med sig ner på perrongen. Vad är det Annas dotter håller i handen?",
+                "correctAnswer": "ballong"
             },
             {
-                "question": "Vilket företag ansvarar för driften av Malmö C?",
+                "question": "Varje dag pendlar drygt 1000 personer mellan Danmark och Skåne. Vad är det danskarna kan hitta på Malmö C som kan räknas in som ett danskt kulturarv? ",
                 "answers": [
-                    "Jernhusen",
-                    "SJ",
-                    "MTR Express",
-                    "Green Cargo"
+                    "Crossiant",
+                    "Pölsemannen",
+                    "Norrlands Guld",
+                    "Kebab"
                 ],
-                "correctAnswer": "Jernhusen"
+                "correctAnswer": "Pölsemannen"
             },
             {
-                "question": "Hur många perronger finns det på Malmö C?",
+                "question": "År 2011 vann Malmö centralstation Brunel Award för sin arkitektur och det bågformade taket har blivit ett       kännetecken. Saluhallen är idag fylld med härliga matalternativ och jämte denna del finns en hall som är döpt efter        färg. Vilken färg?",
                 "answers": [
-                    "4 perronger",
-                    "6 perronger",
-                    "8 perronger",
-                    "10 perronger"
+                    "Blåa",
+                    "Grön",
+                    "Lila",
+                    "Röd"
                 ],
-                "correctAnswer": "8 perronger"
+                "correctAnswer": "Grön"
             }
         ]
     },
     {
         "id": 2,
         "key": "777",
-        "place": "kungsparken",
+        "place": "Kungsparken",
         "quiz": [
             {
                 "question": "I promenadstråket i kungsparken möts man av den otroligt vackra Dubbla kärleksallén på väg från slottsparken mot kasinot. Hur många träd består den av?",
@@ -71,12 +57,12 @@
                     "Restaurang",
                     "Bowlinghall",
                     "Butik",
-                    "Militär byggnad"
+                    "Militärbyggnad"
                 ],
                 "correctAnswer": "Restaurang"
             },
             {
-                "question": "Casino Cosmopol stoltserar i den anrika byggnaden i Kungsparken där gamla Restaurang Kungsparken uppfördes 1881. På invigningen befann sig Kung Oscar II, en anledning till symbolen som stoltserar sig högst upp på byggnaden. Vad är det för symbol?",
+                "question": "Casino Cosmopol stoltserar i den anrika byggnaden i Kungsparken där gamla 'Restaurang Kungsparken' uppfördes 1881. På invigningen befann sig Kung Oscar II, en anledning till symbolen som stoltserar sig högst upp på byggnaden. Vad är det för symbol?",
                 "correctAnswer": "krona"
             },
             {
@@ -98,11 +84,15 @@
     {
         "id": 3,
         "key": "20",
-        "place": "triangeln",
+        "place": "Triangeln",
         "quiz": [
             {
                 "question": "Malmö är en mångkulturell stad där människor runt om i världen har hittat sina hem. En känd tecknad film med ett budskap av att 'hitta hem' har två karaktärer som går att återfinna innanför ena ingången av köpcentrumet, vilka?",
-                "correctAnswer": "dorisochnemo"
+                "correctAnswer": [
+                    "nemo",
+                    "doris"
+                ],
+                "type": "xx"
             },
             {
                 "question": "Vilken busslinje sjunger Timbuktu om som passerar via Triangeln?",
@@ -149,12 +139,12 @@
     {
         "id": 4,
         "key": "johnbörjeson",
-        "place": "stortorget",
+        "place": "Stortorget",
         "quiz": [
             {
                 "question": "Banan, Melon, Kiwi & Citron sjöng Hooja på Stortorget år 2023. I vilket sammanhang?",
                 "answers": [
-                    "Pride Festivalen1",
+                    "Pridefestivalen",
                     "Malmöfestivalen",
                     "Big Slap",
                     "Eurovision"
@@ -162,7 +152,7 @@
                 "correctAnswer": "Malmöfestivalen"
             },
             {
-                "question": "Under 1900-talet målades de första reklamskyltarna på Lejonets Apotek fasad ägd av apotekaren John Tesch. John Tesch använde en brandvägg som reklamplats, vilket ledde till att upp till åtta lager av reklam samlades på väggen. Vilken dryck marknadsförs?",
+                "question": "Under 1900-talet målades de första reklamskyltarna på Lejonets Apoteks fasad ägd av apotekaren John Tesch. John Tesch använde en brandvägg som reklamplats, vilket ledde till att upp till åtta lager av reklam samlades på väggen. Vilken dryck marknadsförs?",
                 "correctAnswer": "cognac"
             },
             {
@@ -194,7 +184,7 @@
     {
         "id": 5,
         "key": "88",
-        "place": "fiskehoddorna",
+        "place": "Fiskehoddorna",
         "quiz": [
             {
                 "question": "En antingen älskad eller hatad traditionellt tillbehör under svenska högtider som också är en signatur för fiskehoddorna?",
@@ -227,7 +217,7 @@
                 "correctAnswer": "Fiskskinn"
             },
             {
-                "question": "Som ett inseglingsmärke för båtar utanför Malmö Hamn strax fram till 1979 användes denna angöringsbojen. Vad kallas just denna boj?",
+                "question": "Som ett inseglingsmärke för båtar utanför Malmö Hamn strax fram till 1979 användes denna angöringsboj. Vad kallas just denna boj?",
                 "answers": [
                     "Röda faran",
                     "Bästebojen",
@@ -245,7 +235,7 @@
     {
         "id": 6,
         "key": "tupp",
-        "place": "malmöstadsbibliotek",
+        "place": "Stadsbiblioteket",
         "quiz": [
             {
                 "question": "Inredningsarkitekten Eva-Johanna Sandberg har i samarbete med LSI skapat en upplevelsevärld för unga mellan åldrarna 9-12 år. Namnet på avdelningen har fått namnet Balagan som på hebreiska betyder vad?",
@@ -269,28 +259,30 @@
             },
             {
                 "question": "Vid entren in till biblioteket skyltas specifikt två stycken förbud. Vilka?",
-                "correctAnswer": "hundarochsparkcyklar"
+                "correctAnswer": [
+                    "hund",
+                    "spark"
+                ],
+                "type": "xx"
             },
             {
                 "question": "Sagolekplatsen bygger på föreställningen om det ljusa och det mörka i sagans värld. En del av lekplatsen smyckas av fjärilar. Hur många fjärilar går det att finna i sagolekplatsen?",
-                "correctAnswer": "19&&20"
+                "correctAnswer": [
+                    "19",
+                    "20"
+                ],
+                "type": "xy"
             },
             {
-                "question": "Alice Lyttkens är en feministisk författare, född och uppvuxen i Malmö 1897 som är en av 1900-talets mest uppskattade svenska författare. Under sin tid skrev hon om kvinnofrågor, moderna kvinnans situation och frigörelse och i sin debutroman Synkoper från 1932 diskuterar hon bland annat abortfrågan, kvinnoförtryck och samhällets orättvisor. Vad är sista ordet i boken på sidan (...)?",
-                "answers": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": ""
+                "question": "Alice Lyttkens är en feministisk författare, född och uppvuxen i Malmö 1897 som är en av 1900-talets mest uppskattade svenska författare. Hon gav ut sin debutroman 7 år efter andra världskrigets start. Vilket år gav hon ut sin roman?",
+                "correctAnswer": "1932"
             }
         ]
     },
     {
         "id": 7,
         "key": "pressbyrån",
-        "place": "gustavadolfstorg",
+        "place": "Gustav Adolfs Torg",
         "quiz": [
             {
                 "question": "En gammal liga delar namn med personen som år 1915 skapade statyn 'Lekande barn' på torget. Vad heter skulptören i efternamn?",
@@ -300,14 +292,14 @@
                 "question": "12 stycken gula vänskapsbänkar finns placerade runt om i Malmö för att lyfta ett viktigt ämne. En av dessa bänkar finns placerade här. Vilket ämne/budskap lyfts av bänkarna?  ",
                 "answers": [
                     "Psykisk ohälsa",
-                    "Pride festivalen",
+                    "Pridefestivalen",
                     "Cancer",
                     "Missbruk"
                 ],
                 "correctAnswer": "Psykisk ohälsa"
             },
             {
-                "question": "Öresund är sundet mellan Skåne och Själland och är ett av världens mest trafikerade sund. I vilket objekt kan man återfinna namnet Öresund på Gustav Adolfs torg? ",
+                "question": "Öresund är sundet mellan Skåne och Själland och är ett av världens mest trafikerade sund. På vilket objekt kan man återfinna namnet Öresund på Gustav Adolfs torg? ",
                 "answers": [
                     "Skylt",
                     "Byggnad",
@@ -317,7 +309,7 @@
                 "correctAnswer": "Staty"
             },
             {
-                "question": "Till WorldPride 2021 valde Malmö stad att investera i denna staty. Hur mycket skattepengar kostade den Malmöborna?",
+                "question": "Till WorldPride 2021 valde Malmö stad att investera i en unicorn. Hur mycket skattepengar kostade den Malmöborna?",
                 "answers": [
                     "150.000",
                     "900.000",
@@ -335,7 +327,7 @@
     {
         "id": 8,
         "key": "morotskaka",
-        "place": "slottsparken",
+        "place": "Slottsparken",
         "quiz": [
             {
                 "question": "När Carola var 16 år uppträdde hon live med sin låt 'Främling' för första gången i Malmö. 40 år senare bjöd hon Malmö på comeback i slottsparken. Vilket år?",
@@ -363,7 +355,11 @@
             },
             {
                 "question": "I parken finns en populär sevärdhet för turisterna i Malmö. För malmöiterna kallas den för en mölla men vilket annat ord används för detta maskineri?",
-                "correctAnswer": "väderkvarn"
+                "correctAnswer": [
+                    "väderkvarn",
+                    "kvarn"
+                ],
+                "type": "xy"
             },
             {
                 "question": "Med sina 23 SM-guld är MFF Malmöbornas stolthet. På slottsträdgårdens café går det att finna spår av detta framgångsrika fotbollslag. I vilken form?",
@@ -374,21 +370,27 @@
     {
         "id": 9,
         "key": "14",
-        "place": "davidshall",
+        "place": "Davidshall",
         "quiz": [
             {
                 "question": "Davidshall har länge varit en plats för musik, konst, Vem är den berömda nöjeskungen som stadsdelen är döpt efter?",
-                "correctAnswer": "davidlenander"
+                "answers": [
+                    "David Lindgren",
+                    "David Sjöberg",
+                    "David Andersson",
+                    "David Lenander"
+                ],
+                "correctAnswer": "David Lenander"
             },
             {
-                "question": "Davidshall är ett namn igenkänt genom tiderna, hur många ställen kan man koppla till David?",
+                "question": "På Davidshallstorg ligger en gammal byggnad som idag är bostadsrätter. År 1934 invigdes denna, som vad?",
                 "answers": [
-                    "Den ena är skånsk",
-                    "Den ena innehåller chilli",
-                    "Den ena är blå",
-                    "Den ena är vegetarisk"
+                    "Brandstation",
+                    "Skola",
+                    "Polishus",
+                    "Sjukhus"
                 ],
-                "correctAnswer": "Den ena är skånsk"
+                "correctAnswer": "Polishus"
             },
             {
                 "question": "Vilka linjer trafikeras på busshållsplatsen davidshall?",
@@ -401,7 +403,7 @@
                 "correctAnswer": "1, 2, 7, 8, 35, 84"
             },
             {
-                "question": "Torgets södra del, som ursprungligen tänkt för byggnad åt Malmö Stadsbibliotek, något som aldrig blev förverkligat. Vad ligger där idag?",
+                "question": "Torgets södra del, som ursprungligen var tänkt som en byggnad åt Malmö stadsbibliotek. Något som aldrig blev förverkligat. Vad ligger där idag?",
                 "answers": [
                     "En lekplats",
                     "Sommartorget",
@@ -411,8 +413,8 @@
                 "correctAnswer": "Sommartorget"
             },
             {
-                "question": "Precis som Andreas har Leif Mannerström gett Blå Hoddans fish and chips ett väldigt gott betyg. Trots sitt något höga pris är den väl värd att testas. Vad kostar en Fish and chips?",
-                "correctAnswer": "185"
+                "question": "På Davidshallsbron finns par i vad",
+                "correctAnswer": "skor"
             }
         ]
     }
