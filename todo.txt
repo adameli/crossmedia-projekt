@@ -2,9 +2,14 @@
 
 Fixa en Delete, så om någon skulle namnge sig väldigt fel kan du ta bort den via en delete request med id på spelaren och en nyckel som bara du vet.
 
-Fixa så att bilden på guiden blir universiall samt transportmeddelet.
 
 Hasha lösenordet som du skickar från backenden.
+
+När man inte kan svaret på ledtråden - ska man få svaret så man kan gå vidare.
+
+Vid map.js få in frågan också.
+
+
 
 
 

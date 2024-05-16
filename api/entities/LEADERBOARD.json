@@ -1,62 +1,12 @@
 [
     {
-        "name": "P\u00e5lle",
-        "points": 10,
+        "name": "Adam",
+        "points": 33,
         "id": 1
     },
     {
-        "name": "Adam",
-        "points": 30,
-        "id": 3
-    },
-    {
-        "name": "Kalle",
-        "points": 28,
-        "id": 4
-    },
-    {
-        "name": "Helen",
-        "points": 21,
-        "id": 5
-    },
-    {
-        "name": "Karin",
-        "points": 22,
-        "id": 9
-    },
-    {
-        "name": "Jacob",
-        "points": 20,
-        "id": 10
-    },
-    {
-        "name": "halle",
-        "points": 39,
-        "id": 11
-    },
-    {
-        "name": "defe",
-        "points": 40,
-        "id": 12
-    },
-    {
-        "name": "tree",
-        "points": 24,
-        "id": 13
-    },
-    {
-        "name": "tred",
-        "points": 18,
-        "id": 14
-    },
-    {
-        "name": "dede",
-        "points": 20,
-        "id": 15
-    },
-    {
-        "name": "dede",
-        "points": 22,
-        "id": 16
+        "name": "xsx",
+        "points": 34,
+        "id": 2
     }
 ]

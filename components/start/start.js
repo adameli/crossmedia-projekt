@@ -180,8 +180,8 @@ function startGame(e) {
             </button>
             <h2 class="sub-title">VÄLJ NAMN</h2>
         </div>
-        <p class="error-message"></p>
         <div id="start-game-container" class="btn-input-container">
+            <p class="error-message"></p>   
             <input  maxlength="15" type="text" placeholder="Lagnamn" id="team-name"></input>
             <button id="start-game" class="btn ">START</button>
         </div>

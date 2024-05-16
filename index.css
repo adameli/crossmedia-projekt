@@ -3,6 +3,7 @@
     --background-main: rgba(146, 171, 180, 1);
     --dark-purple: rgba(88, 131, 145, 1);
     --text-color-white: white;
+    --text-color-black: black;
     --btn-back-color: white;
     --padding-bottom: 30px;
     --padding-inline: 20px;
@@ -113,6 +114,7 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     width: 85vw;
 
     top: 50%;

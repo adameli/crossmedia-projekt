@@ -12,6 +12,7 @@
         margin-inline: var(--padding-inline);
         align-self: center;
         text-align: center;
+        color: var(--text-color-black);
     }
 }
 

@@ -105,28 +105,38 @@ function displayQuestion(quiz, quizNum) {
 
     function nextQuestion() {
         if (gameData.currentQuiz === 5) {
+            console.log(gameData.beenTo);
+            let text = '';
+            switch (gameData.beenTo.length) {
+                case 1:
+                    text = 'Bra jobbat, du har klarat första omgången, gör dig redo för nästa omgång!'
+                    break;
+                case 2:
+                    text = 'Detta går ju galant, andra omgången är nu avklarad, gör dig redo för nästa omgång!'
+                    break;
+                case 3:
+                    text = 'Grattis! Du har nu klarat utmaningen, är du redo att se hur du ligger till i poängligan?'
+                    break;
+                default:
+                    break;
+            }
             const dialog = document.getElementById('quiz-popup');
             dialog.innerHTML = `
             <div class="next-step-container">
-                <h2 class="sub-title" >Du har redan klarat detta steget, gå vidare till nästa</h2>
-                <button id="next-page" class="btn">Gå vidare!</button>
+                <h2 class="sub-title" >${text}</h2>
+                <button id="next-page" class="btn">REDO</button>
             </div>
         `;
 
+            dialog.showModal();
             dialog.querySelector("#next-page").addEventListener('click', (e) => { router('clue') });
-            setTimeout(() => {
-                dialog.showModal();
-            }, 100);
+
             gameData.currentQuiz = 0;
             gameData.currentClue = 0;
             gameData.time = 60;
             gameData.currentKey = '';
             gameData.completed = ['quiz', 'map'];
             localStorage.set(gameData);
-            router('clue');
-            setInterval(() => {
-                console.log('hello');
-            }, 1000);
             return;
         }
 

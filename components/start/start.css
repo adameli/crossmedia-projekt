@@ -23,6 +23,11 @@
         background: var(--background-main) !important;
     }
 
+    .error-message {
+        align-self: center;
+        height: 20px;
+    }
+
     & .close-dialog {
         position: absolute;
         left: var(--padding-inline);

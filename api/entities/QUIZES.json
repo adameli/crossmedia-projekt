@@ -97,7 +97,7 @@
     },
     {
         "id": 3,
-        "key": "2000",
+        "key": "20",
         "place": "triangeln",
         "quiz": [
             {
@@ -209,12 +209,12 @@
             {
                 "question": "På den blåfärgade hoddans fisk finns olika sillsorter utmärkta. Det finns två senapssiller, men vad är det som skiljer dessa åt?",
                 "answers": [
-                    "-",
-                    "Skånsk",
-                    "-",
-                    "-"
+                    "Den ena är skånsk",
+                    "Den ena innehåller chilli",
+                    "Den ena är blå",
+                    "Den ena är vegetarisk"
                 ],
-                "correctAnswer": "Skånsk"
+                "correctAnswer": "Den ena är skånsk"
             },
             {
                 "question": "Som ett gammalt sätt att filtrera kaffet användes denna otippade ingrediens som även går att finna på tork bakom hoddorna. Vad är det som hänger på tork?",

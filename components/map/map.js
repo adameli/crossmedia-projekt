@@ -27,7 +27,7 @@ async function renderComponent() {
     dom.innerHTML = `
         <div id="map-img-container">
             <video controls autoplay>
-                <source src="./resources/videos/davidshall.mp4" type="video/mp4">
+                <source src="./resources/videos/${cluesInfo.img}.mp4" type="video/mp4">
             </video>
         </div>
         <div class="btn-input-container">
@@ -35,7 +35,6 @@ async function renderComponent() {
             <button id="submit-place-password" class="btn">OK</button>
         </div>
     `;
-
     const popupComponent = {
         id: 'map-popup',
         parentId: 'main',
