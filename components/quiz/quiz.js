@@ -168,7 +168,7 @@ function displayQuestion(quiz, quizNum) {
 
             dialog.showModal();
             dialog.querySelector("#next-page").addEventListener('click', (e) => { router('clue') });
-
+            gameData.time = 100;
             gameData.currentQuiz = 0;
             gameData.currentClue = 0;
             gameData.currentKey = '';

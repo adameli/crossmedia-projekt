@@ -13,8 +13,8 @@
 
 
 #clue-transport {
-    height: 28vh;
-    max-width: 420px;
+    height: 23vh;
+    max-width: 430px;
 }
 
 #stopwatch-container {
@@ -34,7 +34,7 @@
 
     & #stopwatch {
         max-width: 160px;
-        height: 10vh;
+        height: 9vh;
     }
 
     animation: shakeStopWatch 1s infinite;

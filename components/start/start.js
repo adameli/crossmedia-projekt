@@ -61,7 +61,7 @@ function howItWorksInfo(e) {
             <li class="list-element">Välj en guide.</li>
             <li class="list-element">Välj en slinga att utforska.</li>
             <li class="list-element">Välj ett färdmedel.</li>
-            <li class="list-element">Gör dig redo för "Vart är vi på väg?” Första ledtråden är värd 10 poäng, ni har 30 sekunder på er att gissa. Om ni inte gissar rätt kommer ledtråd 2 (värd 8 poäng) osv.</li>
+            <li class="list-element">Gör dig redo för "Vart är vi på väg?” Första ledtråden är värd 10 poäng, ni har 20 sekunder per ledtråd att klura ut svaret, sen har ni 20 sekunder på er att svara. Om ni inte gissar rätt kommer nästa ledtråd (värd 8 poäng) osv.</li>
             <li class="list-element">Tryck på nödringklockan när ni tror er veta svaret. Fyll i svaret i fältet och tryck sedan på pilen eller enter.</li>
             <li class="list-element">Vid fel svar fortsätter ni att gissa. Vid rätt svar tar ni er till platsen.</li>
             <li class="list-element">När ni når platsen får ni en gåta uppläst av Andreas. Ert uppdrag är att ta reda på rätt lösenord.</li>
