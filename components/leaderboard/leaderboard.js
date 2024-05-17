@@ -7,7 +7,6 @@ import { Fireworks } from 'https://esm.run/fireworks-js';
 
 async function renderComponent() {
 
-
     createHeader('main', 'POÄNGLIGA');
     const component = {
         id: 'leaderboard-container',

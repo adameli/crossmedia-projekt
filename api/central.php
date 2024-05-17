@@ -4,10 +4,15 @@ ini_set("display_errors", 1);
 
  
     $requestMethod = $_SERVER["REQUEST_METHOD"];
-    // check_request_method($requestMethod);
-
-    // $content_type = $_SERVER["CONTENT_TYPE"];
-    // check_content_type($content_type);
+    
+    if ($_SERVER["REQUEST_METHOD"] == "OPTIONS") {
+        header("Access-Control-Allow-Headers: *");
+        header("Access-Control-Allow-Methods: *");
+        header("Access-Control-Allow-Origin: *");
+        exit();
+    } else {
+        header("Access-Control-Allow-Origin: *");
+    }
 
     $requestJson = file_get_contents("php://input");
     $requestData = json_decode($requestJson, true);

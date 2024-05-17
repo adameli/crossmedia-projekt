@@ -16,13 +16,6 @@ function renderInstance() {
     const gameData = localStorage.get();
 
     startTimer(gameData.time);
-
-    // function speachToText(text) {
-    //     const synth = window.speechSynthesis;
-    //     const utterThis = new SpeechSynthesisUtterance(text);
-    //     synth.speak(utterThis);
-    // }
-
 }
 
 function startTimer(seconds) {
@@ -36,31 +29,25 @@ function startTimer(seconds) {
         const gameData = localStorage.get();
         gameData.time = seconds;
 
-        const totalTime = 60;
+        const totalTime = 100;
         const timeRemaining = totalTime - seconds
         const precentageElapsed = (timeRemaining / totalTime) * 100;
 
         countdownBar.style.width = precentageElapsed + '%';
 
-        if (seconds === 40) { changeClueContent(1, false, gameData); }
-        if (seconds === 20) { changeClueContent(2, false, gameData); }
-        if (seconds === 10) { changeClueContent(3, false, gameData); }
-        if (seconds === 5) { changeClueContent(4, false, gameData); }
+        if (seconds === 80) { changeClueContent(1, false, gameData); }
+        if (seconds === 60) { changeClueContent(2, false, gameData); }
+        if (seconds === 40) { changeClueContent(3, false, gameData); }
+        if (seconds === 20) { changeClueContent(4, false, gameData); }
 
         if (gameData.time === 0) {
             clearInterval(timerIntervalId); // Stop the interval
             changeClueContent(5, gameData.emergencyStop, gameData);
             PubSub.publish({ event: 'endOfClues', detail: STATE.getEntity('CLUES').destination })
         }
-
-        // Check if timer has reached zero
-
-
         localStorage.set(gameData);
 
         seconds--;
-
-
     }, 1000); // Interval set to 1000 milliseconds (1 second)
 
     function changeClueContent(index, isButtonActive, gameData) {
@@ -68,6 +55,7 @@ function startTimer(seconds) {
             gameData.emergencyStop = false;
             document.querySelector('#stopwatch-btn')?.classList.remove('hide');
         }
+
         let cluePoint;
         switch (index) {
             case 0:
@@ -90,17 +78,17 @@ function startTimer(seconds) {
                 break;
         }
         document.getElementById('clue-point').textContent = cluePoint;
-        if (index !== 5) {
-            const textContainer = document.getElementById('clue-text-container');
-            if (clues[index].text) {
+        const textContainer = document.getElementById('clue-text-container');
+        if (index === 5) {
+            textContainer.innerHTML = `<h4 class="text-style">Ajdå, bättre lycka nästa gång. Här får du iallafall svaret!</h4>`;
+        } else {
+            if (clues[index].text)
                 textContainer.innerHTML = `<h4 class="text-style">${clues[index].text}</h4>`;
-            } else {
+            else
                 textContainer.innerHTML = `<img class="responsive-img" src="./resources/images/place_images/${clues[index].img}">`;
-            }
-            gameData.currentClue = index;
         }
+        gameData.currentClue = index;
         localStorage.set(gameData);
-        // speachToText(clues[index].text);
     }
 }
 

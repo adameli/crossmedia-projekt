@@ -170,7 +170,9 @@ input {
         padding-inline: 12px;
 
         & img {
-            height: 30px;
+            height: 4vh;
+            max-width: 30px;
+            max-height: 30px;
             transform: rotate(180deg);
         }
     }
@@ -253,8 +255,9 @@ input {
         all: unset;
 
         & img {
-            height: 30px;
-            width: 30px;
+            height: 4.5vh;
+            max-width: 30px;
+            max-height: 30px;
         }
 
     }

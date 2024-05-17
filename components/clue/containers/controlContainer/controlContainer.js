@@ -4,7 +4,7 @@ import { STATE } from "../../../../logic/state.js";
 import { localStorage } from "../../../../logic/helpers.js";
 import { router } from "../../../../logic/router.js";
 
-const shortTime = 15;
+const shortTime = 20;
 
 function renderComponent(parentId) {
     const component = {
@@ -34,8 +34,6 @@ function renderComponent(parentId) {
     document.querySelector('#stopwatch-btn').addEventListener('click', (e) => {
         PubSub.publish({ event: 'emergencyStop', detail: shortTime });
     })
-
-
 }
 
 PubSub.subscribe({ event: 'renderClueComponents', listener: renderComponent });
@@ -90,14 +88,15 @@ function submitClueAnwser(detail = shortTime) {
                 case 4:
                     points = 2;
                     break;
+                case 5:
+                    points = 0;
+                    break;
             }
-
-            if (detail !== shortTime) points = 0;
 
             document.querySelector("#points").textContent = gameData.points + points;
             gameData.points += points;
             gameData.currentPlace = destination;
-            gameData.time = 60;
+            gameData.time = 100;
             gameData.currentClue = 0;
             gameData.emergencyStop = false;
             gameData.completed = ['quiz', 'clue'];

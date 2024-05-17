@@ -209,7 +209,7 @@ function startGame(e) {
         const localData = {
             name: input.value,
             emergencyStop: false,
-            time: 60,
+            time: 100,
             points: 0,
             currentClue: 0,
             currentQuiz: 0,
@@ -223,7 +223,9 @@ function startGame(e) {
         }
 
         localStorage.set(localData);
-        router('clue');
+        setTimeout(() => {
+            router('clue');
+        }, 1500);
     });
 
 

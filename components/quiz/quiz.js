@@ -56,6 +56,14 @@ function displayQuestion(quiz, quizNum) {
     questionText.textContent = question.question;
     currentQuestion.textContent = ++quizNum + '/5';
 
+    if (question.audio) {
+        alternativesContainer.innerHTML = `
+            <audio controls autoplay loop>
+                <source src="./resources/audio/${question.audio}.mp3" type="audio/mp3" />
+            </audio>
+        `;
+    }
+
     if (question.answers) {
         question.answers.forEach(answer => {
             const btn = document.createElement('button');
@@ -82,8 +90,10 @@ function displayQuestion(quiz, quizNum) {
 
             alternativesContainer.append(btn);
         });
+
+
     } else {
-        alternativesContainer.innerHTML = `
+        alternativesContainer.innerHTML += `
         <input type="text" id="quiz-input-answer" placeholder="">
         <button id="submit-answer" class="btn">SVARA</button>
         `
@@ -161,7 +171,6 @@ function displayQuestion(quiz, quizNum) {
 
             gameData.currentQuiz = 0;
             gameData.currentClue = 0;
-            gameData.time = 60;
             gameData.currentKey = '';
             gameData.completed = ['quiz', 'map'];
             localStorage.set(gameData);
